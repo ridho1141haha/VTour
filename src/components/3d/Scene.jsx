@@ -3,6 +3,7 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Sky, Html, useProgress } from '@react-three/drei';
 import { SchoolModel } from './SchoolModel';
 import { FirstPersonPlayer } from './FirstPersonPlayer';
+import { RoomMarkers } from './RoomMarkers';
 import { useTourStore } from '../../stores/useTourStore';
 
 function Loader() {
@@ -11,16 +12,16 @@ function Loader() {
 
   return (
     <Html center>
-      <div className='bg-slate-900/90 text-white px-8 py-6 rounded-2xl border border-slate-700 shadow-2xl flex flex-col items-center gap-4 min-w-[280px]'>
-        <div className='w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin'></div>
-        <div className='text-center'>
-          <h3 className='text-sm font-semibold text-white'>Memuat 3D Virtual Tour...</h3>
-          <p className='text-xs text-slate-400 mt-1'>{progress.toFixed(0)}% selesai</p>
+      <div className="bg-slate-900/90 text-white px-8 py-6 rounded-2xl border border-slate-700 shadow-2xl flex flex-col items-center gap-4 min-w-[280px]">
+        <div className="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+        <div className="text-center">
+          <h3 className="text-sm font-semibold text-white">Memuat 3D Virtual Tour...</h3>
+          <p className="text-xs text-slate-400 mt-1">{progress.toFixed(0)}% selesai</p>
         </div>
-        <div className='w-full bg-slate-800 rounded-full h-2 overflow-hidden border border-slate-700'>
+        <div className="w-full bg-slate-800 rounded-full h-2 overflow-hidden border border-slate-700">
           <div 
-            className='bg-blue-500 h-full transition-all duration-300 rounded-full' 
-            style={{ width: progress + '%' }}
+            className="bg-blue-500 h-full transition-all duration-300 rounded-full" 
+            style={{ width: `${progress}%` }}
           ></div>
         </div>
       </div>
@@ -32,11 +33,11 @@ export function Scene() {
   const { cameraMode } = useTourStore();
 
   return (
-    <div id='canvas-container' className='w-full h-full relative cursor-pointer'>
+    <div id="canvas-container" className="w-full h-full relative cursor-pointer">
       <Canvas
-        camera={{ position: [0, 2, 20], fov: 65, near: 0.1, far: 1000 }}
+        camera={{ position: [0, 2, 12], fov: 65, near: 0.1, far: 1000 }}
         shadows
-        className='w-full h-full'
+        className="w-full h-full"
       >
         <ambientLight intensity={0.8} />
         <directionalLight
@@ -53,7 +54,7 @@ export function Scene() {
 
         {/* Controller Switcher: First Person (WASD) vs Orbit (Overview) */}
         {cameraMode === 'fps' ? (
-          <FirstPersonPlayer spawnPosition={[0, 2, 20]} />
+          <FirstPersonPlayer spawnPosition={[0, 2, 12]} />
         ) : (
           <OrbitControls 
             enableDamping 
@@ -66,6 +67,7 @@ export function Scene() {
 
         <Suspense fallback={<Loader />}>
           <SchoolModel />
+          <RoomMarkers />
         </Suspense>
       </Canvas>
     </div>

@@ -5,19 +5,30 @@ import * as THREE from 'three';
 import { useKeyboard } from '../../hooks/useKeyboard';
 import { useTourStore } from '../../stores/useTourStore';
 
-export function FirstPersonPlayer({ spawnPosition = [0, 2, 20] }) {
+export function FirstPersonPlayer({ spawnPosition = [0, 2, 12] }) {
   const { camera, scene } = useThree();
   const controlsRef = useRef();
   const keys = useKeyboard();
-  const { appState, setIsPointerLocked } = useTourStore();
+  const { 
+    appState, 
+    setIsPointerLocked, 
+    rooms, 
+    nearbyRoom, 
+    setNearbyRoom, 
+    openRoomModal,
+    currentZone,
+    setCurrentZone 
+  } = useTourStore();
 
   const moveVector = useRef(new THREE.Vector3());
   const forwardVector = useRef(new THREE.Vector3());
   const sideVector = useRef(new THREE.Vector3());
   const raycaster = useRef(new THREE.Raycaster(new THREE.Vector3(), new THREE.Vector3(0, -1, 0), 0, 20));
+  const playerPos = useRef(new THREE.Vector3());
+  const roomPos = useRef(new THREE.Vector3());
+  const lastInteractRef = useRef(false);
 
   useEffect(() => {
-    // Set posisi awal kamera
     camera.position.set(...spawnPosition);
   }, []);
 
@@ -38,13 +49,14 @@ export function FirstPersonPlayer({ spawnPosition = [0, 2, 20] }) {
   }, [setIsPointerLocked]);
 
   useFrame((_, delta) => {
+    // Kunci kontrol saat modal informasi terbuka
     if (appState === 'modal_open') return;
 
     const baseSpeed = 9.0;
     const speed = keys.sprint ? baseSpeed * 1.75 : baseSpeed;
     const actualDelta = Math.min(delta, 0.1);
 
-    // Ambil orientasi kamera horizontal
+    // Orientasi horizontal
     camera.getWorldDirection(forwardVector.current);
     forwardVector.current.y = 0;
     forwardVector.current.normalize();
@@ -72,10 +84,46 @@ export function FirstPersonPlayer({ spawnPosition = [0, 2, 20] }) {
     if (intersects.length > 0) {
       const validHit = intersects.find(hit => hit.object.type === 'Mesh' && !hit.object.name?.includes('marker'));
       if (validHit && validHit.distance > 0.05) {
-        const targetY = validHit.point.y + 1.7; // Tinggi pandangan mata 1.7m
+        const targetY = validHit.point.y + 1.7; // Ketinggian pandangan mata 1.7m
         camera.position.y = THREE.MathUtils.lerp(camera.position.y, targetY, 0.25);
       }
     }
+
+    // Deteksi Proximity ke Marker Ruangan (< 4.5 meter)
+    playerPos.current.set(camera.position.x, 0, camera.position.z);
+    let foundNearby = null;
+    let closestZone = null;
+    let minDistance = Infinity;
+
+    for (const room of rooms) {
+      roomPos.current.set(room.position[0], 0, room.position[2]);
+      const dist = playerPos.current.distanceTo(roomPos.current);
+
+      if (dist < 4.5) {
+        foundNearby = room;
+      }
+
+      if (dist < 12 && dist < minDistance) {
+        minDistance = dist;
+        closestZone = `${room.building} • ${room.shortName}`;
+      }
+    }
+
+    // Update state nearby room
+    if (foundNearby?.id !== nearbyRoom?.id) {
+      setNearbyRoom(foundNearby);
+    }
+
+    // Update state zone toast notification jika berpindah gedung
+    if (closestZone && closestZone !== currentZone) {
+      setCurrentZone(closestZone);
+    }
+
+    // Handle tombol [E] untuk interaksi
+    if (keys.interact && !lastInteractRef.current && foundNearby) {
+      openRoomModal(foundNearby);
+    }
+    lastInteractRef.current = keys.interact;
   });
 
   return (
