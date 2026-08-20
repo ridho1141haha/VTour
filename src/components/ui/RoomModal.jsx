@@ -4,11 +4,8 @@ import {
   X, 
   ChevronLeft, 
   ChevronRight, 
-  MapPin, 
   Building2, 
   CheckCircle2, 
-  Sparkles, 
-  Eye, 
   Maximize2 
 } from 'lucide-react';
 
@@ -49,15 +46,23 @@ export function RoomModal() {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-slate-950/80 backdrop-blur-md animate-fadeIn">
+    <div 
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-slate-950/80 backdrop-blur-md animate-fadeIn"
+      onClick={(e) => {
+        // Klik di luar modal menutup popup
+        if (e.target === e.currentTarget) {
+          closeRoomModal();
+        }
+      }}
+    >
       {/* Lightbox Fullscreen Preview jika user klik foto */}
       {isLightboxOpen && currentImage && (
         <div 
-          className="fixed inset-0 z-[60] bg-black/95 flex flex-col items-center justify-center p-4"
+          className="fixed inset-0 z-[120] bg-black/95 flex flex-col items-center justify-center p-4"
           onClick={() => setIsLightboxOpen(false)}
         >
           <button 
-            className="absolute top-6 right-6 p-2 rounded-full bg-slate-800 text-white hover:bg-slate-700"
+            className="absolute top-6 right-6 p-2.5 rounded-full bg-slate-800 text-white hover:bg-slate-700 transition-all cursor-pointer"
             onClick={() => setIsLightboxOpen(false)}
           >
             <X size={24} />
@@ -65,18 +70,20 @@ export function RoomModal() {
           <img 
             src={currentImage.url} 
             alt={currentImage.caption || activeRoom.name} 
-            className="max-h-[85vh] max-w-[90vw] object-contain rounded-lg shadow-2xl"
+            className="max-h-[85vh] max-w-[90vw] object-contain rounded-xl shadow-2xl"
           />
           {currentImage.caption && (
-            <p className="text-sm text-slate-300 mt-3 text-center">{currentImage.caption}</p>
+            <p className="text-sm text-slate-300 mt-4 text-center font-medium bg-slate-900/80 px-4 py-1.5 rounded-full border border-slate-800">
+              {currentImage.caption}
+            </p>
           )}
         </div>
       )}
 
       {/* Main Modal Card */}
-      <div className="relative w-full max-w-2xl max-h-[90vh] bg-slate-900 border border-slate-700 rounded-3xl shadow-2xl overflow-hidden flex flex-col">
+      <div className="relative w-full max-w-2xl max-h-[90vh] bg-slate-900 border border-slate-700 rounded-3xl shadow-2xl overflow-hidden flex flex-col z-[105]">
         {/* Header */}
-        <div className="flex items-center justify-between p-5 border-b border-slate-800 bg-slate-900/90">
+        <div className="flex items-center justify-between p-5 border-b border-slate-800 bg-slate-900/95">
           <div>
             <div className="flex items-center gap-2 mb-1">
               <span className="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-blue-500/20 text-blue-400 border border-blue-500/30">
@@ -115,7 +122,8 @@ export function RoomModal() {
               {/* Lightbox / Zoom Hint Overlay */}
               <button 
                 onClick={() => setIsLightboxOpen(true)}
-                className="absolute top-3 right-3 p-1.5 rounded-xl bg-slate-900/70 text-white backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity"
+                className="absolute top-3 right-3 p-2 rounded-xl bg-slate-900/80 text-white backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity border border-slate-700"
+                title="Perbesar Foto"
               >
                 <Maximize2 size={16} />
               </button>
@@ -125,19 +133,19 @@ export function RoomModal() {
                 <>
                   <button
                     onClick={handlePrev}
-                    className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-slate-900/80 text-white hover:bg-blue-600 backdrop-blur-sm transition-all shadow-md"
+                    className="absolute left-3 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-slate-900/85 text-white hover:bg-blue-600 backdrop-blur-md transition-all shadow-lg border border-slate-700"
                   >
-                    <ChevronLeft size={20} />
+                    <ChevronLeft size={18} />
                   </button>
                   <button
                     onClick={handleNext}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-slate-900/80 text-white hover:bg-blue-600 backdrop-blur-sm transition-all shadow-md"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-slate-900/85 text-white hover:bg-blue-600 backdrop-blur-md transition-all shadow-lg border border-slate-700"
                   >
-                    <ChevronRight size={20} />
+                    <ChevronRight size={18} />
                   </button>
 
                   {/* Indicator Counter Badge */}
-                  <div className="absolute bottom-3 right-3 px-2.5 py-1 rounded-full bg-slate-950/80 text-[11px] font-mono text-slate-300 backdrop-blur-sm border border-slate-700">
+                  <div className="absolute bottom-3 right-3 px-2.5 py-1 rounded-full bg-slate-950/85 text-[11px] font-mono text-slate-300 backdrop-blur-md border border-slate-700">
                     {currentImageIndex + 1} / {images.length}
                   </div>
                 </>
@@ -145,7 +153,7 @@ export function RoomModal() {
 
               {/* Caption Bar */}
               {currentImage.caption && (
-                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent p-3 pt-6 text-xs text-slate-200">
+                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent p-3.5 pt-7 text-xs text-slate-200">
                   {currentImage.caption}
                 </div>
               )}
@@ -188,7 +196,7 @@ export function RoomModal() {
           <span>Tekan <kbd className="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-slate-300 font-mono">ESC</kbd> untuk menutup</span>
           <button
             onClick={closeRoomModal}
-            className="px-5 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-medium shadow-lg shadow-blue-500/20 transition-all"
+            className="px-5 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-medium shadow-lg shadow-blue-500/20 transition-all cursor-pointer"
           >
             Tutup Informasi
           </button>
