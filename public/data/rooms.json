@@ -1,0 +1,45 @@
+[
+  {
+    "id": "gerbang-utama",
+    "name": "Gerbang Utama & Pos Keamanan",
+    "shortName": "Gerbang Utama",
+    "building": "Area Depan",
+    "floor": 1,
+    "category": "Fasilitas Umum",
+    "description": "Pintu masuk utama SMKN 2 Surakarta. Tempat penyambutan tamu, pemeriksaan keamanan, dan akses utama civitas akademika.",
+    "facilities": [
+      "Pos Penjagaan Keamanan 24 Jam",
+      "Pintu Gerbang Otomatis",
+      "Akses Drop Zone Kendaraan"
+    ],
+    "images": [
+      {
+        "url": "https://images.unsplash.com/photo-1562774053-701939374585?w=800&q=80",
+        "caption": "Tampak depan gerbang sekolah"
+      }
+    ],
+    "position": [0, 1.5, 0]
+  },
+  {
+    "id": "lab-pplg-1",
+    "name": "Laboratorium PPLG 1",
+    "shortName": "Lab PPLG 1",
+    "building": "Gedung C",
+    "floor": 2,
+    "category": "Laboratorium",
+    "description": "Laboratorium Praktik Rekayasa Perangkat Lunak dan Game. Digunakan untuk kegiatan belajar coding, pembuatan aplikasi web/mobile, dan project software industri.",
+    "facilities": [
+      "36 Unit PC Core i7 / 16GB RAM",
+      "2 Unit AC 2 PK",
+      "Smart Projector & High-speed LAN",
+      "Papan Whiteboard Interaktif"
+    ],
+    "images": [
+      {
+        "url": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80",
+        "caption": "Suasana ruang laboratorium komputer"
+      }
+    ],
+    "position": [15, 2, -20]
+  }
+]
