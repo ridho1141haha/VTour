@@ -7,7 +7,6 @@ import {
   Navigation, 
   Building2, 
   Info, 
-  SlidersHorizontal,
   Compass
 } from 'lucide-react';
 
@@ -41,12 +40,14 @@ export function SearchSidebar() {
 
   // Filter ruangan berdasarkan query dan kategori
   const filteredRooms = useMemo(() => {
+    const trimmed = query.trim().toLowerCase();
     return rooms.filter((room) => {
       const matchQuery = 
-        room.name.toLowerCase().includes(query.toLowerCase()) ||
-        room.shortName.toLowerCase().includes(query.toLowerCase()) ||
-        room.building.toLowerCase().includes(query.toLowerCase()) ||
-        (room.description && room.description.toLowerCase().includes(query.toLowerCase()));
+        !trimmed ||
+        room.name.toLowerCase().includes(trimmed) ||
+        room.shortName.toLowerCase().includes(trimmed) ||
+        room.building.toLowerCase().includes(trimmed) ||
+        (room.description && room.description.toLowerCase().includes(trimmed));
 
       const matchCategory = 
         selectedCategory === 'Semua' || room.category === selectedCategory;

@@ -33,8 +33,8 @@ export function FirstPersonPlayer({ spawnPosition = [0, 2, 12] }) {
   const lastInteractRef = useRef(false);
 
   useEffect(() => {
-    camera.position.set(...spawnPosition);
-  }, []);
+    camera.position.set(spawnPosition[0], spawnPosition[1], spawnPosition[2]);
+  }, [camera, spawnPosition]);
 
   // Handle Teleportasi Instan
   useEffect(() => {

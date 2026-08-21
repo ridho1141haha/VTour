@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useTourStore } from '../../stores/useTourStore';
-import { X, Navigation, MapPin, Compass, Info, CheckCircle2 } from 'lucide-react';
+import { X, Navigation, MapPin, Compass, Info } from 'lucide-react';
 
 export function SchoolMapModal() {
-  const { isMapOpen, closeMap, rooms, teleportTo } = useTourStore();
+  const { isMapOpen, closeMap, teleportTo } = useTourStore();
   const [selectedHotspot, setSelectedHotspot] = useState(null);
 
   if (!isMapOpen) return null;

@@ -12,9 +12,7 @@ import {
   MousePointerClick, 
   Sparkles, 
   Search, 
-  Map, 
-  Compass,
-  Layers
+  Map
 } from 'lucide-react';
 
 export default function App() {
@@ -43,7 +41,6 @@ export default function App() {
       const found = rooms.find((r) => r.id === targetRoomId);
       if (found) {
         teleportTo(found.teleportPosition || found.position, found);
-        // Buka modal info setelah delay singkat agar kamera siap
         setTimeout(() => {
           openRoomModal(found);
         }, 500);

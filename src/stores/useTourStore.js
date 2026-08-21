@@ -1,17 +1,31 @@
 import { create } from 'zustand';
 
-export const useTourStore = create((set, get) => ({
+export const useTourStore = create((set) => ({
   // Status Aplikasi: 'exploring' | 'modal_open' | 'search_open' | 'map_open'
   appState: 'exploring',
   setAppState: (state) => set({ appState: state }),
 
   // Mode Kamera: 'fps' | 'orbit'
   cameraMode: 'fps',
-  setCameraMode: (mode) => set({ cameraMode: mode }),
+  setCameraMode: (mode) =>
+    set(() => ({
+      cameraMode: mode,
+      isPointerLocked: false,
+      ...(mode === 'orbit' ? { nearbyRoom: null, currentZone: null } : {}),
+    })),
 
   // Status Pointer Lock (mouse terkunci)
   isPointerLocked: false,
-  setIsPointerLocked: (locked) => set({ isPointerLocked: locked }),
+  setIsPointerLocked: (locked) =>
+    set((state) => ({
+      isPointerLocked:
+        state.appState === 'modal_open' ||
+        state.isSearchOpen ||
+        state.isMapOpen ||
+        state.cameraMode !== 'fps'
+          ? false
+          : Boolean(locked),
+    })),
 
   // Data seluruh ruangan
   rooms: [],
@@ -24,7 +38,7 @@ export const useTourStore = create((set, get) => ({
   // Ruangan yang sedang dibuka di modal informasi
   activeRoom: null,
   openRoomModal: (room) => {
-    if (document.pointerLockElement) {
+    if (typeof document !== 'undefined' && document.pointerLockElement) {
       document.exitPointerLock();
     }
     set({ activeRoom: room, appState: 'modal_open', isPointerLocked: false });
@@ -34,7 +48,7 @@ export const useTourStore = create((set, get) => ({
   // Modal Pencarian & Direktori Ruangan
   isSearchOpen: false,
   openSearch: () => {
-    if (document.pointerLockElement) {
+    if (typeof document !== 'undefined' && document.pointerLockElement) {
       document.exitPointerLock();
     }
     set({ isSearchOpen: true, isMapOpen: false, isPointerLocked: false });
@@ -44,7 +58,7 @@ export const useTourStore = create((set, get) => ({
   // Modal Denah 2D Interaktif Sekolah
   isMapOpen: false,
   openMap: () => {
-    if (document.pointerLockElement) {
+    if (typeof document !== 'undefined' && document.pointerLockElement) {
       document.exitPointerLock();
     }
     set({ isMapOpen: true, isSearchOpen: false, isPointerLocked: false });
