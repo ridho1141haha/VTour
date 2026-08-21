@@ -17,7 +17,11 @@ export function FirstPersonPlayer({ spawnPosition = [0, 2, 12] }) {
     setNearbyRoom, 
     openRoomModal,
     currentZone,
-    setCurrentZone 
+    setCurrentZone,
+    isSearchOpen,
+    isMapOpen,
+    targetTeleport,
+    clearTeleport
   } = useTourStore();
 
   const moveVector = useRef(new THREE.Vector3());
@@ -31,6 +35,14 @@ export function FirstPersonPlayer({ spawnPosition = [0, 2, 12] }) {
   useEffect(() => {
     camera.position.set(...spawnPosition);
   }, []);
+
+  // Handle Teleportasi Instan
+  useEffect(() => {
+    if (targetTeleport && Array.isArray(targetTeleport)) {
+      camera.position.set(targetTeleport[0], targetTeleport[1] || 2, targetTeleport[2]);
+      clearTeleport();
+    }
+  }, [targetTeleport, camera, clearTeleport]);
 
   useEffect(() => {
     const controls = controlsRef.current;
@@ -49,14 +61,14 @@ export function FirstPersonPlayer({ spawnPosition = [0, 2, 12] }) {
   }, [setIsPointerLocked]);
 
   useFrame((_, delta) => {
-    // Kunci kontrol saat modal informasi terbuka
-    if (appState === 'modal_open') return;
+    // Nonaktifkan pergerakan saat modal, pencarian, atau denah sedang dibuka
+    if (appState === 'modal_open' || isSearchOpen || isMapOpen) return;
 
     const baseSpeed = 9.0;
     const speed = keys.sprint ? baseSpeed * 1.75 : baseSpeed;
     const actualDelta = Math.min(delta, 0.1);
 
-    // Orientasi horizontal
+    // Orientasi horizontal kamera
     camera.getWorldDirection(forwardVector.current);
     forwardVector.current.y = 0;
     forwardVector.current.normalize();
@@ -84,7 +96,7 @@ export function FirstPersonPlayer({ spawnPosition = [0, 2, 12] }) {
     if (intersects.length > 0) {
       const validHit = intersects.find(hit => hit.object.type === 'Mesh' && !hit.object.name?.includes('marker'));
       if (validHit && validHit.distance > 0.05) {
-        const targetY = validHit.point.y + 1.7; // Ketinggian pandangan mata 1.7m
+        const targetY = validHit.point.y + 1.7; // Tinggi pandangan mata manusia 1.7m
         camera.position.y = THREE.MathUtils.lerp(camera.position.y, targetY, 0.25);
       }
     }
@@ -109,17 +121,15 @@ export function FirstPersonPlayer({ spawnPosition = [0, 2, 12] }) {
       }
     }
 
-    // Update state nearby room
     if (foundNearby?.id !== nearbyRoom?.id) {
       setNearbyRoom(foundNearby);
     }
 
-    // Update state zone toast notification jika berpindah gedung
     if (closestZone && closestZone !== currentZone) {
       setCurrentZone(closestZone);
     }
 
-    // Handle tombol [E] untuk interaksi
+    // Handle tombol [E]
     if (keys.interact && !lastInteractRef.current && foundNearby) {
       openRoomModal(foundNearby);
     }

@@ -1,87 +1,81 @@
 import { useEffect, useState } from 'react';
 
-export function useKeyboard() {
-  const [keys, setKeys] = useState({
-    forward: false,
-    backward: false,
-    left: false,
-    right: false,
-    sprint: false,
-    interact: false,
-  });
+const EMPTY_KEYS = Object.freeze({
+  forward: false,
+  backward: false,
+  left: false,
+  right: false,
+  sprint: false,
+  interact: false,
+});
+
+const KEY_BINDINGS = {
+  KeyW: 'forward',
+  ArrowUp: 'forward',
+  KeyS: 'backward',
+  ArrowDown: 'backward',
+  KeyA: 'left',
+  ArrowLeft: 'left',
+  KeyD: 'right',
+  ArrowRight: 'right',
+  ShiftLeft: 'sprint',
+  ShiftRight: 'sprint',
+  KeyE: 'interact',
+};
+
+export function useKeyboard(enabled = true) {
+  const [keys, setKeys] = useState(EMPTY_KEYS);
 
   useEffect(() => {
+    const clearKeys = () => {
+      setKeys((current) => (
+        Object.values(current).some(Boolean) ? EMPTY_KEYS : current
+      ));
+    };
+
+    if (!enabled) {
+      clearKeys();
+      return undefined;
+    }
+
+    const setKey = (code, pressed) => {
+      const key = KEY_BINDINGS[code];
+      if (!key) return false;
+
+      setKeys((current) => (
+        current[key] === pressed ? current : { ...current, [key]: pressed }
+      ));
+      return true;
+    };
+
     const handleKeyDown = (e) => {
       // Jangan tangani keyboard jika user sedang mengetik di input form
-      if (['input', 'textarea'].includes(e.target.tagName.toLowerCase())) return;
+      if (e.target instanceof Element
+        && e.target.closest('input, textarea, select, button, [contenteditable="true"]')) return;
 
-      switch (e.code) {
-        case 'KeyW':
-        case 'ArrowUp':
-          setKeys((k) => ({ ...k, forward: true }));
-          break;
-        case 'KeyS':
-        case 'ArrowDown':
-          setKeys((k) => ({ ...k, backward: true }));
-          break;
-        case 'KeyA':
-        case 'ArrowLeft':
-          setKeys((k) => ({ ...k, left: true }));
-          break;
-        case 'KeyD':
-        case 'ArrowRight':
-          setKeys((k) => ({ ...k, right: true }));
-          break;
-        case 'ShiftLeft':
-        case 'ShiftRight':
-          setKeys((k) => ({ ...k, sprint: true }));
-          break;
-        case 'KeyE':
-          setKeys((k) => ({ ...k, interact: true }));
-          break;
-        default:
-          break;
-      }
+      if (setKey(e.code, true)) e.preventDefault();
     };
 
     const handleKeyUp = (e) => {
-      switch (e.code) {
-        case 'KeyW':
-        case 'ArrowUp':
-          setKeys((k) => ({ ...k, forward: false }));
-          break;
-        case 'KeyS':
-        case 'ArrowDown':
-          setKeys((k) => ({ ...k, backward: false }));
-          break;
-        case 'KeyA':
-        case 'ArrowLeft':
-          setKeys((k) => ({ ...k, left: false }));
-          break;
-        case 'KeyD':
-        case 'ArrowRight':
-          setKeys((k) => ({ ...k, right: false }));
-          break;
-        case 'ShiftLeft':
-        case 'ShiftRight':
-          setKeys((k) => ({ ...k, sprint: false }));
-          break;
-        case 'KeyE':
-          setKeys((k) => ({ ...k, interact: false }));
-          break;
-        default:
-          break;
-      }
+      if (setKey(e.code, false)) e.preventDefault();
+    };
+
+    const handleVisibilityChange = () => {
+      if (document.hidden) clearKeys();
     };
 
     window.addEventListener('keydown', handleKeyDown);
     window.addEventListener('keyup', handleKeyUp);
+    window.addEventListener('blur', clearKeys);
+    document.addEventListener('visibilitychange', handleVisibilityChange);
 
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
       window.removeEventListener('keyup', handleKeyUp);
+      window.removeEventListener('blur', clearKeys);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
     };
-  }, []);
+  }, [enabled]);
 
   return keys;
 }

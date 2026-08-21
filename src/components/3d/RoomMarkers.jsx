@@ -1,14 +1,52 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { Html } from '@react-three/drei';
 import * as THREE from 'three';
 import { useTourStore } from '../../stores/useTourStore';
 import { Info } from 'lucide-react';
 
+const ROOMS_URL = `${import.meta.env.BASE_URL}data/rooms.json`;
+
+function validateRooms(data) {
+  if (!Array.isArray(data)) throw new Error('Format data ruangan bukan array.');
+
+  const ids = new Set();
+  data.forEach((room, index) => {
+    const isValid = room
+      && typeof room.id === 'string'
+      && typeof room.name === 'string'
+      && typeof room.shortName === 'string'
+      && typeof room.building === 'string'
+      && typeof room.category === 'string'
+      && typeof room.description === 'string'
+      && typeof room.contentNote === 'string'
+      && Number.isFinite(room.floor)
+      && Array.isArray(room.facilities)
+      && room.facilities.every((facility) => typeof facility === 'string')
+      && Array.isArray(room.images)
+      && room.images.every((image) => image
+        && typeof image.url === 'string'
+        && typeof image.caption === 'string')
+      && Array.isArray(room.position)
+      && room.position.length === 3
+      && room.position.every(Number.isFinite)
+      && !ids.has(room.id);
+
+    if (!isValid) throw new Error(`Data ruangan ke-${index + 1} tidak valid.`);
+    ids.add(room.id);
+  });
+
+  return data;
+}
+
 function SingleMarker({ room }) {
   const markerRef = useRef();
-  const { openRoomModal, nearbyRoom, appState } = useTourStore();
+  const openRoomModal = useTourStore((state) => state.openRoomModal);
+  const nearbyRoom = useTourStore((state) => state.nearbyRoom);
+  const isModalOpen = useTourStore((state) => Boolean(state.activeRoom));
+  const cameraMode = useTourStore((state) => state.cameraMode);
   const isNearby = nearbyRoom?.id === room.id;
+  const canOpen = cameraMode === 'orbit' || isNearby;
 
   useFrame(({ clock }) => {
     if (markerRef.current) {
@@ -43,17 +81,22 @@ function SingleMarker({ room }) {
       </mesh>
 
       {/* HTML Label Billboard (Sembunyikan jika modal sedang terbuka) */}
-      {appState !== 'modal_open' && (
+      {!isModalOpen && (
         <Html
           position={[0, 0.5, 0]}
           center
           distanceFactor={12}
-          zIndexRange={[20, 0]}
+          zIndexRange={[5, 0]}
+          style={{ pointerEvents: canOpen ? 'auto' : 'none' }}
         >
           <button
+            type="button"
+            disabled={!canOpen}
+            aria-hidden={!canOpen}
+            aria-label={`Lihat informasi ${room.name}`}
             onClick={(e) => {
               e.stopPropagation();
-              openRoomModal(room);
+              if (canOpen) openRoomModal(room);
             }}
             className={`group flex items-center gap-1.5 px-3 py-1 rounded-full border shadow-lg backdrop-blur-md transition-all duration-200 cursor-pointer pointer-events-auto select-none ${
               isNearby
@@ -74,20 +117,51 @@ function SingleMarker({ room }) {
 }
 
 export function RoomMarkers() {
-  const { rooms, setRooms } = useTourStore();
+  const rooms = useTourStore((state) => state.rooms);
+  const setRooms = useTourStore((state) => state.setRooms);
+  const [loadError, setLoadError] = useState(null);
+  const [retryCount, setRetryCount] = useState(0);
 
   useEffect(() => {
-    fetch('/data/rooms.json')
-      .then((res) => res.json())
-      .then((data) => setRooms(data))
-      .catch((err) => console.error('Gagal memuat data rooms.json:', err));
-  }, [setRooms]);
+    const controller = new AbortController();
+    setLoadError(null);
+
+    fetch(ROOMS_URL, { signal: controller.signal })
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json();
+      })
+      .then(validateRooms)
+      .then(setRooms)
+      .catch((error) => {
+        if (error.name === 'AbortError') return;
+        console.error('Gagal memuat data rooms.json:', error);
+        setLoadError(error);
+      });
+
+    return () => controller.abort();
+  }, [retryCount, setRooms]);
 
   return (
     <group name="room-markers-group">
       {rooms.map((room) => (
         <SingleMarker key={room.id} room={room} />
       ))}
+      {loadError && (
+        <Html center>
+          <div className="min-w-64 rounded-xl border border-red-500/40 bg-slate-950/95 p-4 text-center text-white shadow-2xl">
+            <p className="text-sm font-semibold">Data ruangan gagal dimuat</p>
+            <p className="mt-1 text-xs text-slate-400">Periksa koneksi lalu coba lagi.</p>
+            <button
+              type="button"
+              onClick={() => setRetryCount((count) => count + 1)}
+              className="mt-3 rounded-lg bg-blue-600 px-4 py-2 text-xs font-semibold hover:bg-blue-500"
+            >
+              Coba Lagi
+            </button>
+          </div>
+        </Html>
+      )}
     </group>
   );
 }

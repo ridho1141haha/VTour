@@ -6,25 +6,25 @@
     "building": "Area Depan",
     "floor": 1,
     "category": "Fasilitas Umum",
-    "description": "Pintu masuk utama kawasan SMKN 2 Surakarta. Tempat penyambutan tamu, pemeriksaan keamanan terpadu, dan akses utama bagi seluruh civitas akademika.",
+    "description": "Titik informasi prototipe untuk area pintu masuk sekolah. Alur tamu, keamanan, dan akses kendaraan perlu disesuaikan dengan kondisi resmi di lapangan.",
+    "contentNote": "Foto masih berupa ilustrasi. Detail fasilitas perlu diverifikasi dengan pihak sekolah sebelum publikasi resmi.",
     "facilities": [
-      "Pos Penjagaan Keamanan 24 Jam",
-      "Pintu Gerbang Otomatis & Barrier Gate",
-      "Akses Drop Zone Kendaraan",
-      "CCTV Pemantauan Kawasan Depan"
+      "Pos penjagaan keamanan",
+      "Akses gerbang kendaraan",
+      "Area naik-turun penumpang",
+      "Pemantauan kawasan depan"
     ],
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1562774053-701939374585?w=1000&q=80",
-        "caption": "Tampak depan gerbang utama SMKN 2 Surakarta"
+        "url": "https://images.unsplash.com/photo-1562774053-701939374585?w=1000&q=75&auto=format&fit=crop",
+        "caption": "Foto ilustrasi area gerbang sekolah — bukan dokumentasi lokasi"
       },
       {
-        "url": "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1000&q=80",
-        "caption": "Akses jalan masuk dan pos satpam"
+        "url": "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1000&q=75&auto=format&fit=crop",
+        "caption": "Foto ilustrasi akses masuk sekolah — bukan dokumentasi lokasi"
       }
     ],
-    "position": [0, 1.5, 5],
-    "teleportPosition": [0, 2, 8]
+    "position": [0, 1.5, 5]
   },
   {
     "id": "lab-pplg-1",
@@ -33,30 +33,30 @@
     "building": "Gedung C",
     "floor": 2,
     "category": "Laboratorium",
-    "description": "Laboratorium khusus program keahlian Pengembangan Perangkat Lunak dan Gim (PPLG). Dilengkapi komputer dengan spesifikasi tinggi untuk pemrograman web, mobile, desktop, dan pembuatan game 3D.",
+    "description": "Titik informasi prototipe untuk ruang praktik program keahlian Pengembangan Perangkat Lunak dan Gim (PPLG). Jenis perangkat dan kegiatan belajar perlu disesuaikan dengan data resmi sekolah.",
+    "contentNote": "Foto dan rincian fasilitas masih berupa konten prototipe; verifikasi dengan pihak sekolah sebelum publikasi resmi.",
     "facilities": [
-      "36 Unit PC Core i7, 16GB RAM, SSD NVMe",
-      "2 Unit AC Inverter 2 PK",
-      "Interactive Smart Projector & Sound System",
-      "Koneksi LAN Gigabit Berkecepatan Tinggi",
-      "Papan Whiteboard Luas & Glassboard"
+      "Perangkat komputer untuk praktik",
+      "Pendingin ruangan",
+      "Perangkat presentasi kelas",
+      "Jaringan lokal dan internet",
+      "Papan tulis untuk pembelajaran"
     ],
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1000&q=80",
-        "caption": "Suasana ruang laboratorium komputer PPLG"
+        "url": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1000&q=75&auto=format&fit=crop",
+        "caption": "Foto ilustrasi laboratorium komputer — bukan dokumentasi lokasi"
       },
       {
-        "url": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=1000&q=80",
-        "caption": "Meja instruktur dan layar presentasi interaktif"
+        "url": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=1000&q=75&auto=format&fit=crop",
+        "caption": "Foto ilustrasi area instruktur — bukan dokumentasi lokasi"
       },
       {
-        "url": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1000&q=80",
-        "caption": "Area kolaborasi dan diskusi project siswa"
+        "url": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1000&q=75&auto=format&fit=crop",
+        "caption": "Foto ilustrasi area kolaborasi siswa — bukan dokumentasi lokasi"
       }
     ],
-    "position": [15, 2, -18],
-    "teleportPosition": [14, 2, -15]
+    "position": [15, 2, -18]
   },
   {
     "id": "perpustakaan",
@@ -65,26 +65,26 @@
     "building": "Gedung B",
     "floor": 1,
     "category": "Fasilitas Umum",
-    "description": "Pusat literasi dan sumber belajar siswa berbasis digital dan cetak. Memiliki ribuan koleksi buku pelajaran, ensiklopedia, jurnal teknik, serta bilik komputer e-library.",
+    "description": "Titik informasi prototipe untuk area perpustakaan dan sumber belajar siswa. Nama ruang, layanan, serta jumlah koleksi perlu disesuaikan dengan data resmi sekolah.",
+    "contentNote": "Foto dan angka koleksi masih berupa konten prototipe; verifikasi dengan pihak sekolah sebelum publikasi resmi.",
     "facilities": [
-      "Koleksi > 5.000 Judul Buku & Jurnal Ilmiah",
-      "12 Unit Komputer Akses E-Library & Katalog Online",
-      "Ruang Baca Ber-AC & Sofa Santai",
-      "Area Diskusi Kelompok dan Silent Study Zone",
-      "Layanan Peminjaman Mandiri dengan Barcode"
+      "Koleksi buku dan referensi pembelajaran",
+      "Akses katalog dan sumber belajar digital",
+      "Area baca siswa",
+      "Area diskusi kelompok",
+      "Layanan peminjaman koleksi"
     ],
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=1000&q=80",
-        "caption": "Ruang baca utama perpustakaan sekolah"
+        "url": "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=1000&q=75&auto=format&fit=crop",
+        "caption": "Foto ilustrasi ruang baca perpustakaan — bukan dokumentasi lokasi"
       },
       {
-        "url": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1000&q=80",
-        "caption": "Deretan rak buku referensi dan literasi teknik"
+        "url": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1000&q=75&auto=format&fit=crop",
+        "caption": "Foto ilustrasi rak buku — bukan dokumentasi lokasi"
       }
     ],
-    "position": [-18, 2, -10],
-    "teleportPosition": [-16, 2, -7]
+    "position": [-18, 2, -10]
   },
   {
     "id": "ruang-guru-tu",
@@ -93,7 +93,8 @@
     "building": "Gedung Utama (A)",
     "floor": 1,
     "category": "Administrasi",
-    "description": "Pusat koordinasi tenaga pendidik dan layanan administrasi sekolah. Melayani urusan administrasi akademik, kesiswaan, kepegawaian, dan konsultasi orang tua/wali murid.",
+    "description": "Titik informasi prototipe untuk area kerja pendidik dan layanan administrasi. Jenis layanan, pembagian ruang, dan jam operasional perlu disesuaikan dengan data resmi sekolah.",
+    "contentNote": "Foto dan rincian fasilitas masih berupa konten prototipe; verifikasi dengan pihak sekolah sebelum publikasi resmi.",
     "facilities": [
       "Loket Pelayanan Administrasi Siswa & Tamu",
       "Ruang Kerja Guru & Ruang Rapat Pendidik",
@@ -103,16 +104,15 @@
     ],
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1000&q=80",
-        "caption": "Ruang administrasi dan layanan terpadu"
+        "url": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1000&q=75&auto=format&fit=crop",
+        "caption": "Foto ilustrasi ruang administrasi — bukan dokumentasi lokasi"
       },
       {
-        "url": "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=1000&q=80",
-        "caption": "Area kerja dan meja koordinasi guru"
+        "url": "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=1000&q=75&auto=format&fit=crop",
+        "caption": "Foto ilustrasi area kerja guru — bukan dokumentasi lokasi"
       }
     ],
-    "position": [-8, 2, -28],
-    "teleportPosition": [-7, 2, -25]
+    "position": [-8, 2, -28]
   },
   {
     "id": "aula-masjid",
@@ -121,21 +121,21 @@
     "building": "Gedung Pertemuan",
     "floor": 1,
     "category": "Fasilitas Ibadah & Pertemuan",
-    "description": "Gedung serbaguna untuk penyelenggaraan upacara indoor, seminar, pameran karya siswa (expo kejuruan), serta sarana ibadah berjamaah warga sekolah.",
+    "description": "Titik informasi prototipe untuk area pertemuan dan sarana ibadah sekolah. Fungsi ruang, kapasitas, dan fasilitas perlu disesuaikan dengan data resmi sekolah.",
+    "contentNote": "Foto dan kapasitas fasilitas masih berupa konten prototipe; verifikasi dengan pihak sekolah sebelum publikasi resmi.",
     "facilities": [
-      "Kapasitas Hingga 800 Orang",
-      "Panggung Utama & Sistem Tata Suara Profesional",
-      "Tempat Wudhu Luas & Toilet Terpisah Pria/Wanita",
-      "Peralatan Ibadah Lengkap & Sajadah Karpet",
-      "Pintu Masuk Lebar dengan Ventilasi Udara Alami"
+      "Area pertemuan warga sekolah",
+      "Panggung dan perangkat tata suara",
+      "Area bersuci dan toilet",
+      "Perlengkapan ibadah",
+      "Akses masuk dan ventilasi ruangan"
     ],
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1544928147-79a2dbc1f389?w=1000&q=80",
-        "caption": "Interior aula serbaguna dan ruang pertemuan besar"
+        "url": "https://images.unsplash.com/photo-1544928147-79a2dbc1f389?w=1000&q=75&auto=format&fit=crop",
+        "caption": "Foto ilustrasi aula serbaguna — bukan dokumentasi lokasi"
       }
     ],
-    "position": [25, 2, -35],
-    "teleportPosition": [22, 2, -32]
+    "position": [25, 2, -35]
   }
 ]
