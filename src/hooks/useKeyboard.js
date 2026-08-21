@@ -49,15 +49,21 @@ export function useKeyboard(enabled = true) {
     };
 
     const handleKeyDown = (e) => {
-      // Jangan tangani keyboard jika user sedang mengetik di input form
-      if (e.target instanceof Element
-        && e.target.closest('input, textarea, select, button, [contenteditable="true"]')) return;
+      // Abaikan HANYA jika pengguna sedang mengetik teks di input form atau textarea
+      if (e.target instanceof Element && e.target.closest('input, textarea, [contenteditable="true"]')) {
+        return;
+      }
 
-      if (setKey(e.code, true)) e.preventDefault();
+      if (setKey(e.code, true)) {
+        // Jangan scroll halaman dengan tombol panah/space
+        if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'Space'].includes(e.code)) {
+          e.preventDefault();
+        }
+      }
     };
 
     const handleKeyUp = (e) => {
-      if (setKey(e.code, false)) e.preventDefault();
+      setKey(e.code, false);
     };
 
     const handleVisibilityChange = () => {

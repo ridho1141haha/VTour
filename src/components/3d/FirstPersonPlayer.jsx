@@ -8,7 +8,7 @@ import { useTourStore } from '../../stores/useTourStore';
 export function FirstPersonPlayer({ spawnPosition = [0, 2, 12] }) {
   const { camera, scene } = useThree();
   const controlsRef = useRef();
-  const keys = useKeyboard();
+  const keys = useKeyboard(true);
   const { 
     appState, 
     setIsPointerLocked, 
@@ -45,18 +45,14 @@ export function FirstPersonPlayer({ spawnPosition = [0, 2, 12] }) {
   }, [targetTeleport, camera, clearTeleport]);
 
   useEffect(() => {
-    const controls = controlsRef.current;
-    if (!controls) return;
+    const handlePointerLockChange = () => {
+      const isLocked = Boolean(document.pointerLockElement);
+      setIsPointerLocked(isLocked);
+    };
 
-    const onLock = () => setIsPointerLocked(true);
-    const onUnlock = () => setIsPointerLocked(false);
-
-    controls.addEventListener('lock', onLock);
-    controls.addEventListener('unlock', onUnlock);
-
+    document.addEventListener('pointerlockchange', handlePointerLockChange);
     return () => {
-      controls.removeEventListener('lock', onLock);
-      controls.removeEventListener('unlock', onUnlock);
+      document.removeEventListener('pointerlockchange', handlePointerLockChange);
     };
   }, [setIsPointerLocked]);
 
@@ -96,7 +92,7 @@ export function FirstPersonPlayer({ spawnPosition = [0, 2, 12] }) {
     if (intersects.length > 0) {
       const validHit = intersects.find(hit => hit.object.type === 'Mesh' && !hit.object.name?.includes('marker'));
       if (validHit && validHit.distance > 0.05) {
-        const targetY = validHit.point.y + 1.7; // Tinggi pandangan mata manusia 1.7m
+        const targetY = validHit.point.y + 1.7; // Ketinggian pandangan mata manusia 1.7m
         camera.position.y = THREE.MathUtils.lerp(camera.position.y, targetY, 0.25);
       }
     }
@@ -139,6 +135,7 @@ export function FirstPersonPlayer({ spawnPosition = [0, 2, 12] }) {
   return (
     <PointerLockControls 
       ref={controlsRef} 
+      selector="#canvas-container"
     />
   );
 }

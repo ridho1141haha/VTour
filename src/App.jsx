@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { Scene } from './components/3d/Scene';
 import { RoomModal } from './components/ui/RoomModal';
 import { InteractionPrompt } from './components/ui/InteractionPrompt';
@@ -29,6 +29,19 @@ export default function App() {
     teleportTo,
     openRoomModal
   } = useTourStore();
+
+  // Handler untuk mengunci mouse saat layar / tombol diklik
+  const handleStartExploring = useCallback(() => {
+    if (cameraMode !== 'fps') return;
+    const canvas = document.querySelector('canvas');
+    if (canvas && typeof canvas.requestPointerLock === 'function') {
+      try {
+        canvas.requestPointerLock();
+      } catch (err) {
+        console.warn('Pointer lock request error:', err);
+      }
+    }
+  }, [cameraMode]);
 
   // Deep Link URL Support (?room=lab-pplg-1)
   useEffect(() => {
@@ -95,18 +108,38 @@ export default function App() {
       {/* Modal Denah 2D Skematis Sekolah */}
       <SchoolMapModal />
 
-      {/* Overlay 'Klik Layar untuk Menjelajah' saat mode FPS belum diklik / terkunci */}
+      {/* Overlay 'Klik Layar untuk Menjelajah' saat mode FPS belum terkunci */}
       {cameraMode === 'fps' && !isPointerLocked && appState !== 'modal_open' && !isSearchOpen && !isMapOpen && (
-        <div className="absolute inset-0 pointer-events-none flex flex-col items-center justify-center z-20 bg-slate-950/40 backdrop-blur-[2px] transition-all">
-          <div className="bg-slate-900/90 border border-slate-700 px-8 py-6 rounded-2xl shadow-2xl flex flex-col items-center gap-3 text-center max-w-sm pointer-events-auto">
-            <div className="w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center animate-bounce">
-              <MousePointerClick size={24} />
+        <div 
+          onClick={handleStartExploring}
+          className="absolute inset-0 flex flex-col items-center justify-center z-20 bg-slate-950/50 backdrop-blur-[2px] cursor-pointer transition-all animate-fadeIn"
+        >
+          <div 
+            onClick={(e) => {
+              e.stopPropagation();
+              handleStartExploring();
+            }}
+            className="bg-slate-900/95 border border-slate-700 p-6 sm:p-8 rounded-3xl shadow-2xl flex flex-col items-center gap-4 text-center max-w-sm cursor-pointer hover:border-blue-500/60 transition-all hover:scale-105 group"
+          >
+            <div className="w-14 h-14 rounded-2xl bg-blue-500/20 text-blue-400 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-all shadow-inner">
+              <MousePointerClick size={28} />
             </div>
-            <h2 className="text-lg font-bold text-white">Klik Layar untuk Menjelajah</h2>
-            <p className="text-xs text-slate-400 leading-relaxed">
-              Gunakan tombol <kbd className="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-blue-300 font-mono">W</kbd> <kbd className="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-blue-300 font-mono">A</kbd> <kbd className="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-blue-300 font-mono">S</kbd> <kbd className="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-blue-300 font-mono">D</kbd> untuk berjalan dan dekati marker <kbd className="px-1.5 py-0.5 bg-blue-600 rounded text-white font-mono">E</kbd> untuk info.
-            </p>
-            <div className="text-[11px] text-slate-500 mt-1">
+
+            <div>
+              <h2 className="text-lg font-bold text-white tracking-wide">Klik untuk Mulai Menjelajah</h2>
+              <p className="text-xs text-slate-400 leading-relaxed mt-1">
+                Gunakan tombol <kbd className="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-blue-300 font-mono">W</kbd> <kbd className="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-blue-300 font-mono">A</kbd> <kbd className="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-blue-300 font-mono">S</kbd> <kbd className="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-blue-300 font-mono">D</kbd> untuk berjalan, gerakkan mouse untuk melihat, dan dekati titik <kbd className="px-1.5 py-0.5 bg-blue-600 rounded text-white font-mono">E</kbd> untuk info.
+              </p>
+            </div>
+
+            <button
+              onClick={handleStartExploring}
+              className="w-full py-2.5 px-5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold shadow-lg shadow-blue-500/30 transition-all cursor-pointer"
+            >
+              Mulai Eksplorasi
+            </button>
+
+            <div className="text-[11px] text-slate-500">
               Tekan <kbd className="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-slate-300 font-mono">ESC</kbd> kapan saja untuk melepas kursor
             </div>
           </div>

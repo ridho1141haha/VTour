@@ -90,7 +90,7 @@ function CanvasLifecycle({ onUnavailable }) {
 }
 
 export function Scene({
-  controlsEnabled,
+  controlsEnabled = true,
   onAssetError,
   onAssetRetry,
   onReady,
@@ -104,16 +104,11 @@ export function Scene({
       className="w-full h-full relative cursor-pointer"
       role="region"
       aria-label="Pemandangan virtual 3D SMKN 2 Surakarta"
-      aria-describedby="scene-controls-description"
     >
-      <span id="scene-controls-description" className="sr-only">
-        Area tur 3D interaktif. Gunakan kontrol mode kamera yang tersedia di bagian atas halaman.
-      </span>
       <Canvas
         camera={{ position: [0, 2, 12], fov: 65, near: 0.1, far: 1000 }}
         dpr={[1, 1.5]}
         className="w-full h-full"
-        fallback="Pemandangan virtual 3D interaktif."
       >
         <CanvasLifecycle onUnavailable={onUnavailable} />
         <ambientLight intensity={0.8} />
