@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const EMPTY_KEYS = Object.freeze({
   forward: false,
@@ -23,11 +23,26 @@ const KEY_BINDINGS = {
   KeyE: 'interact',
 };
 
+function deriveKeysFromCodes(codes) {
+  return {
+    forward: codes.has('KeyW') || codes.has('ArrowUp'),
+    backward: codes.has('KeyS') || codes.has('ArrowDown'),
+    left: codes.has('KeyA') || codes.has('ArrowLeft'),
+    right: codes.has('KeyD') || codes.has('ArrowRight'),
+    sprint: codes.has('ShiftLeft') || codes.has('ShiftRight'),
+    interact: codes.has('KeyE'),
+  };
+}
+
 export function useKeyboard(enabled = true) {
   const [keys, setKeys] = useState(EMPTY_KEYS);
+  const pressedCodesRef = useRef(new Set());
 
   useEffect(() => {
+    const pressedCodes = pressedCodesRef.current;
+
     const clearKeys = () => {
+      pressedCodes.clear();
       setKeys((current) => (
         Object.values(current).some(Boolean) ? EMPTY_KEYS : current
       ));
@@ -38,24 +53,23 @@ export function useKeyboard(enabled = true) {
       return undefined;
     }
 
-    const setKey = (code, pressed) => {
-      const key = KEY_BINDINGS[code];
-      if (!key) return false;
-
-      setKeys((current) => (
-        current[key] === pressed ? current : { ...current, [key]: pressed }
-      ));
-      return true;
+    const updateFromSet = () => {
+      const derived = deriveKeysFromCodes(pressedCodes);
+      setKeys((current) => {
+        const hasChanged = Object.keys(derived).some((k) => derived[k] !== current[k]);
+        return hasChanged ? derived : current;
+      });
     };
 
     const handleKeyDown = (e) => {
-      // Abaikan HANYA jika pengguna sedang mengetik teks di input form atau textarea
-      if (e.target instanceof Element && e.target.closest('input, textarea, [contenteditable="true"]')) {
+      if (e.ctrlKey || e.metaKey || e.altKey) return;
+      if (e.target instanceof Element && e.target.closest('input, textarea, select, [contenteditable="true"]')) {
         return;
       }
 
-      if (setKey(e.code, true)) {
-        // Jangan scroll halaman dengan tombol panah/space
+      if (KEY_BINDINGS[e.code]) {
+        pressedCodes.add(e.code);
+        updateFromSet();
         if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'Space'].includes(e.code)) {
           e.preventDefault();
         }
@@ -63,7 +77,10 @@ export function useKeyboard(enabled = true) {
     };
 
     const handleKeyUp = (e) => {
-      setKey(e.code, false);
+      if (KEY_BINDINGS[e.code]) {
+        pressedCodes.delete(e.code);
+        updateFromSet();
+      }
     };
 
     const handleVisibilityChange = () => {

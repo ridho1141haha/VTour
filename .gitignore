@@ -25,3 +25,6 @@ dist-ssr
 
 # Raw backup model duplicate in root (model is in public/models/smkn2_ska.glb)
 SMKN2 SKA (1).glb
+
+# Raw photo archive; optimized WebP output lives in public/images/locations
+FOTO-*.zip

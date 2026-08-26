@@ -1,50 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import { useTourStore } from '../../stores/useTourStore';
+import React, { useEffect, useState } from 'react';
 import { MapPin } from 'lucide-react';
+import { useTourStore } from '../../stores/useTourStore';
 
 export function ToastLocation() {
-  const currentZone = useTourStore((state) => state.currentZone);
-  const [visible, setVisible] = useState(false);
-  const [zoneText, setZoneText] = useState('');
+  const currentLocation = useTourStore((state) => state.currentLocation);
+  const [visibleLocation, setVisibleLocation] = useState(null);
 
   useEffect(() => {
-    if (!currentZone) {
-      setVisible(false);
-      setZoneText('');
+    if (!currentLocation) {
+      setVisibleLocation(null);
       return undefined;
     }
-
-    setZoneText(currentZone);
-    setVisible(true);
-
-    const timer = setTimeout(() => {
-      setVisible(false);
-    }, 3500);
-
+    setVisibleLocation(currentLocation);
+    const timer = setTimeout(() => setVisibleLocation(null), 3200);
     return () => clearTimeout(timer);
-  }, [currentZone]);
+  }, [currentLocation]);
 
-  if (!visible) return null;
-
+  if (!visibleLocation) return null;
   return (
-    <div
-      className="fixed top-16 sm:top-20 inset-x-0 px-3 flex justify-center pointer-events-none z-30 transition-all duration-500"
-      role="status"
-      aria-live="polite"
-      aria-atomic="true"
-    >
-      <div className="bg-slate-900/90 border border-slate-700/80 px-4 sm:px-5 py-2.5 rounded-2xl shadow-2xl backdrop-blur-md flex items-center gap-2.5 text-white animate-fadeIn max-w-full">
-        <div className="p-1 rounded-lg bg-blue-500/20 text-blue-400">
-          <MapPin size={16} aria-hidden="true" />
-        </div>
-        <div className="min-w-0">
-          <span className="text-[10px] uppercase tracking-wider text-slate-400 font-semibold block">
-            Area Terdekat
-          </span>
-          <span className="text-xs font-bold text-white tracking-wide block truncate">
-            {zoneText}
-          </span>
-        </div>
+    <div className="pointer-events-none fixed inset-x-0 top-24 z-30 flex justify-center px-4" role="status" aria-live="polite" aria-atomic="true">
+      <div className="flex items-center gap-3 border border-zinc-700 bg-zinc-950/95 px-4 py-3 text-white shadow-2xl backdrop-blur-md">
+        <MapPin size={16} className="text-orange-400" /><div><p className="font-mono text-[10px] uppercase tracking-wider text-orange-400">{visibleLocation.category}</p><p className="text-sm font-bold">{visibleLocation.name}</p></div>
       </div>
     </div>
   );

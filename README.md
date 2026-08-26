@@ -1,64 +1,96 @@
 # Virtual Tour 3D SMKN 2 Surakarta
 
-Aplikasi **Virtual Tour 3D Berbasis Web** untuk menjelajahi lingkungan, gedung, dan fasilitas di SMKN 2 Surakarta secara interaktif langsung dari browser tanpa perlu instalasi aplikasi tambahan.
+Aplikasi web untuk menjelajahi lingkungan luar SMKN 2 Surakarta dengan navigasi first-person, titik informasi lokasi, denah, pencarian, teleport, dan galeri foto asli.
 
-## Fitur Utama
+## Fitur
 
-- **First-Person Walkthrough**: Eksplorasi sudut pandang orang pertama (WASD + Mouse Look).
-- **Mode Inspeksi Orbit**: Mode kamera bebas untuk melihat layout dan arsitektur sekolah secara menyeluruh.
-- **Deteksi Ketinggian Lantai**: Sistem raycasting agar player berdiri stabil di atas permukaan tanah/lantai.
-- **Collision Dasar**: Pergerakan FPS dibatasi oleh geometri bangunan dan tepi lantai.
-- **Pencahayaan Dinamis**: Kombinasi directional sunlight dan ambient lighting untuk lingkungan luar dan dalam ruangan.
-- **Real Progress Loader**: Indikator persentase loading aset 3D asli.
-- **Mode Mobile**: Perangkat sentuh otomatis memakai mode Orbit.
+- First-person outdoor exploration dengan WASD, mouse look, sprint, dan interaksi `E`.
+- Collision horizontal ringan terhadap bangunan/pagar dan ground raycast khusus permukaan walkable.
+- Mode Orbit untuk inspeksi lingkungan sekolah.
+- Satu dataset `locations.json` untuk marker, proximity, modal, search, teleport, denah, dan deep link.
+- 23 lokasi final dengan kategori dan fallback konten yang jelas.
+- 64 foto asli terkurasi dalam dua ukuran WebP: thumbnail dan gallery.
+- Search nama, kategori, deskripsi, detail, dan fasilitas.
+- Denah yang hanya membaca `mapPosition` dari dataset lokasi.
+- Kontrol FPS mobile: joystick kiri, drag sisi kanan, sprint, dan tombol interaksi.
+- Preset DPR Low/Medium/High, sensitivitas kamera, audio opsional, dan fullscreen.
+- Loading progress aset 3D, fallback error, tutorial sesi pertama, dan deep link `?location=pplg`.
 
-## Teknologi & Tools
+## Status Lokasi
 
-- **React 18** + **Vite**
-- **Three.js** + **React Three Fiber (@react-three/fiber)** + **Drei (@react-three/drei)**
-- **Tailwind CSS** + **Lucide Icons**
-- **Zustand** (State Management)
+Dataset berisi tepat 23 lokasi. Sembilan anchor telah divalidasi terhadap nama mesh dan geometri model GLB. Empat belas lokasi belum memiliki bukti koordinat yang cukup pada model, sehingga sengaja berstatus `pending`, tidak menampilkan marker, dan tidak dapat diteleport agar aplikasi tidak menyajikan posisi palsu.
 
-## Menjalankan Proyek Secara Lokal
+Pada development, overlay `DEV POSITION` menampilkan posisi kamera dan tombol salin untuk mempercepat kalibrasi. Utility ini tidak masuk tampilan production.
 
-Prasyarat: Node.js 22.13 atau lebih baru dan npm 10.9 atau lebih baru.
+## Stack
 
-1. **Clone repository:**
-   ```bash
-   git clone https://github.com/ridho1141haha/VTour.git
-   cd VTour
-   ```
+- React 18 + Vite
+- Three.js + React Three Fiber + Drei
+- Zustand
+- Tailwind CSS
+- Lucide React
 
-2. **Install dependensi dari lockfile:**
-   ```bash
-   npm ci
-   ```
+## Menjalankan Project
 
-3. **Jalankan development server:**
-   ```bash
-   npm run dev
-   ```
-   Buka `http://localhost:5173/` di browser.
+Prasyarat: Node.js 22.13+ dan npm 10.9+.
 
-4. **Build untuk produksi:**
-   ```bash
-   npm run build
-   ```
+```bash
+npm ci
+npm run dev
+```
 
-## Pemeriksaan Kualitas
+Buka `http://localhost:5173/`.
 
-Jalankan lint, test, dan build sekaligus sebelum mengirim perubahan:
+## Kontrol
+
+| Input | Aksi |
+| --- | --- |
+| `WASD` / panah | Bergerak |
+| Mouse | Melihat |
+| `Shift` | Jalan cepat |
+| `E` | Informasi lokasi terdekat |
+| `Esc` | Lepas pointer / tutup dialog |
+| `M` | Daftar lokasi |
+| `F` | Denah |
+| `O` | Pengaturan |
+
+## Data Lokasi
+
+Sumber data tunggal:
+
+```text
+public/data/locations.json
+```
+
+Field lokasi seperti `position`, `teleportPosition`, `teleportLookAt`, `mapPosition`, `building`, `floor`, `details`, dan `facilities` bersifat optional sesuai kebutuhan lokasi. Entri tanpa koordinat menggunakan `anchorStatus: "pending"` dan nilai posisi `null`.
+
+## Foto
+
+Archive mentah tidak dipublikasikan. Pipeline memilih 64 foto dari archive sumber, menghapus metadata EXIF/GPS, lalu menghasilkan:
+
+- Gallery WebP: sisi terpanjang maksimum 1600 px, quality 80.
+- Thumbnail WebP: sisi terpanjang maksimum 480 px, quality 76.
+
+Jalankan ulang pipeline pada Windows dengan FFmpeg dan PowerShell 7:
+
+```bash
+npm run optimize:images
+```
+
+Output berada di `public/images/locations/`. Perpustakaan, Pembuangan Akhir, dan Labas belum memiliki foto sumber dan menggunakan fallback UI "Foto belum tersedia".
+
+## Quality Check
 
 ```bash
 npm run check
 ```
 
+Perintah tersebut menjalankan lint, test Node, dan production build. Test mencakup schema 23 lokasi, aset foto, search, nearest POI, deep link, teleport fallback, collision primitive, state overlay, static path, dan struktur GLB.
+
 ## Deployment
 
-Hasil build tersedia di folder `dist/` dan dapat diunggah ke static hosting. Konfigurasi menggunakan URL relatif sehingga aplikasi dapat dijalankan dari root domain maupun subpath, termasuk GitHub Pages.
+```bash
+npm run build
+```
 
-Model utama telah memakai tekstur maksimal 2K, GPU instancing, dan kompresi Meshopt. Ukuran aset turun dari sekitar 47 MiB menjadi sekitar 14 MiB.
-
-## Status Konten
-
-Foto galeri saat ini adalah foto ilustrasi eksternal, bukan dokumentasi SMKN 2 Surakarta. Setiap ruangan diberi catatan verifikasi agar konten prototipe tidak dianggap sebagai data resmi. Ganti URL foto dan konfirmasi detail fasilitas bersama pihak sekolah sebelum publikasi resmi.
+Hasil build berada di `dist/`. Seluruh URL runtime menggunakan `import.meta.env.BASE_URL` atau path relatif sehingga dapat dipasang pada root domain maupun subpath static hosting.

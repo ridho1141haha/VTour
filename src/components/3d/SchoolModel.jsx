@@ -1,48 +1,88 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import { useGLTF } from '@react-three/drei';
+import * as THREE from 'three';
+import { SpatialGrid } from '../../lib/collision';
 
 export const SCHOOL_MODEL_URL = `${import.meta.env.BASE_URL}models/smkn2_ska.glb`;
+export const WALKABLE_MESH_PATTERN = /^(GROUNDMAIN|Rumfut|Plane$|FLOOR|INT_Floor|K_Lantai|Lantai|TANGGA)/i;
 
 export function clearSchoolModelCache() {
   useGLTF.clear(SCHOOL_MODEL_URL);
 }
 
-export function SchoolModel({ onReady }) {
-  const groupRef = useRef();
+function addObstacleBoxes(mesh, obstacleBoxes, instanceMatrix, worldMatrix) {
+  if (!mesh.geometry.boundingBox) mesh.geometry.computeBoundingBox();
+  const geometryBox = mesh.geometry.boundingBox;
+  if (!geometryBox) return;
+
+  if (mesh.isInstancedMesh) {
+    for (let index = 0; index < mesh.count; index += 1) {
+      mesh.getMatrixAt(index, instanceMatrix);
+      worldMatrix.multiplyMatrices(mesh.matrixWorld, instanceMatrix);
+      obstacleBoxes.push(geometryBox.clone().applyMatrix4(worldMatrix));
+    }
+    return;
+  }
+
+  obstacleBoxes.push(geometryBox.clone().applyMatrix4(mesh.matrixWorld));
+}
+
+export function SchoolModel({ collisionRef, onReady }) {
   const { scene } = useGLTF(SCHOOL_MODEL_URL);
 
   useEffect(() => {
-    const colliders = [];
-    const colliderRoot = groupRef.current;
+    const groundMeshes = [];
+    const obstacleBoxes = [];
+    const adjustedGlassMaterials = new Set();
+    const instanceMatrix = new THREE.Matrix4();
+    const worldMatrix = new THREE.Matrix4();
 
+    scene.updateWorldMatrix(true, true);
     scene.traverse((child) => {
-      if (child.isMesh) {
-        // Model besar ini terlalu mahal bila semua mesh menggambar shadow map.
-        child.castShadow = false;
-        child.receiveShadow = false;
-        colliders.push(child);
+      if (!child.isMesh) return;
+
+      child.castShadow = false;
+      child.receiveShadow = false;
+
+      // transmission > 0 memicu render pass tambahan seluruh scene per frame;
+      // ganti dengan opacity biasa agar kaca tetap terlihat tanpa pass ganda.
+      const materials = Array.isArray(child.material) ? child.material : [child.material];
+      for (const material of materials) {
+        if (material?.transmission > 0 && !adjustedGlassMaterials.has(material)) {
+          adjustedGlassMaterials.add(material);
+          material.transmission = 0;
+          material.transparent = true;
+          material.opacity = 0.35;
+          material.needsUpdate = true;
+        }
+      }
+
+      if (WALKABLE_MESH_PATTERN.test(child.name)) {
+        groundMeshes.push(child);
+      } else {
+        addObstacleBoxes(child, obstacleBoxes, instanceMatrix, worldMatrix);
       }
     });
 
-    if (colliderRoot) {
-      colliderRoot.userData.tourColliders = colliders;
+    const obstacleGrid = new SpatialGrid(obstacleBoxes);
+    collisionRef.current = { groundMeshes, obstacleBoxes, obstacleGrid };
+
+    if (import.meta.env.DEV) {
+      console.debug('[tour] collision siap', {
+        groundMeshes: groundMeshes.length,
+        obstacleBoxes: obstacleBoxes.length,
+        glassMaterials: adjustedGlassMaterials.size,
+      });
     }
-    onReady?.();
+
+    onReady?.({ groundMeshes: groundMeshes.length, obstacleBoxes: obstacleBoxes.length });
 
     return () => {
-      if (colliderRoot) colliderRoot.userData.tourColliders = [];
+      collisionRef.current = { groundMeshes: [], obstacleBoxes: [], obstacleGrid: null };
     };
-  }, [onReady, scene]);
+  }, [collisionRef, onReady, scene]);
 
-  return (
-    <group ref={groupRef} name="school-model-collider-root">
-      <primitive
-        object={scene}
-        position={[0, 0, 0]}
-        scale={[1, 1, 1]}
-      />
-    </group>
-  );
+  return <primitive object={scene} />;
 }
 
 useGLTF.preload(SCHOOL_MODEL_URL);

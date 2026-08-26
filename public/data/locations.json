@@ -1,0 +1,232 @@
+[
+  {
+    "id": "gerbang-pos", "name": "Gerbang + Pos Satpam Depan", "shortName": "Gerbang + Pos", "category": "Area Umum",
+    "description": "Titik masuk utama dan area pos keamanan depan sekolah. Deskripsi layanan resmi masih menunggu verifikasi pihak sekolah.",
+    "anchorStatus": "pending", "position": null, "teleportPosition": null, "mapPosition": null, "interactionRadius": 4.5, "locationRadius": 12,
+    "details": [], "facilities": [],
+    "images": [
+      {"thumbnail":"images/locations/gerbang-pos/01-thumb.webp","src":"images/locations/gerbang-pos/01.webp","alt":"Foto asli Gerbang dan Pos Satpam 1","caption":"Dokumentasi Gerbang dan Pos Satpam"},
+      {"thumbnail":"images/locations/gerbang-pos/02-thumb.webp","src":"images/locations/gerbang-pos/02.webp","alt":"Foto asli Gerbang dan Pos Satpam 2","caption":"Dokumentasi Gerbang dan Pos Satpam"},
+      {"thumbnail":"images/locations/gerbang-pos/03-thumb.webp","src":"images/locations/gerbang-pos/03.webp","alt":"Foto asli Gerbang dan Pos Satpam 3","caption":"Dokumentasi Gerbang dan Pos Satpam"}
+    ]
+  },
+  {
+    "id": "gedung-putih", "name": "Gedung Putih", "shortName": "Gedung Putih", "category": "Gedung",
+    "description": "Dokumentasi area Gedung Putih. Fungsi dan informasi resmi gedung masih menunggu verifikasi pihak sekolah.",
+    "anchorStatus": "pending", "position": null, "teleportPosition": null, "mapPosition": null, "interactionRadius": 4.5, "locationRadius": 12,
+    "details": [], "facilities": [],
+    "images": [
+      {"thumbnail":"images/locations/gedung-putih/01-thumb.webp","src":"images/locations/gedung-putih/01.webp","alt":"Foto asli Gedung Putih 1","caption":"Dokumentasi Gedung Putih"},
+      {"thumbnail":"images/locations/gedung-putih/02-thumb.webp","src":"images/locations/gedung-putih/02.webp","alt":"Foto asli Gedung Putih 2","caption":"Dokumentasi Gedung Putih"},
+      {"thumbnail":"images/locations/gedung-putih/03-thumb.webp","src":"images/locations/gedung-putih/03.webp","alt":"Foto asli Gedung Putih 3","caption":"Dokumentasi Gedung Putih"},
+      {"thumbnail":"images/locations/gedung-putih/04-thumb.webp","src":"images/locations/gedung-putih/04.webp","alt":"Foto asli Gedung Putih 4","caption":"Dokumentasi Gedung Putih"},
+      {"thumbnail":"images/locations/gedung-putih/05-thumb.webp","src":"images/locations/gedung-putih/05.webp","alt":"Foto asli Gedung Putih 5","caption":"Dokumentasi Gedung Putih"},
+      {"thumbnail":"images/locations/gedung-putih/06-thumb.webp","src":"images/locations/gedung-putih/06.webp","alt":"Foto asli Gedung Putih 6","caption":"Dokumentasi Gedung Putih"}
+    ]
+  },
+  {
+    "id": "technopark", "name": "Technopark", "shortName": "Technopark", "category": "Fasilitas",
+    "description": "Dokumentasi area Technopark. Fungsi dan informasi resmi lokasi masih menunggu verifikasi pihak sekolah.",
+    "anchorStatus": "pending", "position": null, "teleportPosition": null, "mapPosition": null, "interactionRadius": 4.5, "locationRadius": 12,
+    "details": [], "facilities": [],
+    "images": [
+      {"thumbnail":"images/locations/technopark/01-thumb.webp","src":"images/locations/technopark/01.webp","alt":"Foto asli Technopark 1","caption":"Dokumentasi Technopark"},
+      {"thumbnail":"images/locations/technopark/02-thumb.webp","src":"images/locations/technopark/02.webp","alt":"Foto asli Technopark 2","caption":"Dokumentasi Technopark"},
+      {"thumbnail":"images/locations/technopark/03-thumb.webp","src":"images/locations/technopark/03.webp","alt":"Foto asli Technopark 3","caption":"Dokumentasi Technopark"},
+      {"thumbnail":"images/locations/technopark/04-thumb.webp","src":"images/locations/technopark/04.webp","alt":"Foto asli Technopark 4","caption":"Dokumentasi Technopark"}
+    ]
+  },
+  {
+    "id": "gna-lobby", "name": "GNA Lobby Teori TM + WKS Kelas TJKT", "shortName": "GNA Lobby", "category": "Gedung",
+    "description": "Dokumentasi area lobby dan kelas terkait. Nama fungsi serta pembagian area resmi masih menunggu verifikasi pihak sekolah.",
+    "anchorStatus": "pending", "position": null, "teleportPosition": null, "mapPosition": null, "interactionRadius": 4.5, "locationRadius": 12,
+    "details": [], "facilities": [],
+    "images": [
+      {"thumbnail":"images/locations/gna-lobby/01-thumb.webp","src":"images/locations/gna-lobby/01.webp","alt":"Foto asli area Lobby 1","caption":"Dokumentasi area Lobby"},
+      {"thumbnail":"images/locations/gna-lobby/02-thumb.webp","src":"images/locations/gna-lobby/02.webp","alt":"Foto asli area Lobby 2","caption":"Dokumentasi area Lobby"},
+      {"thumbnail":"images/locations/gna-lobby/03-thumb.webp","src":"images/locations/gna-lobby/03.webp","alt":"Foto asli kelas TJKT","caption":"Dokumentasi kelas TJKT"}
+    ]
+  },
+  {
+    "id": "aula-te-samsung", "name": "Aula + TE Samsung", "shortName": "Aula + TE Samsung", "category": "Fasilitas",
+    "description": "Dokumentasi area Aula dan TE Samsung. Rincian fungsi serta fasilitas resmi masih menunggu verifikasi pihak sekolah.",
+    "anchorStatus": "calibrated", "position": [-6.41,0.445,-31.98], "teleportPosition": [-6.41,2.145,-29.6], "teleportLookAt": [-6.41,1.7,-31.98], "mapPosition": {"x":69.7,"y":36.3}, "interactionRadius": 4.5, "locationRadius": 12,
+    "details": [], "facilities": [],
+    "images": [
+      {"thumbnail":"images/locations/aula-te-samsung/01-thumb.webp","src":"images/locations/aula-te-samsung/01.webp","alt":"Foto asli Aula 1","caption":"Dokumentasi Aula"},
+      {"thumbnail":"images/locations/aula-te-samsung/02-thumb.webp","src":"images/locations/aula-te-samsung/02.webp","alt":"Foto asli Aula 2","caption":"Dokumentasi Aula"},
+      {"thumbnail":"images/locations/aula-te-samsung/03-thumb.webp","src":"images/locations/aula-te-samsung/03.webp","alt":"Foto asli TE Samsung 1","caption":"Dokumentasi TE Samsung"},
+      {"thumbnail":"images/locations/aula-te-samsung/04-thumb.webp","src":"images/locations/aula-te-samsung/04.webp","alt":"Foto asli TE Samsung 2","caption":"Dokumentasi TE Samsung"},
+      {"thumbnail":"images/locations/aula-te-samsung/05-thumb.webp","src":"images/locations/aula-te-samsung/05.webp","alt":"Foto asli TE Samsung 3","caption":"Dokumentasi TE Samsung"}
+    ]
+  },
+  {
+    "id": "pplg", "name": "PPLG", "shortName": "PPLG", "category": "Jurusan",
+    "description": "Dokumentasi area PPLG. Informasi akademik dan fasilitas resmi masih menunggu verifikasi pihak sekolah.",
+    "anchorStatus": "calibrated", "position": [-21.41,0.378,21.78], "teleportPosition": [-21.41,2.07,23.3], "teleportLookAt": [-21.41,2.098,21.78], "mapPosition": {"x":61.6,"y":59.7}, "interactionRadius": 4.5, "locationRadius": 12,
+    "details": [], "facilities": [],
+    "images": [{"thumbnail":"images/locations/pplg/01-thumb.webp","src":"images/locations/pplg/01.webp","alt":"Foto asli PPLG","caption":"Dokumentasi PPLG"}]
+  },
+  {
+    "id": "perpustakaan", "name": "Perpustakaan", "shortName": "Perpustakaan", "category": "Fasilitas",
+    "description": "Informasi resmi dan foto Perpustakaan belum tersedia. Konten akan ditambahkan setelah diverifikasi pihak sekolah.",
+    "anchorStatus": "pending", "position": null, "teleportPosition": null, "mapPosition": null, "interactionRadius": 4.5, "locationRadius": 12,
+    "details": [], "facilities": [], "images": []
+  },
+  {
+    "id": "dpib-tkl-tkp", "name": "DPIB TKL TKP", "shortName": "DPIB / TKL / TKP", "category": "Jurusan",
+    "description": "Dokumentasi area DPIB, TKL, dan TKP. Informasi akademik resmi masih menunggu verifikasi pihak sekolah.",
+    "anchorStatus": "calibrated", "position": [-100,0.153,-64.31], "teleportPosition": [-100,1.853,-62.3], "teleportLookAt": [-100,1.265,-64.31], "mapPosition": {"x":19.4,"y":22.1}, "interactionRadius": 4.5, "locationRadius": 12,
+    "details": [], "facilities": [],
+    "images": [
+      {"thumbnail":"images/locations/dpib-tkl-tkp/01-thumb.webp","src":"images/locations/dpib-tkl-tkp/01.webp","alt":"Foto asli DPIB 1","caption":"Dokumentasi DPIB"},
+      {"thumbnail":"images/locations/dpib-tkl-tkp/02-thumb.webp","src":"images/locations/dpib-tkl-tkp/02.webp","alt":"Foto asli DPIB 2","caption":"Dokumentasi DPIB"},
+      {"thumbnail":"images/locations/dpib-tkl-tkp/03-thumb.webp","src":"images/locations/dpib-tkl-tkp/03.webp","alt":"Foto asli DPIB 3","caption":"Dokumentasi DPIB"},
+      {"thumbnail":"images/locations/dpib-tkl-tkp/04-thumb.webp","src":"images/locations/dpib-tkl-tkp/04.webp","alt":"Foto asli TKL 1","caption":"Dokumentasi TKL"},
+      {"thumbnail":"images/locations/dpib-tkl-tkp/05-thumb.webp","src":"images/locations/dpib-tkl-tkp/05.webp","alt":"Foto asli TKL 2","caption":"Dokumentasi TKL"}
+    ]
+  },
+  {
+    "id": "masjid", "name": "Masjid", "shortName": "Masjid", "category": "Fasilitas",
+    "description": "Dokumentasi area Masjid sekolah. Rincian fasilitas resmi masih menunggu verifikasi pihak sekolah.",
+    "anchorStatus": "pending", "position": null, "teleportPosition": null, "mapPosition": null, "interactionRadius": 4.5, "locationRadius": 12,
+    "details": [], "facilities": [],
+    "images": [
+      {"thumbnail":"images/locations/masjid/01-thumb.webp","src":"images/locations/masjid/01.webp","alt":"Foto asli Masjid 1","caption":"Dokumentasi Masjid"},
+      {"thumbnail":"images/locations/masjid/02-thumb.webp","src":"images/locations/masjid/02.webp","alt":"Foto asli Masjid 2","caption":"Dokumentasi Masjid"},
+      {"thumbnail":"images/locations/masjid/03-thumb.webp","src":"images/locations/masjid/03.webp","alt":"Foto asli Masjid 3","caption":"Dokumentasi Masjid"},
+      {"thumbnail":"images/locations/masjid/04-thumb.webp","src":"images/locations/masjid/04.webp","alt":"Foto asli Masjid 4","caption":"Dokumentasi Masjid"},
+      {"thumbnail":"images/locations/masjid/05-thumb.webp","src":"images/locations/masjid/05.webp","alt":"Foto asli Masjid 5","caption":"Dokumentasi Masjid"},
+      {"thumbnail":"images/locations/masjid/06-thumb.webp","src":"images/locations/masjid/06.webp","alt":"Foto asli Masjid 6","caption":"Dokumentasi Masjid"},
+      {"thumbnail":"images/locations/masjid/07-thumb.webp","src":"images/locations/masjid/07.webp","alt":"Foto asli Masjid 7","caption":"Dokumentasi Masjid"},
+      {"thumbnail":"images/locations/masjid/08-thumb.webp","src":"images/locations/masjid/08.webp","alt":"Foto asli Masjid 8","caption":"Dokumentasi Masjid"}
+    ]
+  },
+  {
+    "id": "uks", "name": "Deretan UKS", "shortName": "UKS", "category": "Fasilitas",
+    "description": "Dokumentasi area deretan UKS. Informasi layanan resmi masih menunggu verifikasi pihak sekolah.",
+    "anchorStatus": "calibrated", "position": [-58.07,0.3,36.79], "teleportPosition": [-58.07,1.72,34.6], "teleportLookAt": [-58.07,1.75,37.09], "mapPosition": {"x":41.9,"y":66.3}, "interactionRadius": 4.5, "locationRadius": 12,
+    "details": [], "facilities": [],
+    "images": [{"thumbnail":"images/locations/uks/01-thumb.webp","src":"images/locations/uks/01.webp","alt":"Foto asli Deretan UKS","caption":"Dokumentasi Deretan UKS"}]
+  },
+  {
+    "id": "kantin-kopsis", "name": "Kantin Kopsis", "shortName": "Kantin Kopsis", "category": "Fasilitas",
+    "description": "Dokumentasi area kantin dan koperasi. Informasi layanan resmi masih menunggu verifikasi pihak sekolah.",
+    "anchorStatus": "calibrated", "position": [-66.06,0.02,43.33], "teleportPosition": [-66.06,1.72,41.5], "teleportLookAt": [-66.06,1.757,43.33], "mapPosition": {"x":37.6,"y":69.1}, "interactionRadius": 4.5, "locationRadius": 12,
+    "details": [], "facilities": [],
+    "images": [{"thumbnail":"images/locations/kantin-kopsis/01-thumb.webp","src":"images/locations/kantin-kopsis/01.webp","alt":"Foto asli Kantin Kopsis","caption":"Dokumentasi Kantin Kopsis"}]
+  },
+  {
+    "id": "lab-tjkt", "name": "Lab TJKT", "shortName": "Lab TJKT", "category": "Laboratorium",
+    "description": "Dokumentasi area Laboratorium TJKT. Informasi perangkat dan kegiatan resmi masih menunggu verifikasi pihak sekolah.",
+    "anchorStatus": "calibrated", "position": [-51.67,0.3,36.79], "teleportPosition": [-51.67,1.72,34.6], "teleportLookAt": [-51.67,1.75,37.09], "mapPosition": {"x":45.3,"y":66.3}, "interactionRadius": 4.5, "locationRadius": 12,
+    "details": [], "facilities": [],
+    "images": [
+      {"thumbnail":"images/locations/lab-tjkt/01-thumb.webp","src":"images/locations/lab-tjkt/01.webp","alt":"Foto asli Lab TJKT 1","caption":"Dokumentasi Lab TJKT"},
+      {"thumbnail":"images/locations/lab-tjkt/02-thumb.webp","src":"images/locations/lab-tjkt/02.webp","alt":"Foto asli Lab TJKT 2","caption":"Dokumentasi Lab TJKT"},
+      {"thumbnail":"images/locations/lab-tjkt/03-thumb.webp","src":"images/locations/lab-tjkt/03.webp","alt":"Foto asli Lab TJKT 3","caption":"Dokumentasi Lab TJKT"},
+      {"thumbnail":"images/locations/lab-tjkt/04-thumb.webp","src":"images/locations/lab-tjkt/04.webp","alt":"Foto asli Lab TJKT 4","caption":"Dokumentasi Lab TJKT"}
+    ]
+  },
+  {
+    "id": "um", "name": "UM", "shortName": "UM", "category": "Fasilitas",
+    "description": "Dokumentasi area UM. Nama fungsi dan informasi resmi lokasi masih menunggu verifikasi pihak sekolah.",
+    "anchorStatus": "calibrated", "position": [-45.11,0.023,84.98], "teleportPosition": [-45.11,1.72,82.8], "teleportLookAt": [-45.11,1.7,85.15], "mapPosition": {"x":48.9,"y":87.3}, "interactionRadius": 4.5, "locationRadius": 12,
+    "details": [], "facilities": [],
+    "images": [{"thumbnail":"images/locations/um/01-thumb.webp","src":"images/locations/um/01.webp","alt":"Foto asli UM","caption":"Dokumentasi UM"}]
+  },
+  {
+    "id": "bengkel-to-1", "name": "Bengkel TO 1", "shortName": "Bengkel TO 1", "category": "Bengkel",
+    "description": "Dokumentasi Bengkel TO 1. Informasi fasilitas resmi masih menunggu verifikasi pihak sekolah.",
+    "anchorStatus": "pending", "position": null, "teleportPosition": null, "mapPosition": null, "interactionRadius": 4.5, "locationRadius": 12,
+    "details": [], "facilities": [],
+    "images": [{"thumbnail":"images/locations/bengkel-to-1/01-thumb.webp","src":"images/locations/bengkel-to-1/01.webp","alt":"Foto asli Bengkel TO 1","caption":"Dokumentasi Bengkel TO 1"}]
+  },
+  {
+    "id": "bengkel-to-2", "name": "Bengkel TO 2", "shortName": "Bengkel TO 2", "category": "Bengkel",
+    "description": "Dokumentasi Bengkel TO 2. Informasi fasilitas resmi masih menunggu verifikasi pihak sekolah.",
+    "anchorStatus": "pending", "position": null, "teleportPosition": null, "mapPosition": null, "interactionRadius": 4.5, "locationRadius": 12,
+    "details": [], "facilities": [],
+    "images": [
+      {"thumbnail":"images/locations/bengkel-to-2/01-thumb.webp","src":"images/locations/bengkel-to-2/01.webp","alt":"Foto asli Bengkel TO 2 1","caption":"Dokumentasi Bengkel TO 2"},
+      {"thumbnail":"images/locations/bengkel-to-2/02-thumb.webp","src":"images/locations/bengkel-to-2/02.webp","alt":"Foto asli Bengkel TO 2 2","caption":"Dokumentasi Bengkel TO 2"},
+      {"thumbnail":"images/locations/bengkel-to-2/03-thumb.webp","src":"images/locations/bengkel-to-2/03.webp","alt":"Foto asli Bengkel TO 2 3","caption":"Dokumentasi Bengkel TO 2"},
+      {"thumbnail":"images/locations/bengkel-to-2/04-thumb.webp","src":"images/locations/bengkel-to-2/04.webp","alt":"Foto asli Bengkel TO 2 4","caption":"Dokumentasi Bengkel TO 2"},
+      {"thumbnail":"images/locations/bengkel-to-2/05-thumb.webp","src":"images/locations/bengkel-to-2/05.webp","alt":"Foto asli Bengkel TO 2 5","caption":"Dokumentasi Bengkel TO 2"}
+    ]
+  },
+  {
+    "id": "teori-to", "name": "Teori TO", "shortName": "Teori TO", "category": "Jurusan",
+    "description": "Dokumentasi area Teori TO. Informasi kegiatan dan fasilitas resmi masih menunggu verifikasi pihak sekolah.",
+    "anchorStatus": "pending", "position": null, "teleportPosition": null, "mapPosition": null, "interactionRadius": 4.5, "locationRadius": 12,
+    "details": [], "facilities": [],
+    "images": [
+      {"thumbnail":"images/locations/teori-to/01-thumb.webp","src":"images/locations/teori-to/01.webp","alt":"Foto asli Teori TO 1","caption":"Dokumentasi Teori TO"},
+      {"thumbnail":"images/locations/teori-to/02-thumb.webp","src":"images/locations/teori-to/02.webp","alt":"Foto asli Teori TO 2","caption":"Dokumentasi Teori TO"}
+    ]
+  },
+  {
+    "id": "bengkel-tm", "name": "Bengkel TM", "shortName": "Bengkel TM", "category": "Bengkel",
+    "description": "Dokumentasi Bengkel TM. Informasi fasilitas resmi masih menunggu verifikasi pihak sekolah.",
+    "anchorStatus": "calibrated", "position": [7.33,0.02,82.93], "teleportPosition": [7.33,1.899,80.8], "teleportLookAt": [7.33,1.7,82.93], "mapPosition": {"x":77,"y":86.5}, "interactionRadius": 4.5, "locationRadius": 12,
+    "details": [], "facilities": [],
+    "images": [{"thumbnail":"images/locations/bengkel-tm/01-thumb.webp","src":"images/locations/bengkel-tm/01.webp","alt":"Foto asli Bengkel TM","caption":"Dokumentasi Bengkel TM"}]
+  },
+  {
+    "id": "pembuangan-akhir", "name": "Pembuangan Akhir", "shortName": "Pembuangan Akhir", "category": "Area Umum",
+    "description": "Informasi resmi dan foto lokasi Pembuangan Akhir belum tersedia. Konten akan ditambahkan setelah diverifikasi pihak sekolah.",
+    "anchorStatus": "pending", "position": null, "teleportPosition": null, "mapPosition": null, "interactionRadius": 4.5, "locationRadius": 12,
+    "details": [], "facilities": [], "images": []
+  },
+  {
+    "id": "lapvol", "name": "Lapvol", "shortName": "Lapangan Voli", "category": "Olahraga",
+    "description": "Dokumentasi area Lapangan Voli. Informasi penggunaan resmi masih menunggu verifikasi pihak sekolah.",
+    "anchorStatus": "pending", "position": null, "teleportPosition": null, "mapPosition": null, "interactionRadius": 4.5, "locationRadius": 12,
+    "details": [], "facilities": [],
+    "images": [
+      {"thumbnail":"images/locations/lapvol/01-thumb.webp","src":"images/locations/lapvol/01.webp","alt":"Foto asli Lapangan Voli 1","caption":"Dokumentasi Lapangan Voli"},
+      {"thumbnail":"images/locations/lapvol/02-thumb.webp","src":"images/locations/lapvol/02.webp","alt":"Foto asli Lapangan Voli 2","caption":"Dokumentasi Lapangan Voli"}
+    ]
+  },
+  {
+    "id": "labas", "name": "Labas + Kamar Mandinya", "shortName": "Labas", "category": "Laboratorium",
+    "description": "Informasi resmi dan foto Labas belum tersedia. Konten akan ditambahkan setelah diverifikasi pihak sekolah.",
+    "anchorStatus": "pending", "position": null, "teleportPosition": null, "mapPosition": null, "interactionRadius": 4.5, "locationRadius": 12,
+    "details": [], "facilities": [], "images": []
+  },
+  {
+    "id": "tpfl", "name": "TPFL", "shortName": "TPFL", "category": "Jurusan",
+    "description": "Dokumentasi area TPFL. Informasi akademik dan fasilitas resmi masih menunggu verifikasi pihak sekolah.",
+    "anchorStatus": "pending", "position": null, "teleportPosition": null, "mapPosition": null, "interactionRadius": 4.5, "locationRadius": 12,
+    "details": [], "facilities": [],
+    "images": [
+      {"thumbnail":"images/locations/tpfl/01-thumb.webp","src":"images/locations/tpfl/01.webp","alt":"Foto asli TPFL 1","caption":"Dokumentasi TPFL"},
+      {"thumbnail":"images/locations/tpfl/02-thumb.webp","src":"images/locations/tpfl/02.webp","alt":"Foto asli TPFL 2","caption":"Dokumentasi TPFL"}
+    ]
+  },
+  {
+    "id": "kamar-mandi-lab", "name": "Kamar Mandi Lab", "shortName": "Kamar Mandi Lab", "category": "Fasilitas",
+    "description": "Dokumentasi kamar mandi area laboratorium. Posisi dan informasi fasilitas resmi masih menunggu verifikasi pihak sekolah.",
+    "anchorStatus": "pending", "position": null, "teleportPosition": null, "mapPosition": null, "interactionRadius": 4.5, "locationRadius": 12,
+    "details": [], "facilities": [],
+    "images": [
+      {"thumbnail":"images/locations/kamar-mandi-lab/01-thumb.webp","src":"images/locations/kamar-mandi-lab/01.webp","alt":"Foto asli Kamar Mandi Lab 1","caption":"Dokumentasi Kamar Mandi Lab"},
+      {"thumbnail":"images/locations/kamar-mandi-lab/02-thumb.webp","src":"images/locations/kamar-mandi-lab/02.webp","alt":"Foto asli Kamar Mandi Lab 2","caption":"Dokumentasi Kamar Mandi Lab"},
+      {"thumbnail":"images/locations/kamar-mandi-lab/03-thumb.webp","src":"images/locations/kamar-mandi-lab/03.webp","alt":"Foto asli Kamar Mandi Lab 3","caption":"Dokumentasi Kamar Mandi Lab"},
+      {"thumbnail":"images/locations/kamar-mandi-lab/04-thumb.webp","src":"images/locations/kamar-mandi-lab/04.webp","alt":"Foto asli Kamar Mandi Lab 4","caption":"Dokumentasi Kamar Mandi Lab"}
+    ]
+  },
+  {
+    "id": "gedung-organisasi", "name": "Gedung Organisasi", "shortName": "Gedung Organisasi", "category": "Gedung",
+    "description": "Dokumentasi Gedung Organisasi. Informasi fungsi dan fasilitas resmi masih menunggu verifikasi pihak sekolah.",
+    "anchorStatus": "calibrated", "position": [-114.43,0.445,-28.4], "teleportPosition": [-112.5,1.72,-28.4], "teleportLookAt": [-114.43,1.7,-28.4], "mapPosition": {"x":11.6,"y":37.8}, "interactionRadius": 4.5, "locationRadius": 12,
+    "details": [], "facilities": [],
+    "images": [
+      {"thumbnail":"images/locations/gedung-organisasi/01-thumb.webp","src":"images/locations/gedung-organisasi/01.webp","alt":"Foto asli Gedung Organisasi 1","caption":"Dokumentasi Gedung Organisasi"},
+      {"thumbnail":"images/locations/gedung-organisasi/02-thumb.webp","src":"images/locations/gedung-organisasi/02.webp","alt":"Foto asli Gedung Organisasi 2","caption":"Dokumentasi Gedung Organisasi"},
+      {"thumbnail":"images/locations/gedung-organisasi/03-thumb.webp","src":"images/locations/gedung-organisasi/03.webp","alt":"Foto asli Gedung Organisasi 3","caption":"Dokumentasi Gedung Organisasi"},
+      {"thumbnail":"images/locations/gedung-organisasi/04-thumb.webp","src":"images/locations/gedung-organisasi/04.webp","alt":"Foto asli Gedung Organisasi 4","caption":"Dokumentasi Gedung Organisasi"},
+      {"thumbnail":"images/locations/gedung-organisasi/05-thumb.webp","src":"images/locations/gedung-organisasi/05.webp","alt":"Foto asli Gedung Organisasi 5","caption":"Dokumentasi Gedung Organisasi"}
+    ]
+  }
+]

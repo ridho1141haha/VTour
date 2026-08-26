@@ -1,229 +1,176 @@
-import React, { useEffect, useCallback } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { Eye, Footprints, HelpCircle, Map, MousePointerClick, Search, Settings, X } from 'lucide-react';
 import { Scene } from './components/3d/Scene';
-import { RoomModal } from './components/ui/RoomModal';
+import { LocationModal } from './components/ui/LocationModal';
 import { InteractionPrompt } from './components/ui/InteractionPrompt';
 import { ToastLocation } from './components/ui/ToastLocation';
 import { SearchSidebar } from './components/ui/SearchSidebar';
 import { SchoolMapModal } from './components/ui/SchoolMapModal';
+import { SettingsModal } from './components/ui/SettingsModal';
+import { VirtualJoystick } from './components/ui/VirtualJoystick';
+import { AudioAmbience } from './components/ui/AudioAmbience';
 import { useTourStore } from './stores/useTourStore';
-import { 
-  Eye, 
-  Footprints, 
-  MousePointerClick, 
-  Sparkles, 
-  Search, 
-  Map
-} from 'lucide-react';
+import { findDeepLinkedLocation, getDeepLinkLocationId, resolveTeleportPosition } from './lib/locationUtils';
 
 export default function App() {
-  const { 
-    cameraMode, 
-    setCameraMode, 
-    isPointerLocked, 
-    appState, 
-    openSearch, 
-    openMap,
-    isSearchOpen,
-    isMapOpen,
-    rooms,
-    teleportTo,
-    openRoomModal
-  } = useTourStore();
+  const cameraMode = useTourStore((state) => state.cameraMode);
+  const setCameraMode = useTourStore((state) => state.setCameraMode);
+  const isPointerLocked = useTourStore((state) => state.isPointerLocked);
+  const overlay = useTourStore((state) => state.overlay);
+  const openSearch = useTourStore((state) => state.openSearch);
+  const openMap = useTourStore((state) => state.openMap);
+  const openSettings = useTourStore((state) => state.openSettings);
+  const openLocation = useTourStore((state) => state.openLocation);
+  const teleportTo = useTourStore((state) => state.teleportTo);
+  const locations = useTourStore((state) => state.locations);
+  const locationsStatus = useTourStore((state) => state.locationsStatus);
+  const [sceneReady, setSceneReady] = useState(false);
+  const [sceneUnavailable, setSceneUnavailable] = useState(false);
+  const [hasStarted, setHasStarted] = useState(false);
+  const [showIntroHelp, setShowIntroHelp] = useState(false);
+  const [showTutorial, setShowTutorial] = useState(false);
+  const [notice, setNotice] = useState('');
+  const deepLinkHandledRef = useRef(false);
 
-  // Handler untuk mengunci mouse saat layar / tombol diklik
-  const handleStartExploring = useCallback(() => {
+  const handleStartExploring = useCallback((event) => {
+    setHasStarted(true);
+    if (sessionStorage.getItem('virtual-tour-tutorial-seen') !== '1') setShowTutorial(true);
     if (cameraMode !== 'fps') return;
-    const canvas = document.querySelector('canvas');
-    if (canvas && typeof canvas.requestPointerLock === 'function') {
-      try {
-        canvas.requestPointerLock();
-      } catch (err) {
-        console.warn('Pointer lock request error:', err);
+    const isDirectTouch = event?.nativeEvent?.pointerType === 'touch' || event?.touches?.length > 0;
+    if (!isDirectTouch) {
+      const canvas = document.querySelector('canvas');
+      if (canvas?.requestPointerLock) {
+        try { canvas.requestPointerLock(); } catch { /* ignore */ }
       }
     }
   }, [cameraMode]);
 
-  // Deep Link URL Support (?room=lab-pplg-1)
+  const handleSceneReady = useCallback(() => setSceneReady(true), []);
+  const handleSceneUnavailable = useCallback(() => setSceneUnavailable(true), []);
+  const handleSceneRestored = useCallback(() => setSceneUnavailable(false), []);
+
+  const closeTutorial = () => {
+    sessionStorage.setItem('virtual-tour-tutorial-seen', '1');
+    setShowTutorial(false);
+  };
+
   useEffect(() => {
-    if (rooms.length === 0) return;
-
-    const params = new URLSearchParams(window.location.search);
-    const targetRoomId = params.get('room');
-
-    if (targetRoomId) {
-      const found = rooms.find((r) => r.id === targetRoomId);
-      if (found) {
-        teleportTo(found.teleportPosition || found.position, found);
-        setTimeout(() => {
-          openRoomModal(found);
-        }, 500);
-      }
+    if (locationsStatus !== 'ready' || deepLinkHandledRef.current) return undefined;
+    const requestedId = getDeepLinkLocationId(window.location.search);
+    if (!requestedId) {
+      deepLinkHandledRef.current = true;
+      return undefined;
     }
-  }, [rooms, teleportTo, openRoomModal]);
 
-  // Global Keyboard Shortcuts (M untuk Search, F untuk Denah)
+    deepLinkHandledRef.current = true;
+    const location = findDeepLinkedLocation(locations, window.location.search);
+    if (!location) {
+      setNotice(`Lokasi “${requestedId}” tidak ditemukan.`);
+      return undefined;
+    }
+
+    setHasStarted(true);
+    if (resolveTeleportPosition(location)) teleportTo(location);
+    openLocation(location);
+    return undefined;
+  }, [locations, locationsStatus, openLocation, teleportTo]);
+
   useEffect(() => {
-    const handleGlobalKeys = (e) => {
-      if (['input', 'textarea'].includes(e.target.tagName.toLowerCase())) return;
-
-      if (e.key === 'm' || e.key === 'M') {
-        if (!isSearchOpen && appState !== 'modal_open') {
-          openSearch();
-        }
-      } else if (e.key === 'f' || e.key === 'F') {
-        if (!isMapOpen && appState !== 'modal_open') {
-          openMap();
-        }
-      }
+    const handleGlobalKeys = (event) => {
+      if (event.ctrlKey || event.metaKey || event.altKey || event.defaultPrevented) return;
+      if (event.target instanceof Element && event.target.closest('input, textarea, select, [contenteditable="true"]')) return;
+      const key = event.key.toLowerCase();
+      if (key === 'm') openSearch();
+      if (key === 'f') openMap();
+      if (key === 'o') openSettings();
     };
-
     window.addEventListener('keydown', handleGlobalKeys);
     return () => window.removeEventListener('keydown', handleGlobalKeys);
-  }, [isSearchOpen, isMapOpen, appState, openSearch, openMap]);
+  }, [openMap, openSearch, openSettings]);
+
+  useEffect(() => {
+    if (!notice) return undefined;
+    const timer = window.setTimeout(() => setNotice(''), 4500);
+    return () => window.clearTimeout(timer);
+  }, [notice]);
+
+  // Sembunyikan latar dari assistive technology saat overlay terbuka.
+  useEffect(() => {
+    const background = [
+      document.getElementById('canvas-container'),
+      document.querySelector('.tour-header'),
+      document.querySelector('.tour-footer'),
+    ].filter(Boolean);
+    background.forEach((element) => { element.inert = overlay != null; });
+    return () => background.forEach((element) => { element.inert = false; });
+  }, [overlay]);
+
+  const showIntro = sceneReady && !hasStarted && !overlay;
 
   return (
-    <main className="w-screen h-screen relative bg-slate-950 text-slate-100 overflow-hidden select-none">
-      {/* 3D Scene Viewport */}
-      <Scene />
+    <main className="tour-shell relative w-screen overflow-hidden text-slate-100">
+      <Scene controlsEnabled={hasStarted && !sceneUnavailable} onReady={handleSceneReady} onUnavailable={handleSceneUnavailable} onRestored={handleSceneRestored} />
+      <AudioAmbience />
+      <VirtualJoystick />
 
-      {/* Crosshair di tengah layar saat mode FPS & mouse terkunci */}
-      {cameraMode === 'fps' && isPointerLocked && appState !== 'modal_open' && !isSearchOpen && !isMapOpen && (
-        <div className="absolute inset-0 pointer-events-none flex items-center justify-center z-20">
-          <div className="w-2 h-2 rounded-full bg-white/80 border border-slate-900 shadow-md"></div>
+      {sceneUnavailable && (
+        <div role="alert" className="fixed inset-0 z-[150] grid place-items-center bg-zinc-950 p-6 text-center text-white">
+          <div className="max-w-sm"><p className="eyebrow">WebGL tidak tersedia</p><h2 className="text-2xl font-extrabold">Virtual Tour tidak dapat ditampilkan</h2><p className="mt-3 text-sm text-zinc-400">Aktifkan akselerasi grafis atau gunakan browser dan perangkat lain.</p><button onClick={() => window.location.reload()} className="mt-6 min-h-11 bg-orange-500 px-5 text-sm font-bold text-zinc-950">Muat Ulang</button></div>
         </div>
       )}
 
-      {/* Prompt Interaksi Tombol [E] saat dekat marker */}
-      <InteractionPrompt />
+      {cameraMode === 'fps' && isPointerLocked && !overlay && (
+        <div className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center"><div className="crosshair" /></div>
+      )}
 
-      {/* Notifikasi Banner Lokasi Gedung */}
+      <InteractionPrompt />
       <ToastLocation />
 
-      {/* Modal Popup Informasi Ruangan & Galeri Foto */}
-      <RoomModal />
+      {overlay?.type === 'location' && <LocationModal key={overlay.location.id} />}
+      {overlay?.type === 'search' && <SearchSidebar />}
+      {overlay?.type === 'map' && <SchoolMapModal />}
+      {overlay?.type === 'settings' && <SettingsModal />}
 
-      {/* Sidebar Pencarian & Direktori Ruangan */}
-      <SearchSidebar />
+      {notice && <div role="alert" className="fixed left-1/2 top-24 z-[90] -translate-x-1/2 border border-amber-500/50 bg-zinc-950 px-4 py-3 text-sm text-amber-200 shadow-2xl">{notice}</div>}
 
-      {/* Modal Denah 2D Skematis Sekolah */}
-      <SchoolMapModal />
-
-      {/* Overlay 'Klik Layar untuk Menjelajah' saat mode FPS belum terkunci */}
-      {cameraMode === 'fps' && !isPointerLocked && appState !== 'modal_open' && !isSearchOpen && !isMapOpen && (
-        <div 
-          onClick={handleStartExploring}
-          className="absolute inset-0 flex flex-col items-center justify-center z-20 bg-slate-950/50 backdrop-blur-[2px] cursor-pointer transition-all animate-fadeIn"
-        >
-          <div 
-            onClick={(e) => {
-              e.stopPropagation();
-              handleStartExploring();
-            }}
-            className="bg-slate-900/95 border border-slate-700 p-6 sm:p-8 rounded-3xl shadow-2xl flex flex-col items-center gap-4 text-center max-w-sm cursor-pointer hover:border-blue-500/60 transition-all hover:scale-105 group"
-          >
-            <div className="w-14 h-14 rounded-2xl bg-blue-500/20 text-blue-400 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-all shadow-inner">
-              <MousePointerClick size={28} />
-            </div>
-
-            <div>
-              <h2 className="text-lg font-bold text-white tracking-wide">Klik untuk Mulai Menjelajah</h2>
-              <p className="text-xs text-slate-400 leading-relaxed mt-1">
-                Gunakan tombol <kbd className="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-blue-300 font-mono">W</kbd> <kbd className="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-blue-300 font-mono">A</kbd> <kbd className="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-blue-300 font-mono">S</kbd> <kbd className="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-blue-300 font-mono">D</kbd> untuk berjalan, gerakkan mouse untuk melihat, dan dekati titik <kbd className="px-1.5 py-0.5 bg-blue-600 rounded text-white font-mono">E</kbd> untuk info.
-              </p>
-            </div>
-
-            <button
-              onClick={handleStartExploring}
-              className="w-full py-2.5 px-5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold shadow-lg shadow-blue-500/30 transition-all cursor-pointer"
-            >
-              Mulai Eksplorasi
-            </button>
-
-            <div className="text-[11px] text-slate-500">
-              Tekan <kbd className="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-slate-300 font-mono">ESC</kbd> kapan saja untuk melepas kursor
-            </div>
-          </div>
+      {showIntro && (
+        <div className="start-screen absolute inset-0 z-40 flex items-center justify-center p-5">
+          <section className="start-card relative w-full max-w-xl overflow-hidden text-left">
+            <div className="start-index">VT / 01</div><div className="start-icon"><MousePointerClick size={24} /></div>
+            <div className="mt-10 sm:mt-14"><p className="eyebrow">Virtual Tour</p><h2 className="start-title">SMKN 2<br />Surakarta.</h2><p className="mt-4 max-w-md text-sm leading-relaxed text-slate-300">Jelajahi lingkungan dan fasilitas sekolah secara interaktif dalam tampilan 3D.</p></div>
+            {showIntroHelp && <div className="mt-5 grid grid-cols-2 gap-x-6 gap-y-2 border-y border-zinc-800 py-4 font-mono text-xs text-zinc-400"><span><kbd>WASD</kbd> Bergerak</span><span><kbd>Mouse</kbd> Melihat</span><span><kbd>Shift</kbd> Jalan cepat</span><span><kbd>E</kbd> Interaksi</span><p className="col-span-2 mt-2 text-zinc-500">Dekati ikon informasi untuk membuka detail lokasi.</p></div>}
+            <button onClick={handleStartExploring} className="start-action mt-7"><span>Mulai Virtual Tour</span><span aria-hidden="true">→</span></button>
+            <div className="mt-3 grid grid-cols-2 gap-2"><button onClick={openMap} className="min-h-11 border border-zinc-700 text-xs font-semibold text-zinc-300 hover:border-orange-500"><Map size={14} className="mr-2 inline" />Denah</button><button onClick={() => setShowIntroHelp((visible) => !visible)} aria-expanded={showIntroHelp} className="min-h-11 border border-zinc-700 text-xs font-semibold text-zinc-300 hover:border-orange-500"><HelpCircle size={14} className="mr-2 inline" />Petunjuk</button></div>
+          </section>
         </div>
       )}
 
-      {/* Top Header HUD */}
-      <header className="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none z-10">
-        <div className="bg-slate-900/85 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-slate-800 pointer-events-auto flex items-center gap-3 shadow-lg">
-          <div className="w-3 h-3 rounded-full bg-blue-500 animate-pulse"></div>
-          <div>
-            <h1 className="text-xs sm:text-sm font-bold tracking-wide text-white">SMKN 2 SURAKARTA</h1>
-            <p className="text-[10px] sm:text-xs text-slate-400">Virtual Tour 3D</p>
-          </div>
-        </div>
+      {showTutorial && !overlay && (
+        <aside className="fixed left-1/2 top-24 z-30 w-[min(92vw,420px)] -translate-x-1/2 border border-zinc-700 bg-zinc-950/95 p-4 text-white shadow-2xl backdrop-blur-md" aria-label="Petunjuk eksplorasi">
+          <button onClick={closeTutorial} aria-label="Tutup petunjuk" className="absolute right-2 top-2 grid h-9 w-9 place-items-center text-zinc-500 hover:text-white"><X size={16} /></button>
+          <p className="eyebrow">Petunjuk singkat</p><p className="pr-8 text-sm font-bold">Dekati ikon informasi untuk melihat detail lokasi.</p>
+          <div className="mt-3 flex flex-wrap gap-2 font-mono text-[11px] text-zinc-400"><span><kbd>WASD</kbd> Bergerak</span><span><kbd>Shift</kbd> Cepat</span><span><kbd>E</kbd> Informasi</span></div>
+        </aside>
+      )}
 
-        {/* Navigation & Mode Controls */}
-        <div className="flex items-center gap-2 pointer-events-auto">
-          {/* Quick Actions (Cari & Denah) */}
-          <div className="bg-slate-900/85 backdrop-blur-md p-1 rounded-2xl border border-slate-800 flex items-center gap-1 shadow-lg">
-            <button
-              onClick={openSearch}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-all cursor-pointer"
-              title="Pencarian & Direktori Ruangan (M)"
-            >
-              <Search size={14} className="text-blue-400" />
-              <span className="hidden sm:inline">Cari Ruangan</span>
-            </button>
-            <button
-              onClick={openMap}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-all cursor-pointer"
-              title="Denah Skematis Kampus (F)"
-            >
-              <Map size={14} className="text-emerald-400" />
-              <span className="hidden sm:inline">Denah</span>
-            </button>
-          </div>
-
-          {/* Mode Switcher Buttons */}
-          <div className="bg-slate-900/85 backdrop-blur-md p-1 rounded-2xl border border-slate-800 flex items-center gap-1 shadow-lg">
-            <button
-              onClick={() => setCameraMode('fps')}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium transition-all cursor-pointer ${
-                cameraMode === 'fps'
-                  ? 'bg-blue-600 text-white shadow-md'
-                  : 'text-slate-400 hover:text-slate-200'
-              }`}
-            >
-              <Footprints size={14} />
-              <span className="hidden md:inline">Jalan Kaki</span>
-            </button>
-            <button
-              onClick={() => setCameraMode('orbit')}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium transition-all cursor-pointer ${
-                cameraMode === 'orbit'
-                  ? 'bg-blue-600 text-white shadow-md'
-                  : 'text-slate-400 hover:text-slate-200'
-              }`}
-            >
-              <Eye size={14} />
-              <span className="hidden md:inline">Inspeksi</span>
-            </button>
-          </div>
+      <header className="tour-header pointer-events-none absolute inset-x-0 top-0 z-10 flex items-start justify-between">
+        <div className="brand-lockup pointer-events-auto flex items-stretch"><div className="brand-mark">02</div><div><p className="eyebrow">Virtual campus</p><h1 className="brand-title">SMKN 2 <span>Surakarta</span></h1></div></div>
+        <div className="pointer-events-auto flex items-center gap-1.5 sm:gap-2">
+          <nav className="hud-panel flex items-center" aria-label="Navigasi tur">
+            <button onClick={openSearch} className="hud-button" title="Cari Lokasi (M)" aria-label="Cari lokasi"><Search size={16} /><span className="hidden md:inline">Lokasi</span></button>
+            <button onClick={openMap} className="hud-button" title="Denah (F)" aria-label="Buka denah"><Map size={16} /><span className="hidden md:inline">Denah</span></button>
+            <button onClick={openSettings} className="hud-button" title="Pengaturan (O)" aria-label="Buka pengaturan"><Settings size={16} /><span className="hidden lg:inline">Pengaturan</span></button>
+          </nav>
+          <div className="mode-switch flex items-center"><button onClick={() => setCameraMode('fps')} aria-pressed={cameraMode === 'fps'} className={`mode-button ${cameraMode === 'fps' ? 'is-active' : ''}`}><Footprints size={14} /><span className="hidden sm:inline">Jalan</span></button><button onClick={() => setCameraMode('orbit')} aria-pressed={cameraMode === 'orbit'} className={`mode-button ${cameraMode === 'orbit' ? 'is-active' : ''}`}><Eye size={14} /><span className="hidden sm:inline">Orbit</span></button></div>
         </div>
       </header>
 
-      {/* Bottom Status & Key Hints */}
-      <footer className="absolute bottom-4 left-4 right-4 flex justify-between items-center pointer-events-none z-10">
-        <div className="bg-slate-900/85 backdrop-blur-md px-4 py-2 rounded-xl border border-slate-800 text-xs text-slate-300 pointer-events-auto flex items-center gap-2 shadow-lg">
-          <Sparkles size={14} className="text-amber-400" />
-          <span>{cameraMode === 'fps' ? 'Dekati titik informasi lalu tekan [E]' : 'Mode Inspeksi Orbit'}</span>
-        </div>
-
-        {cameraMode === 'fps' && isPointerLocked && (
-          <div className="hidden sm:flex bg-slate-900/85 backdrop-blur-md px-4 py-2 rounded-xl border border-slate-800 text-xs text-slate-400 pointer-events-auto items-center gap-3 shadow-lg">
-            <span><strong className="text-white font-mono">WASD</strong> Jalan</span>
-            <span><strong className="text-white font-mono">Shift</strong> Lari</span>
-            <span><strong className="text-white font-mono">E</strong> Info</span>
-            <span><strong className="text-white font-mono">M</strong> Direktori</span>
-            <span><strong className="text-white font-mono">F</strong> Denah</span>
-            <span><strong className="text-white font-mono">ESC</strong> Kursor</span>
-          </div>
-        )}
-      </footer>
+      {hasStarted && (
+        <footer className="tour-footer pointer-events-none absolute inset-x-0 flex items-end justify-between">
+          <div className="status-strip pointer-events-auto flex items-center gap-3"><span className="status-dot" /><span>{cameraMode === 'fps' ? 'Dekati penanda untuk informasi lokasi' : 'Mode inspeksi orbit'}</span></div>
+          {cameraMode === 'fps' && isPointerLocked && <div className="key-strip pointer-events-auto hidden items-center sm:flex"><span><strong>WASD</strong> Jalan</span><span><strong>Shift</strong> Cepat</span><span><strong>E</strong> Info</span><span><strong>M</strong> Lokasi</span><span><strong>F</strong> Denah</span><span><strong>ESC</strong> Kursor</span></div>}
+        </footer>
+      )}
     </main>
   );
 }

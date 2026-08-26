@@ -7,4 +7,15 @@ export default defineConfig({
   server: {
     port: 5173,
   },
+  build: {
+    rollupOptions: {
+      output: {
+        // Pisahkan vendor agar revisi app tidak membatalkan cache library besar.
+        manualChunks: {
+          three: ['three', '@react-three/fiber', '@react-three/drei'],
+          react: ['react', 'react-dom'],
+        },
+      },
+    },
+  },
 });
