@@ -103,7 +103,47 @@ export const useTourStore = create((set, get) => ({
     });
     return true;
   },
+  teleportToPosition: (x, z) => {
+    if (![x, z].every((value) => Number.isFinite(value))) return false;
+    releasePointer();
+    set({
+      targetTeleport: { position: [x, 2, z], lookAt: null, locationId: null },
+      overlay: null,
+      cameraMode: 'fps',
+      isPointerLocked: false,
+      nearbyLocation: null,
+    });
+    return true;
+  },
   clearTeleport: () => set({ targetTeleport: null }),
+
+  presenceStatus: 'idle',
+  setPresenceStatus: (presenceStatus) => set({ presenceStatus }),
+  presenceEnabled: true,
+  setPresenceEnabled: (presenceEnabled) => set({ presenceEnabled }),
+  displayName: '',
+  setDisplayName: (displayName) => set({ displayName }),
+  presenceRoster: [],
+  setPresenceRoster: (presenceRoster) => set({
+    presenceRoster,
+    peerCount: presenceRoster.length,
+  }),
+  peerCount: 0,
+  guide: null,
+  setPresenceGuide: (guide) => set({ guide }),
+  presenceNotice: null,
+  setPresenceNotice: (presenceNotice) => set({ presenceNotice }),
+  chatMessages: [],
+  chatUnread: 0,
+  isChatOpen: false,
+  setIsChatOpen: (isChatOpen) => set((state) => ({
+    isChatOpen,
+    chatUnread: isChatOpen ? 0 : state.chatUnread,
+  })),
+  addChatMessage: (message, { silent = false } = {}) => set((state) => ({
+    chatMessages: [...state.chatMessages.slice(-49), message],
+    chatUnread: silent || state.isChatOpen ? state.chatUnread : state.chatUnread + 1,
+  })),
 
   resetExplorationState: () => {
     releasePointer();

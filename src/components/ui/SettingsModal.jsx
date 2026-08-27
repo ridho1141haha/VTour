@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Check, Maximize, Minimize, Monitor, Settings, Sliders, Volume2, VolumeX, X } from 'lucide-react';
+import { Check, Maximize, Minimize, Monitor, RadioTower, Settings, Sliders, Volume2, VolumeX, X } from 'lucide-react';
 import { useTourStore } from '../../stores/useTourStore';
 import { useFocusTrap } from '../../hooks/useFocusTrap';
+import { setDisplayName, setPresenceEnabled } from '../../lib/presence';
 
 const QUALITY_PRESETS = [
   { id: 'low', label: 'Rendah', description: 'DPR 1.0 untuk perangkat dengan GPU terbatas.' },
@@ -20,6 +21,9 @@ export function SettingsModal() {
   const setAudioVolume = useTourStore((state) => state.setAudioVolume);
   const mouseSensitivity = useTourStore((state) => state.mouseSensitivity);
   const setMouseSensitivity = useTourStore((state) => state.setMouseSensitivity);
+  const displayName = useTourStore((state) => state.displayName);
+  const presenceEnabled = useTourStore((state) => state.presenceEnabled);
+  const presenceStatus = useTourStore((state) => state.presenceStatus);
   const [isFullscreen, setIsFullscreen] = useState(Boolean(document.fullscreenElement));
   const [fullscreenError, setFullscreenError] = useState('');
   const dialogRef = useRef(null);
@@ -81,6 +85,22 @@ export function SettingsModal() {
           <section className="border-t border-zinc-800 pt-5">
             <div className="flex items-center justify-between"><h3 className="flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-wider text-zinc-400"><Sliders size={15} className="text-orange-400" />Sensitivitas Kamera</h3><span className="font-mono text-xs text-orange-400">{mouseSensitivity.toFixed(1)}x</span></div>
             <label className="mt-3 flex items-center gap-3 border border-zinc-800 bg-zinc-900/60 p-3"><span className="text-[10px] text-zinc-500">Lambat</span><input aria-label="Sensitivitas kamera" type="range" min="0.4" max="2" step="0.1" value={mouseSensitivity} onChange={(event) => setMouseSensitivity(Number(event.target.value))} className="flex-1 accent-orange-500" /><span className="text-[10px] text-zinc-500">Cepat</span></label>
+          </section>
+
+          <section className="border-t border-zinc-800 pt-5">
+            <div className="flex items-center justify-between"><h3 className="flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-wider text-zinc-400"><RadioTower size={15} className="text-orange-400" />Multiplayer</h3><button onClick={() => setPresenceEnabled(!presenceEnabled)} aria-pressed={presenceEnabled} className={`min-h-9 border px-3 text-xs font-semibold ${presenceEnabled ? 'border-orange-500 bg-orange-500 text-zinc-950' : 'border-zinc-700 text-zinc-400'}`}>{presenceEnabled ? 'Aktif' : 'Nonaktif'}</button></div>
+            <label className="mt-3 flex items-center gap-3 border border-zinc-800 bg-zinc-900/60 p-3">
+              <span className="shrink-0 text-xs text-zinc-400">Nama tampilan</span>
+              <input
+                value={displayName}
+                onChange={(event) => setDisplayName(event.target.value)}
+                maxLength={20}
+                aria-label="Nama tampilan pengunjung"
+                placeholder="Pengunjung-42"
+                className="h-9 min-w-0 flex-1 border border-zinc-800 bg-zinc-950 px-2 text-xs text-white placeholder:text-zinc-600 focus:border-orange-500 focus:outline-none"
+              />
+            </label>
+            <p className="mt-2 text-xs text-zinc-500">Status: {presenceStatus === 'online' ? 'terhubung' : presenceStatus === 'connecting' ? 'menghubungkan...' : presenceStatus === 'disabled' ? 'tidak tersedia di build ini' : presenceStatus === 'error' ? 'gagal terhubung' : 'offline'}{presenceEnabled ? '' : ' (multiplayer nonaktif)'}.</p>
           </section>
 
           <section className="flex items-center justify-between gap-4 border-t border-zinc-800 pt-5"><div><h3 className="text-sm font-bold text-zinc-200">Layar Penuh</h3><p className="mt-1 text-xs text-zinc-500">Gunakan seluruh area layar untuk eksplorasi.</p>{fullscreenError && <p role="alert" className="mt-2 text-xs text-red-400">{fullscreenError}</p>}</div><button onClick={toggleFullscreen} className="flex min-h-11 shrink-0 items-center gap-2 border border-zinc-700 px-3 text-xs font-semibold text-zinc-200 hover:border-orange-500">{isFullscreen ? <Minimize size={14} /> : <Maximize size={14} />}{isFullscreen ? 'Keluar' : 'Fullscreen'}</button></section>

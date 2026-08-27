@@ -1,10 +1,14 @@
 import React, { Component, Suspense, useEffect, useRef, useState } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { Html, OrbitControls, Sky, useProgress } from '@react-three/drei';
+import { XR, XROrigin } from '@react-three/xr';
 import { SchoolModel, clearSchoolModelCache } from './SchoolModel';
 import { FirstPersonPlayer } from './FirstPersonPlayer';
+import { XRPlayer } from './XRPlayer';
 import { LocationMarkers } from './LocationMarkers';
+import { PeerMarkers } from './PeerMarkers';
 import { useTourStore } from '../../stores/useTourStore';
+import { xrStore } from '../../lib/xrStore';
 
 const DEFAULT_SPAWN_POS = [0, 2, 12];
 
@@ -118,6 +122,7 @@ export function Scene({ controlsEnabled = true, onAssetError, onAssetRetry, onRe
   const cameraMode = useTourStore((state) => state.cameraMode);
   const graphicsQuality = useTourStore((state) => state.graphicsQuality);
   const collisionRef = useRef({ groundMeshes: [], obstacleBoxes: [], obstacleGrid: null });
+  const xrOriginRef = useRef(null);
   const [canvasKey, setCanvasKey] = useState(0);
   const dpr = graphicsQuality === 'low' ? 1 : graphicsQuality === 'medium' ? [1, 1.25] : [1, 1.5];
 
@@ -130,24 +135,29 @@ export function Scene({ controlsEnabled = true, onAssetError, onAssetRetry, onRe
     <div id="canvas-container" className="relative h-full w-full cursor-pointer touch-none" role="region" aria-label="Pemandangan virtual 3D SMKN 2 Surakarta">
       <CanvasErrorBoundary onError={onUnavailable} onRetry={handleRetry}>
         <Canvas key={canvasKey} camera={{ position: DEFAULT_SPAWN_POS, fov: 65, near: 0.1, far: 1000 }} dpr={dpr} shadows={false}>
-          <CanvasLifecycle onUnavailable={onUnavailable} onRestored={onRestored} />
-          <ambientLight intensity={0.9} />
-          <directionalLight position={[60, 90, 30]} intensity={1.75} />
-          <directionalLight position={[-50, 40, -30]} intensity={0.35} />
-          <Sky sunPosition={[60, 90, 30]} turbidity={6} rayleigh={3} />
+          <XR store={xrStore}>
+            <XROrigin ref={xrOriginRef} />
+            <CanvasLifecycle onUnavailable={onUnavailable} onRestored={onRestored} />
+            <ambientLight intensity={0.9} />
+            <directionalLight position={[60, 90, 30]} intensity={1.75} />
+            <directionalLight position={[-50, 40, -30]} intensity={0.35} />
+            <Sky sunPosition={[60, 90, 30]} turbidity={6} rayleigh={3} />
 
-          <FirstPersonPlayer collisionRef={collisionRef} enabled={cameraMode === 'fps' && controlsEnabled} spawnPosition={DEFAULT_SPAWN_POS} />
-          {cameraMode === 'orbit' && (
-            <OrbitControls enableDamping dampingFactor={0.05} target={[-43.28, 1.7, -0.68]} maxDistance={250} minDistance={2} maxPolarAngle={Math.PI / 2 - 0.02} />
-          )}
+            <FirstPersonPlayer collisionRef={collisionRef} enabled={cameraMode === 'fps' && controlsEnabled} spawnPosition={DEFAULT_SPAWN_POS} />
+            <XRPlayer collisionRef={collisionRef} enabled={controlsEnabled} originRef={xrOriginRef} />
+            {cameraMode === 'orbit' && (
+              <OrbitControls enableDamping dampingFactor={0.05} target={[-43.28, 1.7, -0.68]} maxDistance={250} minDistance={2} maxPolarAngle={Math.PI / 2 - 0.02} />
+            )}
 
-          <AssetErrorBoundary onError={onAssetError} onRetry={onAssetRetry}>
-            <Suspense fallback={<Loader />}>
-              <SchoolModel collisionRef={collisionRef} onReady={onReady} />
-            </Suspense>
-          </AssetErrorBoundary>
-          <LocationMarkers />
-          {import.meta.env.DEV && <PositionDebug />}
+            <AssetErrorBoundary onError={onAssetError} onRetry={onAssetRetry}>
+              <Suspense fallback={<Loader />}>
+                <SchoolModel collisionRef={collisionRef} onReady={onReady} />
+              </Suspense>
+            </AssetErrorBoundary>
+            <LocationMarkers />
+            <PeerMarkers />
+            {import.meta.env.DEV && <PositionDebug />}
+          </XR>
         </Canvas>
       </CanvasErrorBoundary>
     </div>

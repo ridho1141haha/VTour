@@ -26,7 +26,7 @@ export default [
     },
   },
   {
-    files: ['*.config.js', 'test/**/*.js'],
+    files: ['*.config.js', 'server/**/*.js', 'test/**/*.js'],
     ...js.configs.recommended,
     languageOptions: {
       ecmaVersion: 'latest',

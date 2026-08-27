@@ -9,8 +9,12 @@ import { SchoolMapModal } from './components/ui/SchoolMapModal';
 import { SettingsModal } from './components/ui/SettingsModal';
 import { VirtualJoystick } from './components/ui/VirtualJoystick';
 import { AudioAmbience } from './components/ui/AudioAmbience';
+import { PresencePanel } from './components/ui/PresencePanel';
+import { ChatPanel } from './components/ui/ChatPanel';
+import { XRButton } from './components/ui/XRButton';
 import { useTourStore } from './stores/useTourStore';
 import { findDeepLinkedLocation, getDeepLinkLocationId, resolveTeleportPosition } from './lib/locationUtils';
+import { initializePresenceSettings, presence } from './lib/presence';
 
 export default function App() {
   const cameraMode = useTourStore((state) => state.cameraMode);
@@ -24,6 +28,7 @@ export default function App() {
   const teleportTo = useTourStore((state) => state.teleportTo);
   const locations = useTourStore((state) => state.locations);
   const locationsStatus = useTourStore((state) => state.locationsStatus);
+  const presenceEnabled = useTourStore((state) => state.presenceEnabled);
   const [sceneReady, setSceneReady] = useState(false);
   const [sceneUnavailable, setSceneUnavailable] = useState(false);
   const [hasStarted, setHasStarted] = useState(false);
@@ -94,6 +99,19 @@ export default function App() {
     return () => window.clearTimeout(timer);
   }, [notice]);
 
+  // Multiplayer presence: inisialisasi preferensi lalu hubungkan setelah tur dimulai.
+  useEffect(() => {
+    initializePresenceSettings();
+  }, []);
+
+  useEffect(() => {
+    if (!hasStarted) return;
+    if (presenceEnabled) presence.connect();
+    else presence.disconnect();
+  }, [hasStarted, presenceEnabled]);
+
+  useEffect(() => () => presence.disconnect(), []);
+
   // Sembunyikan latar dari assistive technology saat overlay terbuka.
   useEffect(() => {
     const background = [
@@ -125,6 +143,8 @@ export default function App() {
 
       <InteractionPrompt />
       <ToastLocation />
+      {hasStarted && !sceneUnavailable && <PresencePanel />}
+      {hasStarted && <ChatPanel />}
 
       {overlay?.type === 'location' && <LocationModal key={overlay.location.id} />}
       {overlay?.type === 'search' && <SearchSidebar />}
@@ -160,6 +180,7 @@ export default function App() {
             <button onClick={openSearch} className="hud-button" title="Cari Lokasi (M)" aria-label="Cari lokasi"><Search size={16} /><span className="hidden md:inline">Lokasi</span></button>
             <button onClick={openMap} className="hud-button" title="Denah (F)" aria-label="Buka denah"><Map size={16} /><span className="hidden md:inline">Denah</span></button>
             <button onClick={openSettings} className="hud-button" title="Pengaturan (O)" aria-label="Buka pengaturan"><Settings size={16} /><span className="hidden lg:inline">Pengaturan</span></button>
+            <XRButton />
           </nav>
           <div className="mode-switch flex items-center"><button onClick={() => setCameraMode('fps')} aria-pressed={cameraMode === 'fps'} className={`mode-button ${cameraMode === 'fps' ? 'is-active' : ''}`}><Footprints size={14} /><span className="hidden sm:inline">Jalan</span></button><button onClick={() => setCameraMode('orbit')} aria-pressed={cameraMode === 'orbit'} className={`mode-button ${cameraMode === 'orbit' ? 'is-active' : ''}`}><Eye size={14} /><span className="hidden sm:inline">Orbit</span></button></div>
         </div>

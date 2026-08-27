@@ -22,6 +22,9 @@ const locationsPath = new URL('../public/data/locations.json', import.meta.url);
 const modelPath = new URL('../public/models/smkn2_ska.glb', import.meta.url);
 const playerPath = new URL('../src/components/3d/FirstPersonPlayer.jsx', import.meta.url);
 const schoolModelPath = new URL('../src/components/3d/SchoolModel.jsx', import.meta.url);
+const scenePath = new URL('../src/components/3d/Scene.jsx', import.meta.url);
+const xrPlayerPath = new URL('../src/components/3d/XRPlayer.jsx', import.meta.url);
+const xrButtonPath = new URL('../src/components/ui/XRButton.jsx', import.meta.url);
 const locations = validateLocations(JSON.parse(await readFile(locationsPath, 'utf8')));
 
 const EXPECTED_IDS = [
@@ -212,3 +215,29 @@ test('aset model utama teroptimasi dan valid secara struktural', async () => {
     }
   }
 });
+
+test('integrasi WebXR VR mode terpasang dan tervalidasi', async () => {
+  const sceneSource = await readFile(scenePath, 'utf8');
+  const xrPlayerSource = await readFile(xrPlayerPath, 'utf8');
+  const xrButtonSource = await readFile(xrButtonPath, 'utf8');
+  const playerSource = await readFile(playerPath, 'utf8');
+
+  // Scene wraps content in <XR store={xrStore}>, mounts XROrigin and passes originRef to XRPlayer
+  assert.match(sceneSource, /<XR store=\{xrStore\}>/);
+  assert.match(sceneSource, /<XROrigin ref=\{xrOriginRef\} \/>/);
+  assert.match(sceneSource, /<XRPlayer collisionRef=\{collisionRef\}/);
+
+  // FirstPersonPlayer handles XR session bypass
+  assert.match(playerSource, /isXRSession/);
+
+  // XRPlayer implements VR locomotion, snap-turn, XROrigin translation, and proximity
+  assert.match(xrPlayerSource, /useXRStore/);
+  assert.match(xrPlayerSource, /xr-standard-thumbstick/);
+  assert.match(xrPlayerSource, /origin\.position\.x = nextX/);
+  assert.match(xrPlayerSource, /keys\.forward/);
+
+  // XRButton queries navigator.xr immersive-vr support
+  assert.match(xrButtonSource, /navigator\.xr\.isSessionSupported\('immersive-vr'\)/);
+  assert.match(xrButtonSource, /xrStore\.enterVR\(\)/);
+});
+

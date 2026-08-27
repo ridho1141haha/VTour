@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
 import { PointerLockControls } from '@react-three/drei';
+import { useXRStore } from '@react-three/xr';
 import * as THREE from 'three';
 import { useKeyboard } from '../../hooks/useKeyboard';
 import { useTourStore } from '../../stores/useTourStore';
@@ -19,6 +20,8 @@ const DOWN = new THREE.Vector3(0, -1, 0);
 
 export function FirstPersonPlayer({ collisionRef, enabled, spawnPosition = DEFAULT_SPAWN }) {
   const { camera, gl } = useThree();
+  const xrStore = useXRStore();
+  const isXRSession = xrStore.getState().session != null;
   const controlsRef = useRef();
   const overlay = useTourStore((state) => state.overlay);
   const setIsPointerLocked = useTourStore((state) => state.setIsPointerLocked);
@@ -194,6 +197,7 @@ export function FirstPersonPlayer({ collisionRef, enabled, spawnPosition = DEFAU
   }, [camera, gl]);
 
   useFrame((_, delta) => {
+    if (isXRSession) return;
     const collision = collisionRef.current;
     if (!collision.groundMeshes || collision.groundMeshes.length === 0) return;
 
@@ -300,7 +304,7 @@ export function FirstPersonPlayer({ collisionRef, enabled, spawnPosition = DEFAU
     lastInteractRef.current = keys.interact;
   });
 
-  if (!enabled || overlay) return null;
+  if (!enabled || overlay || isXRSession) return null;
   return (
     <PointerLockControls
       ref={controlsRef}

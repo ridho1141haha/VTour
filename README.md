@@ -94,3 +94,24 @@ npm run build
 ```
 
 Hasil build berada di `dist/`. Seluruh URL runtime menggunakan `import.meta.env.BASE_URL` atau path relatif sehingga dapat dipasang pada root domain maupun subpath static hosting.
+
+Deep link memakai query string (`?location=pplg`), bukan path, sehingga tidak membutuhkan rewrite routing khusus.
+
+### Netlify
+
+Konfigurasi sudah disiapkan di `netlify.toml` (build command, publish `dist/`, cache headers, dan SPA fallback):
+
+1. Push repository ini ke GitHub.
+2. Di Netlify: **Add new site → Import an existing project** → pilih repo.
+3. Biarkan pengaturan dari `netlify.toml`, lalu **Deploy**.
+
+### Render.com
+
+Konfigurasi sudah disiapkan di `render.yaml` (Blueprint static site):
+
+1. Push repository ini ke GitHub.
+2. Di Render: **New → Blueprint** → pilih repo → Render membaca `render.yaml` otomatis.
+3. **Apply** untuk membuat static site.
+
+Kedua platform mendukung deploy otomatis setiap push ke `main` dan preview URL untuk pull request.
+
