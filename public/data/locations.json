@@ -205,14 +205,14 @@
     "description": "Merupakan fasilitas yang mendukung kegiatan inovasi, pembelajaran berbasis teknologi dan industri, serta pengembangan hasil karya siswa. Area ini menjadi wadah untuk mengembangkan ide, produk, dan keterampilan siswa.",
     "anchorStatus": "calibrated",
     "position": [
-      -38,
+      -92.77,
       0.45,
-      -35
+      -90.94
     ],
     "teleportPosition": [
-      -38,
+      -92.77,
       1.72,
-      -31
+      -86.94
     ],
     "mapPosition": {
       "x": 50,
@@ -269,9 +269,9 @@
       }
     ],
     "teleportLookAt": [
-      -38,
+      -92.77,
       1.72,
-      -35
+      -90.94
     ]
   },
   {
@@ -753,14 +753,14 @@
     "description": "Merupakan sarana ibadah bagi warga sekolah, khususnya umat Islam. Selain digunakan untuk melaksanakan ibadah, masjid juga dimanfaatkan untuk berbagai kegiatan keagamaan dan pembinaan kerohanian siswa.",
     "anchorStatus": "calibrated",
     "position": [
-      -85,
-      0.45,
-      -10
+      -76.84,
+      0.3,
+      17.41
     ],
     "teleportPosition": [
-      -85,
+      -76.84,
       1.72,
-      -6
+      13.41
     ],
     "mapPosition": {
       "x": 59.8,
@@ -902,9 +902,9 @@
       }
     ],
     "teleportLookAt": [
-      -85,
+      -76.84,
       1.72,
-      -10
+      17.41
     ]
   },
   {
@@ -1041,19 +1041,19 @@
     "description": "Merupakan laboratorium praktik yang digunakan untuk kegiatan perakitan komputer, konfigurasi jaringan, pengelolaan perangkat jaringan (router/switch), server, serta praktik telekomunikasi. Terhubung dengan ruang Teori TJKT untuk pembelajaran umum.",
     "anchorStatus": "calibrated",
     "position": [
-      -48.75,
+      -5.4,
       0.3,
-      34.9
+      40.3
     ],
     "teleportPosition": [
-      -48.75,
+      -5.4,
       1.72,
-      31
+      36.3
     ],
     "teleportLookAt": [
-      -48.75,
+      -5.4,
       1.72,
-      34.9
+      40.3
     ],
     "mapPosition": {
       "x": 37.1,
@@ -1561,14 +1561,14 @@
     "description": "Merupakan fasilitas olahraga terbuka yang digunakan untuk permainan bola voli, pembelajaran pendidikan jasmani, latihan rutin, kegiatan ekstrakurikuler olahraga, dan pertandingan antarkelas.",
     "anchorStatus": "calibrated",
     "position": [
-      57.36,
+      59.39,
       0.2,
-      -10
+      -81.72
     ],
     "teleportPosition": [
-      57.36,
+      59.39,
       1.72,
-      -6
+      -77.72
     ],
     "mapPosition": {
       "x": 18.5,
@@ -1602,9 +1602,9 @@
       }
     ],
     "teleportLookAt": [
-      57.36,
+      59.39,
       1.72,
-      -10
+      -81.72
     ]
   },
   {
@@ -1680,14 +1680,14 @@
     "description": "Merupakan bengkel praktik dan ruang kelas teori yang digunakan untuk kegiatan pengelasan dan fabrikasi logam, seperti pemotongan, penyambungan, pengelasan (SMAW, GMAW, GTAW), dan pembentukan material logam. Dilengkapi ruang Teori TPFL untuk pembelajaran mata pelajaran umum.",
     "anchorStatus": "calibrated",
     "position": [
-      57.36,
+      60.6,
       0.2,
-      12
+      -56.11
     ],
     "teleportPosition": [
-      57.36,
+      60.6,
       1.72,
-      8
+      -52.11
     ],
     "mapPosition": {
       "x": 18,
@@ -1757,9 +1757,9 @@
       }
     ],
     "teleportLookAt": [
-      57.36,
+      60.6,
       1.72,
-      12
+      -56.11
     ]
   },
   {
@@ -1770,14 +1770,14 @@
     "description": "Fasilitas sanitasi dan laboratorium pendukung. Meliputi kamar mandi deretan laboratorium sekolah serta akses ke Lab IPA yang digunakan untuk kegiatan praktikum sains seperti Fisika, Kimia, dan Biologi melalui pengamatan, percobaan, dan praktik secara langsung.",
     "anchorStatus": "calibrated",
     "position": [
-      -55.55,
+      21.97,
       0.3,
-      34.9
+      50.7
     ],
     "teleportPosition": [
-      -55.55,
+      21.97,
       1.72,
-      31
+      46.7
     ],
     "mapPosition": {
       "x": 65,
@@ -1823,9 +1823,9 @@
       }
     ],
     "teleportLookAt": [
-      -55.55,
+      21.97,
       1.72,
-      34.9
+      50.7
     ]
   },
   {
