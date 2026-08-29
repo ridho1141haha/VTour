@@ -1,10 +1,10 @@
 [
   {
     "id": "gerbang-pos",
-    "name": "Gerbang + Pos Satpam Depan",
-    "shortName": "Gerbang + Pos",
+    "name": "Gerbang Depan dan Pos Satpam",
+    "shortName": "Gerbang & Pos",
     "category": "Area Umum",
-    "description": "Titik masuk utama dan area pos keamanan depan sekolah. Deskripsi layanan resmi masih menunggu verifikasi pihak sekolah.",
+    "description": "Merupakan akses utama keluar-masuk lingkungan sekolah. Area ini dilengkapi pos satpam yang berfungsi untuk mengawasi keamanan, mengatur akses warga sekolah, serta menerima dan mendata tamu yang datang ke sekolah.",
     "anchorStatus": "calibrated",
     "position": [
       -66.44,
@@ -22,8 +22,16 @@
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
-    "details": [],
-    "facilities": [],
+    "details": [
+      "Akses utama keluar-masuk sekolah",
+      "Pengawasan dan penjagaan keamanan 24 jam",
+      "Penerimaan dan pencatatan tamu yang berkunjung"
+    ],
+    "facilities": [
+      "Pos Keamanan / Satpam",
+      "Buku Tamu & Administrasi Kunjungan",
+      "Portal Akses Utama"
+    ],
     "images": [
       {
         "thumbnail": "images/locations/gerbang-pos/01-thumb.webp",
@@ -55,7 +63,7 @@
     "name": "Gedung Putih",
     "shortName": "Gedung Putih",
     "category": "Gedung",
-    "description": "Dokumentasi area Gedung Putih. Fungsi dan informasi resmi gedung masih menunggu verifikasi pihak sekolah.",
+    "description": "Merupakan gedung penghubung antara dua bangunan yang memiliki beberapa ruang pendukung kegiatan sekolah. Di dalamnya terdapat Ruang BK serta Studio Kreatif. Studio Kreatif digunakan untuk kegiatan seni dan media sekolah, dilengkapi alat musik band serta Creative Corner sebagai ruang produksi media sekolah dengan fasilitas seperti kamera, lighting, gimbal, dan perlengkapan dokumentasi lainnya.",
     "anchorStatus": "calibrated",
     "position": [
       -55.93,
@@ -73,8 +81,18 @@
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
-    "details": [],
-    "facilities": [],
+    "details": [
+      "Gedung penghubung utama antar bangunan sekolah",
+      "Layanan Bimbingan Konseling (BK)",
+      "Pusat produksi konten dan publikasi sekolah (Creative Corner)",
+      "Studio musik dan seni pertunjukan"
+    ],
+    "facilities": [
+      "Ruang BK (Bimbingan Konseling)",
+      "Studio Kreatif & Musik Band",
+      "Creative Corner (Kamera, Lighting, Gimbal, Audio)",
+      "Ruang Produksi Media Sekolah"
+    ],
     "images": [
       {
         "thumbnail": "images/locations/gedung-putih/01-thumb.webp",
@@ -124,7 +142,7 @@
     "name": "Technopark",
     "shortName": "Technopark",
     "category": "Fasilitas",
-    "description": "Dokumentasi area Technopark. Fungsi dan informasi resmi lokasi masih menunggu verifikasi pihak sekolah.",
+    "description": "Merupakan fasilitas yang mendukung kegiatan inovasi, pembelajaran berbasis teknologi dan industri, serta pengembangan hasil karya siswa. Area ini menjadi wadah untuk mengembangkan ide, produk, dan keterampilan siswa.",
     "anchorStatus": "calibrated",
     "position": [
       6.5,
@@ -142,8 +160,16 @@
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
-    "details": [],
-    "facilities": [],
+    "details": [
+      "Pusat inkubasi inovasi dan teknologi",
+      "Kerjasama industri dan teaching factory",
+      "Pameran karya dan produk unggulan siswa"
+    ],
+    "facilities": [
+      "Display Produk Inovasi",
+      "Ruang Kolaborasi Industri",
+      "Area Presentasi & Pameran Karya"
+    ],
     "images": [
       {
         "thumbnail": "images/locations/technopark/01-thumb.webp",
@@ -178,10 +204,10 @@
   },
   {
     "id": "gna-lobby",
-    "name": "GNA Lobby Teori TM + WKS Kelas TJKT",
-    "shortName": "GNA Lobby",
+    "name": "GNA, Lobby, Kesiswaan, TU & Teori",
+    "shortName": "GNA & Lobby",
     "category": "Gedung",
-    "description": "Dokumentasi area lobby dan kelas terkait. Nama fungsi serta pembagian area resmi masih menunggu verifikasi pihak sekolah.",
+    "description": "Gedung pusat administrasi dan kegiatan belajar teori. Meliputi Lobby utama penerima tamu, Ruang GNA sebagai ruang kerja guru mata pelajaran normatif dan adaptif, Ruang Kesiswaan untuk pembinaan peserta didik dan ekstrakurikuler, Ruang Tata Usaha (TU) sebagai pusat layanan administrasi dan surat-menyurat, serta Ruang Teori TM dan Teori TJKT.",
     "anchorStatus": "calibrated",
     "position": [
       -56,
@@ -199,8 +225,20 @@
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
-    "details": [],
-    "facilities": [],
+    "details": [
+      "Lobby penerima tamu di depan gedung utama",
+      "Ruang GNA (Guru Normatif & Adaptif)",
+      "Ruang Kesiswaan (Administrasi siswa, disiplin, ekstrakurikuler)",
+      "Ruang Tata Usaha (Surat-menyurat, dokumen siswa, pembayaran)",
+      "Ruang Teori TM dan Teori TJKT"
+    ],
+    "facilities": [
+      "Lobby Penerima Tamu",
+      "Ruang Kerja Guru GNA",
+      "Ruang Pembina Kesiswaan",
+      "Loket Pelayanan Tata Usaha (TU)",
+      "Ruang Kelas Teori TM & TJKT"
+    ],
     "images": [
       {
         "thumbnail": "images/locations/gna-lobby/01-thumb.webp",
@@ -229,10 +267,10 @@
   },
   {
     "id": "aula-te-samsung",
-    "name": "Aula + TE Samsung",
-    "shortName": "Aula + TE Samsung",
+    "name": "Aula & Teknik Elektronika (TE)",
+    "shortName": "Aula + TE",
     "category": "Fasilitas",
-    "description": "Dokumentasi area Aula dan TE Samsung. Rincian fungsi serta fasilitas resmi masih menunggu verifikasi pihak sekolah.",
+    "description": "Area gabungan Aula sekolah dan laboratorium Teknik Elektronika. Aula merupakan ruangan berkapasitas besar untuk pertemuan, seminar, dan acara resmi sekolah. Dilengkapi ruang praktik dan kelas Teori TE (Teknik Elektronika) yang digunakan untuk perakitan, pengujian rangkaian elektronik, mikrokontroler, dan kelistrikan.",
     "anchorStatus": "calibrated",
     "position": [
       -6.41,
@@ -255,8 +293,18 @@
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
-    "details": [],
-    "facilities": [],
+    "details": [
+      "Aula serbaguna berkapasitas besar untuk kegiatan resmi sekolah",
+      "Laboratorium praktik Teknik Elektronika (TE)",
+      "Pembelajaran kelas Teori TE",
+      "Pengembangan mikrokontroler dan sistem elektronika"
+    ],
+    "facilities": [
+      "Panggung & Sound System Aula",
+      "Laboratorium Praktik Rangkaian Elektronika",
+      "Peralatan Solder & Alat Ukur Multimeter/Oscilloscope",
+      "Ruang Kelas Teori TE"
+    ],
     "images": [
       {
         "thumbnail": "images/locations/aula-te-samsung/01-thumb.webp",
@@ -292,10 +340,10 @@
   },
   {
     "id": "pplg",
-    "name": "PPLG",
+    "name": "PPLG (Pengembangan Perangkat Lunak dan Gim)",
     "shortName": "PPLG",
     "category": "Jurusan",
-    "description": "Dokumentasi area PPLG. Informasi akademik dan fasilitas resmi masih menunggu verifikasi pihak sekolah.",
+    "description": "Merupakan laboratorium komputer dan ruang kelas teori yang digunakan untuk kegiatan pemrograman, pembuatan aplikasi, pengembangan perangkat lunak, serta pembuatan dan pengembangan gim. Dilengkapi ruang Teori PPLG untuk pembelajaran mata pelajaran umum.",
     "anchorStatus": "calibrated",
     "position": [
       -21.41,
@@ -318,8 +366,17 @@
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
-    "details": [],
-    "facilities": [],
+    "details": [
+      "Praktik rekayasa perangkat lunak web, mobile, dan desktop",
+      "Pengembangan dan perancangan gim 2D/3D",
+      "Pembelajaran kelas Teori PPLG"
+    ],
+    "facilities": [
+      "Lab Komputer High-Spec Programming",
+      "Jaringan Lokal & Internet Berkecepatan Tinggi",
+      "Perangkat Lunak IDE & Game Engine",
+      "Ruang Kelas Teori PPLG"
+    ],
     "images": [
       {
         "thumbnail": "images/locations/pplg/01-thumb.webp",
@@ -334,7 +391,7 @@
     "name": "Perpustakaan",
     "shortName": "Perpustakaan",
     "category": "Fasilitas",
-    "description": "Informasi resmi dan foto Perpustakaan belum tersedia. Konten akan ditambahkan setelah diverifikasi pihak sekolah.",
+    "description": "Merupakan pusat sumber belajar yang menyediakan berbagai koleksi buku dan bahan referensi. Perpustakaan digunakan oleh siswa dan guru untuk membaca, belajar mandiri, serta mencari informasi yang mendukung kegiatan pembelajaran.",
     "anchorStatus": "calibrated",
     "position": [
       -78,
@@ -352,8 +409,17 @@
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
-    "details": [],
-    "facilities": [],
+    "details": [
+      "Koleksi buku teks kurikulum, ensiklopedia, dan fiksi",
+      "Area membaca dan belajar mandiri yang nyaman",
+      "Layanan sirkulasi peminjaman buku"
+    ],
+    "facilities": [
+      "Rak Buku Koleksi Lengkap",
+      "Meja & Kursi Area Baca",
+      "Katalog Perpustakaan & Komputer Pencarian",
+      "Meja Layanan Sirkulasi"
+    ],
     "images": [],
     "teleportLookAt": [
       -78,
@@ -363,10 +429,10 @@
   },
   {
     "id": "dpib-tkl-tkp",
-    "name": "DPIB TKL TKP",
+    "name": "DPIB, TKL & TKP",
     "shortName": "DPIB / TKL / TKP",
     "category": "Jurusan",
-    "description": "Dokumentasi area DPIB, TKL, dan TKP. Informasi akademik resmi masih menunggu verifikasi pihak sekolah.",
+    "description": "Area konsentrasi keahlian teknik bangunan dan konstruksi. Meliputi DPIB (Desain Pemodelan dan Informasi Bangunan) untuk menggambar teknik, perancangan, dan pemodelan bangunan; TKL untuk penerapan keterampilan dan peralatan keahlian; serta ruang kelas Teori DPIB dan Teori TKL untuk pembelajaran mata pelajaran umum.",
     "anchorStatus": "calibrated",
     "position": [
       -100,
@@ -389,8 +455,16 @@
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
-    "details": [],
-    "facilities": [],
+    "details": [
+      "Studio gambar teknik dan pemodelan CAD/BIM (DPIB)",
+      "Area praktik keterampilan keahlian TKL",
+      "Pembelajaran kelas Teori DPIB & Teori TKL"
+    ],
+    "facilities": [
+      "Komputer CAD/BIM & Studio Gambar",
+      "Peralatan Ukur & Praktik Konstruksi",
+      "Ruang Kelas Teori DPIB & TKL"
+    ],
     "images": [
       {
         "thumbnail": "images/locations/dpib-tkl-tkp/01-thumb.webp",
@@ -429,7 +503,7 @@
     "name": "Masjid",
     "shortName": "Masjid",
     "category": "Fasilitas",
-    "description": "Dokumentasi area Masjid sekolah. Rincian fasilitas resmi masih menunggu verifikasi pihak sekolah.",
+    "description": "Merupakan sarana ibadah bagi warga sekolah, khususnya umat Islam. Selain digunakan untuk melaksanakan ibadah, masjid juga dimanfaatkan untuk berbagai kegiatan keagamaan dan pembinaan kerohanian siswa.",
     "anchorStatus": "calibrated",
     "position": [
       -95,
@@ -447,8 +521,17 @@
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
-    "details": [],
-    "facilities": [],
+    "details": [
+      "Tempat pelaksanaan salat berjamaah dan salat Jumat",
+      "Pusat kegiatan rohani Islam (Rohis) dan peringatan hari besar Islam",
+      "Kajian keagamaan dan bimbingan kepribadian"
+    ],
+    "facilities": [
+      "Ruang Utama Salat Berkapasitas Luas",
+      "Tempat Wudu Pria & Wanita",
+      "Sound System Masjid",
+      "Perlengkapan Ibadah"
+    ],
     "images": [
       {
         "thumbnail": "images/locations/masjid/01-thumb.webp",
@@ -507,10 +590,10 @@
   },
   {
     "id": "uks",
-    "name": "Deretan UKS",
+    "name": "UKS (Usaha Kesehatan Sekolah)",
     "shortName": "UKS",
     "category": "Fasilitas",
-    "description": "Dokumentasi area deretan UKS. Informasi layanan resmi masih menunggu verifikasi pihak sekolah.",
+    "description": "Merupakan fasilitas pelayanan kesehatan dasar di lingkungan sekolah yang digunakan untuk memberikan pertolongan pertama serta menjadi tempat beristirahat sementara bagi siswa yang mengalami gangguan kesehatan.",
     "anchorStatus": "calibrated",
     "position": [
       -58.07,
@@ -533,8 +616,17 @@
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
-    "details": [],
-    "facilities": [],
+    "details": [
+      "Pelayanan pertolongan pertama pada kecelakaan (P3K)",
+      "Pemeriksaan kesehatan dasar siswa dan warga sekolah",
+      "Tempat istirahat bagi siswa yang sakit"
+    ],
+    "facilities": [
+      "Tempat Tidur Pasien",
+      "Kotak Obat & Perlengkapan P3K",
+      "Alat Tensi & Pengukur Suhu",
+      "Timbangan & Pengukur Tinggi Badan"
+    ],
     "images": [
       {
         "thumbnail": "images/locations/uks/01-thumb.webp",
@@ -546,10 +638,10 @@
   },
   {
     "id": "kantin-kopsis",
-    "name": "Kantin Kopsis",
-    "shortName": "Kantin Kopsis",
+    "name": "Kantin & Koperasi Sekolah",
+    "shortName": "Kantin & Kopsis",
     "category": "Fasilitas",
-    "description": "Dokumentasi area kantin dan koperasi. Informasi layanan resmi masih menunggu verifikasi pihak sekolah.",
+    "description": "Pusat layanan konsumsi dan perlengkapan sekolah. Kantin menyediakan aneka makanan dan minuman sehat bagi warga sekolah serta menjadi tempat beristirahat dan bersosialisasi. Koperasi menyediakan kebutuhan warga sekolah seperti alat tulis, seragam, dan perlengkapan belajar sekaligus sarana praktik kewirausahaan.",
     "anchorStatus": "calibrated",
     "position": [
       -66.06,
@@ -572,8 +664,17 @@
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
-    "details": [],
-    "facilities": [],
+    "details": [
+      "Penyediaan makanan dan minuman higienis",
+      "Penyediaan seragam, atribut, dan alat tulis sekolah",
+      "Wadah praktik kewirausahaan peserta didik"
+    ],
+    "facilities": [
+      "Stan-stan Penjual Kantin",
+      "Area Meja Makan Kantin",
+      "Etalase & Rak Koperasi Siswa",
+      "Kasir & Layanan Koperasi"
+    ],
     "images": [
       {
         "thumbnail": "images/locations/kantin-kopsis/01-thumb.webp",
@@ -585,10 +686,10 @@
   },
   {
     "id": "lab-tjkt",
-    "name": "Lab TJKT",
+    "name": "TJKT (Teknik Jaringan Komputer dan Telekomunikasi)",
     "shortName": "Lab TJKT",
     "category": "Laboratorium",
-    "description": "Dokumentasi area Laboratorium TJKT. Informasi perangkat dan kegiatan resmi masih menunggu verifikasi pihak sekolah.",
+    "description": "Merupakan laboratorium praktik yang digunakan untuk kegiatan perakitan komputer, konfigurasi jaringan, pengelolaan perangkat jaringan (router/switch), server, serta praktik telekomunikasi. Terhubung dengan ruang Teori TJKT untuk pembelajaran umum.",
     "anchorStatus": "calibrated",
     "position": [
       -51.67,
@@ -611,8 +712,17 @@
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
-    "details": [],
-    "facilities": [],
+    "details": [
+      "Praktik konfigurasi jaringan komputer lokal & internet",
+      "Pengelolaan server fisik dan cloud",
+      "Perakitan dan troubleshooting perangkat keras PC"
+    ],
+    "facilities": [
+      "Rack Server & Router Mikrotik/Cisco",
+      "Kabel Tester & Crimping Tools",
+      "Komputer Laboratorium Jaringan",
+      "Akses Internet Dedicated"
+    ],
     "images": [
       {
         "thumbnail": "images/locations/lab-tjkt/01-thumb.webp",
@@ -642,10 +752,10 @@
   },
   {
     "id": "um",
-    "name": "UM",
-    "shortName": "UM",
+    "name": "UM Mart",
+    "shortName": "UM Mart",
     "category": "Fasilitas",
-    "description": "Dokumentasi area UM. Nama fungsi dan informasi resmi lokasi masih menunggu verifikasi pihak sekolah.",
+    "description": "Merupakan toko atau swalayan mini milik sekolah yang menyediakan berbagai kebutuhan warga sekolah. UM Mart juga menjadi sarana praktik kewirausahaan dan pengelolaan usaha bagi siswa.",
     "anchorStatus": "calibrated",
     "position": [
       -45.11,
@@ -668,8 +778,17 @@
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
-    "details": [],
-    "facilities": [],
+    "details": [
+      "Swalayan mini kebutuhan harian dan sekolah",
+      "Unit usaha dan sarana Business Center siswa",
+      "Praktik kasir, inventori stok, dan pelayanan retail"
+    ],
+    "facilities": [
+      "Rak Display Produk Swalayan",
+      "Sistem Kasir Point of Sale (POS)",
+      "Pendingin Minuman (Chiller)",
+      "Area Belanja Ber-AC"
+    ],
     "images": [
       {
         "thumbnail": "images/locations/um/01-thumb.webp",
@@ -681,10 +800,10 @@
   },
   {
     "id": "bengkel-to-1",
-    "name": "Bengkel TO 1",
+    "name": "Bengkel TO 1 (Teknik Otomotif)",
     "shortName": "Bengkel TO 1",
     "category": "Bengkel",
-    "description": "Dokumentasi Bengkel TO 1. Informasi fasilitas resmi masih menunggu verifikasi pihak sekolah.",
+    "description": "Merupakan area praktik Teknik Otomotif yang digunakan untuk kegiatan perawatan, pemeriksaan, perbaikan, pembongkaran, dan pemasangan berbagai komponen kendaraan bermotor, khususnya sistem mesin, kelistrikan bodi, dan transmisi kendaraan.",
     "anchorStatus": "calibrated",
     "position": [
       -78.5,
@@ -702,8 +821,17 @@
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
-    "details": [],
-    "facilities": [],
+    "details": [
+      "Praktik perawatan berkala (tune-up) kendaraan",
+      "Overhaul mesin dan sistem kelistrikan otomotif",
+      "Diagnosis kerusakan menggunakan scanner otomotif"
+    ],
+    "facilities": [
+      "Engine Stand & Trainer Otomotif",
+      "Car Lift / Jack Stand",
+      "Toolbox & Kunci Pas Khusus",
+      "Scanner Diagnostik ECU"
+    ],
     "images": [
       {
         "thumbnail": "images/locations/bengkel-to-1/01-thumb.webp",
@@ -720,10 +848,10 @@
   },
   {
     "id": "bengkel-to-2",
-    "name": "Bengkel TO 2",
+    "name": "Bengkel TO 2 (Teknik Otomotif)",
     "shortName": "Bengkel TO 2",
     "category": "Bengkel",
-    "description": "Dokumentasi Bengkel TO 2. Informasi fasilitas resmi masih menunggu verifikasi pihak sekolah.",
+    "description": "Merupakan area lanjutan bengkel Teknik Otomotif untuk servis chasis, sistem pengereman, kemudi, suspensi, dan roda kendaraan bermotor dengan standar keselamatan kerja bengkel modern.",
     "anchorStatus": "calibrated",
     "position": [
       -86.5,
@@ -741,8 +869,17 @@
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
-    "details": [],
-    "facilities": [],
+    "details": [
+      "Praktik servis sistem rem, suspensi, dan kemudi",
+      "Spooring & balancing roda",
+      "Uji emisi dan perawatan kendaraan roda empat/dua"
+    ],
+    "facilities": [
+      "Peralatan Bongkar Pasang Ban",
+      "Kompresor & Alat Angkat Berat",
+      "Area Kerja Servis Mobil",
+      "Wadah Pembuangan Oli Standar K3"
+    ],
     "images": [
       {
         "thumbnail": "images/locations/bengkel-to-2/01-thumb.webp",
@@ -783,10 +920,10 @@
   },
   {
     "id": "teori-to",
-    "name": "Teori TO",
+    "name": "Teori TO (Teknik Otomotif)",
     "shortName": "Teori TO",
     "category": "Jurusan",
-    "description": "Dokumentasi area Teori TO. Informasi kegiatan dan fasilitas resmi masih menunggu verifikasi pihak sekolah.",
+    "description": "Merupakan ruang kelas yang digunakan oleh siswa Teknik Otomotif untuk pembelajaran mata pelajaran umum, seperti Matematika, Bahasa Indonesia, Bahasa Inggris, serta pendalaman konsep teori teknik otomotif sesuai kurikulum.",
     "anchorStatus": "calibrated",
     "position": [
       -74,
@@ -804,8 +941,16 @@
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
-    "details": [],
-    "facilities": [],
+    "details": [
+      "Pembelajaran mata pelajaran umum dan muatan nasional",
+      "Penyampaian materi teori dasar dan keselamatan otomotif",
+      "Diskusi dan evaluasi tugas pembelajaran"
+    ],
+    "facilities": [
+      "Papan Tulis & Proyektor Kelas",
+      "Meja & Kursi Siswa",
+      "Media Peraga Pembelajaran Otomotif"
+    ],
     "images": [
       {
         "thumbnail": "images/locations/teori-to/01-thumb.webp",
@@ -828,10 +973,10 @@
   },
   {
     "id": "bengkel-tm",
-    "name": "Bengkel TM",
+    "name": "Bengkel TM (Teknik Mesin)",
     "shortName": "Bengkel TM",
     "category": "Bengkel",
-    "description": "Dokumentasi Bengkel TM. Informasi fasilitas resmi masih menunggu verifikasi pihak sekolah.",
+    "description": "Merupakan area praktik Teknik Mesin yang digunakan untuk kegiatan permesinan, seperti pengoperasian mesin bubut, mesin frais (milling), pengerjaan material, dan kegiatan fabrikasi presisi.",
     "anchorStatus": "calibrated",
     "position": [
       7.33,
@@ -854,8 +999,17 @@
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
-    "details": [],
-    "facilities": [],
+    "details": [
+      "Pengoperasian mesin bubut manual dan CNC",
+      "Pengerjaan benda kerja dengan mesin frais (milling)",
+      "Pengukuran presisi menggunakan jangka sorong dan mikrometer sekrup"
+    ],
+    "facilities": [
+      "Deretan Mesin Bubut Presisi",
+      "Mesin Frais (Milling)",
+      "Mesin Gerinda & Pemotong Logam",
+      "Alat Ukur Presisi (Micrometer, Caliper)"
+    ],
     "images": [
       {
         "thumbnail": "images/locations/bengkel-tm/01-thumb.webp",
@@ -867,10 +1021,10 @@
   },
   {
     "id": "pembuangan-akhir",
-    "name": "Pembuangan Akhir",
-    "shortName": "Pembuangan Akhir",
+    "name": "Gerbang Belakang dan TPA",
+    "shortName": "Gerbang Belakang & TPA",
     "category": "Area Umum",
-    "description": "Informasi resmi dan foto lokasi Pembuangan Akhir belum tersedia. Konten akan ditambahkan setelah diverifikasi pihak sekolah.",
+    "description": "Merupakan akses keluar-masuk sekunder yang berada di bagian belakang sekolah dan berbatasan dengan area Tempat Pembuangan Akhir. Gerbang ini menjadi jalur alternatif menuju dan keluar dari kawasan sekolah serta pengelolaan kebersihan lingkungan.",
     "anchorStatus": "calibrated",
     "position": [
       -92,
@@ -888,8 +1042,16 @@
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
-    "details": [],
-    "facilities": [],
+    "details": [
+      "Jalur keluar-masuk alternatif belakang sekolah",
+      "Pusat pengelolaan dan pemilahan sampah sekolah",
+      "Akses kendaraan logistik dan kebersihan"
+    ],
+    "facilities": [
+      "Gerbang Pengaman Belakang",
+      "Tempat Pembuangan Sampah Terpilah",
+      "Akses Jalan Logistik"
+    ],
     "images": [],
     "teleportLookAt": [
       -92,
@@ -899,10 +1061,10 @@
   },
   {
     "id": "lapvol",
-    "name": "Lapvol",
-    "shortName": "Lapangan Voli",
+    "name": "Lavol (Lapangan Voli)",
+    "shortName": "Lavol",
     "category": "Olahraga",
-    "description": "Dokumentasi area Lapangan Voli. Informasi penggunaan resmi masih menunggu verifikasi pihak sekolah.",
+    "description": "Merupakan fasilitas olahraga terbuka yang digunakan untuk permainan bola voli, pembelajaran pendidikan jasmani, latihan rutin, kegiatan ekstrakurikuler olahraga, dan pertandingan antarkelas.",
     "anchorStatus": "calibrated",
     "position": [
       -18.5,
@@ -920,8 +1082,17 @@
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
-    "details": [],
-    "facilities": [],
+    "details": [
+      "Lapangan standar bola voli outdoor",
+      "Sarana pembelajaran PJOK dan ekstrakurikuler voli",
+      "Area kompetisi olahraga antarkelas (Class Meeting)"
+    ],
+    "facilities": [
+      "Lapangan Voli Berlantai Semen Halus",
+      "Tiang & Jaring Net Voli Standar",
+      "Garis Batas Lapangan Jelas",
+      "Ruang Duduk Penonton"
+    ],
     "images": [
       {
         "thumbnail": "images/locations/lapvol/01-thumb.webp",
@@ -944,10 +1115,10 @@
   },
   {
     "id": "labas",
-    "name": "Labas + Kamar Mandinya",
+    "name": "Labas (Lapangan Basket / Bebas)",
     "shortName": "Labas",
-    "category": "Laboratorium",
-    "description": "Informasi resmi dan foto Labas belum tersedia. Konten akan ditambahkan setelah diverifikasi pihak sekolah.",
+    "category": "Olahraga",
+    "description": "Merupakan area terbuka yang digunakan untuk olahraga bola basket, kegiatan olahraga lainnya, upacara/apel, serta berbagai aktivitas sekolah yang membutuhkan ruang terbuka luas.",
     "anchorStatus": "calibrated",
     "position": [
       -42,
@@ -965,8 +1136,16 @@
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
-    "details": [],
-    "facilities": [],
+    "details": [
+      "Lapangan basket outdoor dengan ring standar",
+      "Area kegiatan apel, upacara, dan kegiatan luar ruangan",
+      "Fasilitas kamar mandi dan bilas area olahraga"
+    ],
+    "facilities": [
+      "Ring Basket Standar",
+      "Lapangan Aspal/Semen Luas",
+      "Kamar Mandi & Tempat Ganti Olahraga"
+    ],
     "images": [],
     "teleportLookAt": [
       -42,
@@ -976,10 +1155,10 @@
   },
   {
     "id": "tpfl",
-    "name": "TPFL",
+    "name": "TPFL (Teknik Pengelasan dan Fabrikasi Logam)",
     "shortName": "TPFL",
     "category": "Jurusan",
-    "description": "Dokumentasi area TPFL. Informasi akademik dan fasilitas resmi masih menunggu verifikasi pihak sekolah.",
+    "description": "Merupakan bengkel praktik dan ruang kelas teori yang digunakan untuk kegiatan pengelasan dan fabrikasi logam, seperti pemotongan, penyambungan, pengelasan (SMAW, GMAW, GTAW), dan pembentukan material logam. Dilengkapi ruang Teori TPFL untuk pembelajaran mata pelajaran umum.",
     "anchorStatus": "calibrated",
     "position": [
       -16,
@@ -997,8 +1176,17 @@
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
-    "details": [],
-    "facilities": [],
+    "details": [
+      "Praktik pengelasan busur listrik, MIG/MAG, dan TIG",
+      "Pemotongan plat dan fabrikasi konstruksi baja",
+      "Pembelajaran kelas Teori TPFL"
+    ],
+    "facilities": [
+      "Booth/Bilik Las Mandiri",
+      "Mesin Las Listrik, MIG, & TIG",
+      "Mesin Pemotong Plat (Shearing/Grinding)",
+      "Ruang Kelas Teori TPFL"
+    ],
     "images": [
       {
         "thumbnail": "images/locations/tpfl/01-thumb.webp",
@@ -1021,10 +1209,10 @@
   },
   {
     "id": "kamar-mandi-lab",
-    "name": "Kamar Mandi Lab",
-    "shortName": "Kamar Mandi Lab",
+    "name": "Kamar Mandi Lab & Lab IPA",
+    "shortName": "Kamar Mandi Lab & IPA",
     "category": "Fasilitas",
-    "description": "Dokumentasi kamar mandi area laboratorium. Posisi dan informasi fasilitas resmi masih menunggu verifikasi pihak sekolah.",
+    "description": "Fasilitas sanitasi dan laboratorium pendukung. Meliputi kamar mandi deretan laboratorium sekolah serta akses ke Lab IPA yang digunakan untuk kegiatan praktikum sains seperti Fisika, Kimia, dan Biologi melalui pengamatan, percobaan, dan praktik secara langsung.",
     "anchorStatus": "calibrated",
     "position": [
       -49.69,
@@ -1042,8 +1230,17 @@
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
-    "details": [],
-    "facilities": [],
+    "details": [
+      "Kamar mandi dan sanitasi bersih area laboratorium",
+      "Praktikum sains terapan (Fisika, Kimia, Biologi)",
+      "Fasilitas cuci tangan dan keselamatan kerja lab"
+    ],
+    "facilities": [
+      "Bilik Toilet Bersih",
+      "Wastafel Cuci Tangan",
+      "Meja Praktikum Lab IPA & Rak Reagen",
+      "Peralatan Gelas & Mikroskop Sains"
+    ],
     "images": [
       {
         "thumbnail": "images/locations/kamar-mandi-lab/01-thumb.webp",
@@ -1081,7 +1278,7 @@
     "name": "Gedung Organisasi",
     "shortName": "Gedung Organisasi",
     "category": "Gedung",
-    "description": "Dokumentasi Gedung Organisasi. Informasi fungsi dan fasilitas resmi masih menunggu verifikasi pihak sekolah.",
+    "description": "Merupakan pusat kegiatan organisasi siswa seperti OSIS, Pasukan Paduan Suara, Elmobpela, Patroli Keamanan Sekolah (PKS), dan Wira Paski Sakti. Gedung ini digunakan sebagai tempat sekretariat, berkumpul, berdiskusi, menyusun program, dan melakukan koordinasi kegiatan.",
     "anchorStatus": "calibrated",
     "position": [
       -114.43,
@@ -1104,8 +1301,18 @@
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
-    "details": [],
-    "facilities": [],
+    "details": [
+      "Sekretariat OSIS & MPK SMKN 2 Surakarta",
+      "Ruang koordinasi PKS (Patroli Keamanan Sekolah) & Wira Paski Sakti",
+      "Markas kegiatan Elmobpela (Pecinta Alam) & Paduan Suara",
+      "Pusat rapat kerja dan penyusunan program kesiswaan"
+    ],
+    "facilities": [
+      "Ruang Rapat & Sekretariat Bersama",
+      "Papan Informasi Kegiatan Organisasi",
+      "Tempat Penyimpanan Perlengkapan Ekskul",
+      "Meja Kerja Administrasi Pengurus"
+    ],
     "images": [
       {
         "thumbnail": "images/locations/gedung-organisasi/01-thumb.webp",
