@@ -1514,14 +1514,14 @@
     "description": "Merupakan akses keluar-masuk sekunder yang berada di bagian belakang sekolah dan berbatasan dengan area Tempat Pembuangan Akhir. Gerbang ini menjadi jalur alternatif menuju dan keluar dari kawasan sekolah serta pengelolaan kebersihan lingkungan.",
     "anchorStatus": "calibrated",
     "position": [
-      -92,
+      57.36,
       0.2,
-      82
+      75
     ],
     "teleportPosition": [
-      -92,
+      57.36,
       1.72,
-      78
+      71
     ],
     "mapPosition": {
       "x": 13.5,
@@ -1548,9 +1548,9 @@
       }
     ],
     "teleportLookAt": [
-      -92,
+      57.36,
       1.72,
-      82
+      75
     ]
   },
   {
@@ -1561,14 +1561,14 @@
     "description": "Merupakan fasilitas olahraga terbuka yang digunakan untuk permainan bola voli, pembelajaran pendidikan jasmani, latihan rutin, kegiatan ekstrakurikuler olahraga, dan pertandingan antarkelas.",
     "anchorStatus": "calibrated",
     "position": [
-      -18.5,
+      57.36,
       0.2,
-      52
+      -10
     ],
     "teleportPosition": [
-      -18.5,
+      57.36,
       1.72,
-      48
+      -6
     ],
     "mapPosition": {
       "x": 18.5,
@@ -1602,9 +1602,9 @@
       }
     ],
     "teleportLookAt": [
-      -18.5,
+      57.36,
       1.72,
-      52
+      -10
     ]
   },
   {
@@ -1615,14 +1615,14 @@
     "description": "Merupakan area terbuka yang digunakan untuk olahraga bola basket, kegiatan olahraga lainnya, upacara/apel, serta berbagai aktivitas sekolah yang membutuhkan ruang terbuka luas.",
     "anchorStatus": "calibrated",
     "position": [
-      -18.5,
+      57.36,
       0.2,
-      35
+      35.96
     ],
     "teleportPosition": [
-      -18.5,
+      57.36,
       1.72,
-      31
+      31.96
     ],
     "mapPosition": {
       "x": 18,
@@ -1667,9 +1667,9 @@
       }
     ],
     "teleportLookAt": [
-      -18.5,
+      57.36,
       1.72,
-      35
+      35.96
     ]
   },
   {
@@ -1680,14 +1680,14 @@
     "description": "Merupakan bengkel praktik dan ruang kelas teori yang digunakan untuk kegiatan pengelasan dan fabrikasi logam, seperti pemotongan, penyambungan, pengelasan (SMAW, GMAW, GTAW), dan pembentukan material logam. Dilengkapi ruang Teori TPFL untuk pembelajaran mata pelajaran umum.",
     "anchorStatus": "calibrated",
     "position": [
-      -20,
-      0.3,
-      82
+      57.36,
+      0.2,
+      12
     ],
     "teleportPosition": [
-      -20,
+      57.36,
       1.72,
-      78
+      8
     ],
     "mapPosition": {
       "x": 18,
@@ -1757,9 +1757,9 @@
       }
     ],
     "teleportLookAt": [
-      -20,
+      57.36,
       1.72,
-      82
+      12
     ]
   },
   {
