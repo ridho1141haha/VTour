@@ -67,12 +67,12 @@ test('dataset memuat tepat 23 location ID final dan schema optional yang valid',
   }
 });
 
-test('64 foto asli terkurasi tersedia sebagai WebP gallery dan thumbnail', async () => {
+test('156 foto asli terkurasi tersedia sebagai WebP gallery dan thumbnail', async () => {
   const images = locations.flatMap((location) => location.images);
-  assert.equal(images.length, 64);
+  assert.equal(images.length, 156);
   assert.deepEqual(
     locations.filter((location) => location.images.length === 0).map((location) => location.id),
-    ['perpustakaan', 'pembuangan-akhir', 'labas'],
+    [],
   );
 
   let totalBytes = 0;
@@ -90,7 +90,7 @@ test('64 foto asli terkurasi tersedia sebagai WebP gallery dan thumbnail', async
       totalBytes += fileStat.size;
     }
   }
-  assert.ok(totalBytes < 12 * 1024 * 1024);
+  assert.ok(totalBytes < 25 * 1024 * 1024);
 });
 
 test('search membaca nama, kategori, deskripsi, details, dan facilities', () => {

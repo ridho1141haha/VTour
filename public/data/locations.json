@@ -129,6 +129,66 @@
         "src": "images/locations/gedung-putih/06.webp",
         "alt": "Foto asli Gedung Putih 6",
         "caption": "Dokumentasi Gedung Putih"
+      },
+      {
+        "thumbnail": "images/locations/gedung-putih/07-thumb.webp",
+        "src": "images/locations/gedung-putih/07.webp",
+        "alt": "Foto asli Gedung Putih 7",
+        "caption": "Dokumentasi Gedung Putih"
+      },
+      {
+        "thumbnail": "images/locations/gedung-putih/08-thumb.webp",
+        "src": "images/locations/gedung-putih/08.webp",
+        "alt": "Foto asli Gedung Putih 8",
+        "caption": "Dokumentasi Gedung Putih"
+      },
+      {
+        "thumbnail": "images/locations/gedung-putih/09-thumb.webp",
+        "src": "images/locations/gedung-putih/09.webp",
+        "alt": "Foto asli Gedung Putih 9",
+        "caption": "Dokumentasi Gedung Putih"
+      },
+      {
+        "thumbnail": "images/locations/gedung-putih/10-thumb.webp",
+        "src": "images/locations/gedung-putih/10.webp",
+        "alt": "Foto asli Gedung Putih 10",
+        "caption": "Dokumentasi Gedung Putih"
+      },
+      {
+        "thumbnail": "images/locations/gedung-putih/11-thumb.webp",
+        "src": "images/locations/gedung-putih/11.webp",
+        "alt": "Foto asli Gedung Putih 11",
+        "caption": "Dokumentasi Gedung Putih"
+      },
+      {
+        "thumbnail": "images/locations/gedung-putih/12-thumb.webp",
+        "src": "images/locations/gedung-putih/12.webp",
+        "alt": "Foto asli Gedung Putih 12",
+        "caption": "Dokumentasi Gedung Putih"
+      },
+      {
+        "thumbnail": "images/locations/gedung-putih/13-thumb.webp",
+        "src": "images/locations/gedung-putih/13.webp",
+        "alt": "Foto asli Gedung Putih 13",
+        "caption": "Dokumentasi Gedung Putih"
+      },
+      {
+        "thumbnail": "images/locations/gedung-putih/14-thumb.webp",
+        "src": "images/locations/gedung-putih/14.webp",
+        "alt": "Foto asli Gedung Putih 14",
+        "caption": "Dokumentasi Gedung Putih"
+      },
+      {
+        "thumbnail": "images/locations/gedung-putih/15-thumb.webp",
+        "src": "images/locations/gedung-putih/15.webp",
+        "alt": "Foto asli Gedung Putih 15",
+        "caption": "Dokumentasi Gedung Putih"
+      },
+      {
+        "thumbnail": "images/locations/gedung-putih/16-thumb.webp",
+        "src": "images/locations/gedung-putih/16.webp",
+        "alt": "Foto asli Gedung Putih 16",
+        "caption": "Dokumentasi Gedung Putih"
       }
     ],
     "teleportLookAt": [
@@ -194,6 +254,18 @@
         "src": "images/locations/technopark/04.webp",
         "alt": "Foto asli Technopark 4",
         "caption": "Dokumentasi Technopark"
+      },
+      {
+        "thumbnail": "images/locations/technopark/05-thumb.webp",
+        "src": "images/locations/technopark/05.webp",
+        "alt": "Foto asli Technopark 5",
+        "caption": "Dokumentasi Technopark"
+      },
+      {
+        "thumbnail": "images/locations/technopark/06-thumb.webp",
+        "src": "images/locations/technopark/06.webp",
+        "alt": "Foto asli Technopark 6",
+        "caption": "Dokumentasi Technopark"
       }
     ],
     "teleportLookAt": [
@@ -243,20 +315,32 @@
       {
         "thumbnail": "images/locations/gna-lobby/01-thumb.webp",
         "src": "images/locations/gna-lobby/01.webp",
-        "alt": "Foto asli area Lobby 1",
-        "caption": "Dokumentasi area Lobby"
+        "alt": "Foto asli GNA & Lobby 1",
+        "caption": "Dokumentasi GNA & Lobby"
       },
       {
         "thumbnail": "images/locations/gna-lobby/02-thumb.webp",
         "src": "images/locations/gna-lobby/02.webp",
-        "alt": "Foto asli area Lobby 2",
-        "caption": "Dokumentasi area Lobby"
+        "alt": "Foto asli GNA & Lobby 2",
+        "caption": "Dokumentasi GNA & Lobby"
       },
       {
         "thumbnail": "images/locations/gna-lobby/03-thumb.webp",
         "src": "images/locations/gna-lobby/03.webp",
-        "alt": "Foto asli kelas TJKT",
-        "caption": "Dokumentasi kelas TJKT"
+        "alt": "Foto asli GNA & Lobby 3",
+        "caption": "Dokumentasi GNA & Lobby"
+      },
+      {
+        "thumbnail": "images/locations/gna-lobby/04-thumb.webp",
+        "src": "images/locations/gna-lobby/04.webp",
+        "alt": "Foto asli GNA & Lobby 4",
+        "caption": "Dokumentasi GNA & Lobby"
+      },
+      {
+        "thumbnail": "images/locations/gna-lobby/05-thumb.webp",
+        "src": "images/locations/gna-lobby/05.webp",
+        "alt": "Foto asli GNA & Lobby 5",
+        "caption": "Dokumentasi GNA & Lobby"
       }
     ],
     "teleportLookAt": [
@@ -309,32 +393,86 @@
       {
         "thumbnail": "images/locations/aula-te-samsung/01-thumb.webp",
         "src": "images/locations/aula-te-samsung/01.webp",
-        "alt": "Foto asli Aula 1",
-        "caption": "Dokumentasi Aula"
+        "alt": "Foto asli Aula & TE 1",
+        "caption": "Dokumentasi Aula & TE"
       },
       {
         "thumbnail": "images/locations/aula-te-samsung/02-thumb.webp",
         "src": "images/locations/aula-te-samsung/02.webp",
-        "alt": "Foto asli Aula 2",
-        "caption": "Dokumentasi Aula"
+        "alt": "Foto asli Aula & TE 2",
+        "caption": "Dokumentasi Aula & TE"
       },
       {
         "thumbnail": "images/locations/aula-te-samsung/03-thumb.webp",
         "src": "images/locations/aula-te-samsung/03.webp",
-        "alt": "Foto asli TE Samsung 1",
-        "caption": "Dokumentasi TE Samsung"
+        "alt": "Foto asli Aula & TE 3",
+        "caption": "Dokumentasi Aula & TE"
       },
       {
         "thumbnail": "images/locations/aula-te-samsung/04-thumb.webp",
         "src": "images/locations/aula-te-samsung/04.webp",
-        "alt": "Foto asli TE Samsung 2",
-        "caption": "Dokumentasi TE Samsung"
+        "alt": "Foto asli Aula & TE 4",
+        "caption": "Dokumentasi Aula & TE"
       },
       {
         "thumbnail": "images/locations/aula-te-samsung/05-thumb.webp",
         "src": "images/locations/aula-te-samsung/05.webp",
-        "alt": "Foto asli TE Samsung 3",
-        "caption": "Dokumentasi TE Samsung"
+        "alt": "Foto asli Aula & TE 5",
+        "caption": "Dokumentasi Aula & TE"
+      },
+      {
+        "thumbnail": "images/locations/aula-te-samsung/06-thumb.webp",
+        "src": "images/locations/aula-te-samsung/06.webp",
+        "alt": "Foto asli Aula & TE 6",
+        "caption": "Dokumentasi Aula & TE"
+      },
+      {
+        "thumbnail": "images/locations/aula-te-samsung/07-thumb.webp",
+        "src": "images/locations/aula-te-samsung/07.webp",
+        "alt": "Foto asli Aula & TE 7",
+        "caption": "Dokumentasi Aula & TE"
+      },
+      {
+        "thumbnail": "images/locations/aula-te-samsung/08-thumb.webp",
+        "src": "images/locations/aula-te-samsung/08.webp",
+        "alt": "Foto asli Aula & TE 8",
+        "caption": "Dokumentasi Aula & TE"
+      },
+      {
+        "thumbnail": "images/locations/aula-te-samsung/09-thumb.webp",
+        "src": "images/locations/aula-te-samsung/09.webp",
+        "alt": "Foto asli Aula & TE 9",
+        "caption": "Dokumentasi Aula & TE"
+      },
+      {
+        "thumbnail": "images/locations/aula-te-samsung/10-thumb.webp",
+        "src": "images/locations/aula-te-samsung/10.webp",
+        "alt": "Foto asli Aula & TE 10",
+        "caption": "Dokumentasi Aula & TE"
+      },
+      {
+        "thumbnail": "images/locations/aula-te-samsung/11-thumb.webp",
+        "src": "images/locations/aula-te-samsung/11.webp",
+        "alt": "Foto asli Aula & TE 11",
+        "caption": "Dokumentasi Aula & TE"
+      },
+      {
+        "thumbnail": "images/locations/aula-te-samsung/12-thumb.webp",
+        "src": "images/locations/aula-te-samsung/12.webp",
+        "alt": "Foto asli Aula & TE 12",
+        "caption": "Dokumentasi Aula & TE"
+      },
+      {
+        "thumbnail": "images/locations/aula-te-samsung/13-thumb.webp",
+        "src": "images/locations/aula-te-samsung/13.webp",
+        "alt": "Foto asli Aula & TE 13",
+        "caption": "Dokumentasi Aula & TE"
+      },
+      {
+        "thumbnail": "images/locations/aula-te-samsung/14-thumb.webp",
+        "src": "images/locations/aula-te-samsung/14.webp",
+        "alt": "Foto asli Aula & TE 14",
+        "caption": "Dokumentasi Aula & TE"
       }
     ]
   },
@@ -381,7 +519,31 @@
       {
         "thumbnail": "images/locations/pplg/01-thumb.webp",
         "src": "images/locations/pplg/01.webp",
-        "alt": "Foto asli PPLG",
+        "alt": "Foto asli PPLG 1",
+        "caption": "Dokumentasi PPLG"
+      },
+      {
+        "thumbnail": "images/locations/pplg/02-thumb.webp",
+        "src": "images/locations/pplg/02.webp",
+        "alt": "Foto asli PPLG 2",
+        "caption": "Dokumentasi PPLG"
+      },
+      {
+        "thumbnail": "images/locations/pplg/03-thumb.webp",
+        "src": "images/locations/pplg/03.webp",
+        "alt": "Foto asli PPLG 3",
+        "caption": "Dokumentasi PPLG"
+      },
+      {
+        "thumbnail": "images/locations/pplg/04-thumb.webp",
+        "src": "images/locations/pplg/04.webp",
+        "alt": "Foto asli PPLG 4",
+        "caption": "Dokumentasi PPLG"
+      },
+      {
+        "thumbnail": "images/locations/pplg/05-thumb.webp",
+        "src": "images/locations/pplg/05.webp",
+        "alt": "Foto asli PPLG 5",
         "caption": "Dokumentasi PPLG"
       }
     ]
@@ -420,7 +582,38 @@
       "Katalog Perpustakaan & Komputer Pencarian",
       "Meja Layanan Sirkulasi"
     ],
-    "images": [],
+    "images": [
+      {
+        "thumbnail": "images/locations/perpustakaan/01-thumb.webp",
+        "src": "images/locations/perpustakaan/01.webp",
+        "alt": "Foto asli Perpustakaan 1",
+        "caption": "Dokumentasi Perpustakaan"
+      },
+      {
+        "thumbnail": "images/locations/perpustakaan/02-thumb.webp",
+        "src": "images/locations/perpustakaan/02.webp",
+        "alt": "Foto asli Perpustakaan 2",
+        "caption": "Dokumentasi Perpustakaan"
+      },
+      {
+        "thumbnail": "images/locations/perpustakaan/03-thumb.webp",
+        "src": "images/locations/perpustakaan/03.webp",
+        "alt": "Foto asli Perpustakaan 3",
+        "caption": "Dokumentasi Perpustakaan"
+      },
+      {
+        "thumbnail": "images/locations/perpustakaan/04-thumb.webp",
+        "src": "images/locations/perpustakaan/04.webp",
+        "alt": "Foto asli Perpustakaan 4",
+        "caption": "Dokumentasi Perpustakaan"
+      },
+      {
+        "thumbnail": "images/locations/perpustakaan/05-thumb.webp",
+        "src": "images/locations/perpustakaan/05.webp",
+        "alt": "Foto asli Perpustakaan 5",
+        "caption": "Dokumentasi Perpustakaan"
+      }
+    ],
     "teleportLookAt": [
       -78,
       1.72,
@@ -469,32 +662,86 @@
       {
         "thumbnail": "images/locations/dpib-tkl-tkp/01-thumb.webp",
         "src": "images/locations/dpib-tkl-tkp/01.webp",
-        "alt": "Foto asli DPIB 1",
-        "caption": "Dokumentasi DPIB"
+        "alt": "Foto asli DPIB, TKL & TKP 1",
+        "caption": "Dokumentasi DPIB, TKL & TKP"
       },
       {
         "thumbnail": "images/locations/dpib-tkl-tkp/02-thumb.webp",
         "src": "images/locations/dpib-tkl-tkp/02.webp",
-        "alt": "Foto asli DPIB 2",
-        "caption": "Dokumentasi DPIB"
+        "alt": "Foto asli DPIB, TKL & TKP 2",
+        "caption": "Dokumentasi DPIB, TKL & TKP"
       },
       {
         "thumbnail": "images/locations/dpib-tkl-tkp/03-thumb.webp",
         "src": "images/locations/dpib-tkl-tkp/03.webp",
-        "alt": "Foto asli DPIB 3",
-        "caption": "Dokumentasi DPIB"
+        "alt": "Foto asli DPIB, TKL & TKP 3",
+        "caption": "Dokumentasi DPIB, TKL & TKP"
       },
       {
         "thumbnail": "images/locations/dpib-tkl-tkp/04-thumb.webp",
         "src": "images/locations/dpib-tkl-tkp/04.webp",
-        "alt": "Foto asli TKL 1",
-        "caption": "Dokumentasi TKL"
+        "alt": "Foto asli DPIB, TKL & TKP 4",
+        "caption": "Dokumentasi DPIB, TKL & TKP"
       },
       {
         "thumbnail": "images/locations/dpib-tkl-tkp/05-thumb.webp",
         "src": "images/locations/dpib-tkl-tkp/05.webp",
-        "alt": "Foto asli TKL 2",
-        "caption": "Dokumentasi TKL"
+        "alt": "Foto asli DPIB, TKL & TKP 5",
+        "caption": "Dokumentasi DPIB, TKL & TKP"
+      },
+      {
+        "thumbnail": "images/locations/dpib-tkl-tkp/06-thumb.webp",
+        "src": "images/locations/dpib-tkl-tkp/06.webp",
+        "alt": "Foto asli DPIB, TKL & TKP 6",
+        "caption": "Dokumentasi DPIB, TKL & TKP"
+      },
+      {
+        "thumbnail": "images/locations/dpib-tkl-tkp/07-thumb.webp",
+        "src": "images/locations/dpib-tkl-tkp/07.webp",
+        "alt": "Foto asli DPIB, TKL & TKP 7",
+        "caption": "Dokumentasi DPIB, TKL & TKP"
+      },
+      {
+        "thumbnail": "images/locations/dpib-tkl-tkp/08-thumb.webp",
+        "src": "images/locations/dpib-tkl-tkp/08.webp",
+        "alt": "Foto asli DPIB, TKL & TKP 8",
+        "caption": "Dokumentasi DPIB, TKL & TKP"
+      },
+      {
+        "thumbnail": "images/locations/dpib-tkl-tkp/09-thumb.webp",
+        "src": "images/locations/dpib-tkl-tkp/09.webp",
+        "alt": "Foto asli DPIB, TKL & TKP 9",
+        "caption": "Dokumentasi DPIB, TKL & TKP"
+      },
+      {
+        "thumbnail": "images/locations/dpib-tkl-tkp/10-thumb.webp",
+        "src": "images/locations/dpib-tkl-tkp/10.webp",
+        "alt": "Foto asli DPIB, TKL & TKP 10",
+        "caption": "Dokumentasi DPIB, TKL & TKP"
+      },
+      {
+        "thumbnail": "images/locations/dpib-tkl-tkp/11-thumb.webp",
+        "src": "images/locations/dpib-tkl-tkp/11.webp",
+        "alt": "Foto asli DPIB, TKL & TKP 11",
+        "caption": "Dokumentasi DPIB, TKL & TKP"
+      },
+      {
+        "thumbnail": "images/locations/dpib-tkl-tkp/12-thumb.webp",
+        "src": "images/locations/dpib-tkl-tkp/12.webp",
+        "alt": "Foto asli DPIB, TKL & TKP 12",
+        "caption": "Dokumentasi DPIB, TKL & TKP"
+      },
+      {
+        "thumbnail": "images/locations/dpib-tkl-tkp/13-thumb.webp",
+        "src": "images/locations/dpib-tkl-tkp/13.webp",
+        "alt": "Foto asli DPIB, TKL & TKP 13",
+        "caption": "Dokumentasi DPIB, TKL & TKP"
+      },
+      {
+        "thumbnail": "images/locations/dpib-tkl-tkp/14-thumb.webp",
+        "src": "images/locations/dpib-tkl-tkp/14.webp",
+        "alt": "Foto asli DPIB, TKL & TKP 14",
+        "caption": "Dokumentasi DPIB, TKL & TKP"
       }
     ]
   },
@@ -580,6 +827,78 @@
         "src": "images/locations/masjid/08.webp",
         "alt": "Foto asli Masjid 8",
         "caption": "Dokumentasi Masjid"
+      },
+      {
+        "thumbnail": "images/locations/masjid/09-thumb.webp",
+        "src": "images/locations/masjid/09.webp",
+        "alt": "Foto asli Masjid 9",
+        "caption": "Dokumentasi Masjid"
+      },
+      {
+        "thumbnail": "images/locations/masjid/10-thumb.webp",
+        "src": "images/locations/masjid/10.webp",
+        "alt": "Foto asli Masjid 10",
+        "caption": "Dokumentasi Masjid"
+      },
+      {
+        "thumbnail": "images/locations/masjid/11-thumb.webp",
+        "src": "images/locations/masjid/11.webp",
+        "alt": "Foto asli Masjid 11",
+        "caption": "Dokumentasi Masjid"
+      },
+      {
+        "thumbnail": "images/locations/masjid/12-thumb.webp",
+        "src": "images/locations/masjid/12.webp",
+        "alt": "Foto asli Masjid 12",
+        "caption": "Dokumentasi Masjid"
+      },
+      {
+        "thumbnail": "images/locations/masjid/13-thumb.webp",
+        "src": "images/locations/masjid/13.webp",
+        "alt": "Foto asli Masjid 13",
+        "caption": "Dokumentasi Masjid"
+      },
+      {
+        "thumbnail": "images/locations/masjid/14-thumb.webp",
+        "src": "images/locations/masjid/14.webp",
+        "alt": "Foto asli Masjid 14",
+        "caption": "Dokumentasi Masjid"
+      },
+      {
+        "thumbnail": "images/locations/masjid/15-thumb.webp",
+        "src": "images/locations/masjid/15.webp",
+        "alt": "Foto asli Masjid 15",
+        "caption": "Dokumentasi Masjid"
+      },
+      {
+        "thumbnail": "images/locations/masjid/16-thumb.webp",
+        "src": "images/locations/masjid/16.webp",
+        "alt": "Foto asli Masjid 16",
+        "caption": "Dokumentasi Masjid"
+      },
+      {
+        "thumbnail": "images/locations/masjid/17-thumb.webp",
+        "src": "images/locations/masjid/17.webp",
+        "alt": "Foto asli Masjid 17",
+        "caption": "Dokumentasi Masjid"
+      },
+      {
+        "thumbnail": "images/locations/masjid/18-thumb.webp",
+        "src": "images/locations/masjid/18.webp",
+        "alt": "Foto asli Masjid 18",
+        "caption": "Dokumentasi Masjid"
+      },
+      {
+        "thumbnail": "images/locations/masjid/19-thumb.webp",
+        "src": "images/locations/masjid/19.webp",
+        "alt": "Foto asli Masjid 19",
+        "caption": "Dokumentasi Masjid"
+      },
+      {
+        "thumbnail": "images/locations/masjid/20-thumb.webp",
+        "src": "images/locations/masjid/20.webp",
+        "alt": "Foto asli Masjid 20",
+        "caption": "Dokumentasi Masjid"
       }
     ],
     "teleportLookAt": [
@@ -631,7 +950,25 @@
       {
         "thumbnail": "images/locations/uks/01-thumb.webp",
         "src": "images/locations/uks/01.webp",
-        "alt": "Foto asli Deretan UKS",
+        "alt": "Foto asli Deretan UKS 1",
+        "caption": "Dokumentasi Deretan UKS"
+      },
+      {
+        "thumbnail": "images/locations/uks/02-thumb.webp",
+        "src": "images/locations/uks/02.webp",
+        "alt": "Foto asli Deretan UKS 2",
+        "caption": "Dokumentasi Deretan UKS"
+      },
+      {
+        "thumbnail": "images/locations/uks/03-thumb.webp",
+        "src": "images/locations/uks/03.webp",
+        "alt": "Foto asli Deretan UKS 3",
+        "caption": "Dokumentasi Deretan UKS"
+      },
+      {
+        "thumbnail": "images/locations/uks/04-thumb.webp",
+        "src": "images/locations/uks/04.webp",
+        "alt": "Foto asli Deretan UKS 4",
         "caption": "Dokumentasi Deretan UKS"
       }
     ]
@@ -679,8 +1016,20 @@
       {
         "thumbnail": "images/locations/kantin-kopsis/01-thumb.webp",
         "src": "images/locations/kantin-kopsis/01.webp",
-        "alt": "Foto asli Kantin Kopsis",
-        "caption": "Dokumentasi Kantin Kopsis"
+        "alt": "Foto asli Kantin & Koperasi 1",
+        "caption": "Dokumentasi Kantin & Koperasi"
+      },
+      {
+        "thumbnail": "images/locations/kantin-kopsis/02-thumb.webp",
+        "src": "images/locations/kantin-kopsis/02.webp",
+        "alt": "Foto asli Kantin & Koperasi 2",
+        "caption": "Dokumentasi Kantin & Koperasi"
+      },
+      {
+        "thumbnail": "images/locations/kantin-kopsis/03-thumb.webp",
+        "src": "images/locations/kantin-kopsis/03.webp",
+        "alt": "Foto asli Kantin & Koperasi 3",
+        "caption": "Dokumentasi Kantin & Koperasi"
       }
     ]
   },
@@ -747,6 +1096,24 @@
         "src": "images/locations/lab-tjkt/04.webp",
         "alt": "Foto asli Lab TJKT 4",
         "caption": "Dokumentasi Lab TJKT"
+      },
+      {
+        "thumbnail": "images/locations/lab-tjkt/05-thumb.webp",
+        "src": "images/locations/lab-tjkt/05.webp",
+        "alt": "Foto asli Lab TJKT 5",
+        "caption": "Dokumentasi Lab TJKT"
+      },
+      {
+        "thumbnail": "images/locations/lab-tjkt/06-thumb.webp",
+        "src": "images/locations/lab-tjkt/06.webp",
+        "alt": "Foto asli Lab TJKT 6",
+        "caption": "Dokumentasi Lab TJKT"
+      },
+      {
+        "thumbnail": "images/locations/lab-tjkt/07-thumb.webp",
+        "src": "images/locations/lab-tjkt/07.webp",
+        "alt": "Foto asli Lab TJKT 7",
+        "caption": "Dokumentasi Lab TJKT"
       }
     ]
   },
@@ -793,8 +1160,20 @@
       {
         "thumbnail": "images/locations/um/01-thumb.webp",
         "src": "images/locations/um/01.webp",
-        "alt": "Foto asli UM",
-        "caption": "Dokumentasi UM"
+        "alt": "Foto asli UM Mart 1",
+        "caption": "Dokumentasi UM Mart"
+      },
+      {
+        "thumbnail": "images/locations/um/02-thumb.webp",
+        "src": "images/locations/um/02.webp",
+        "alt": "Foto asli UM Mart 2",
+        "caption": "Dokumentasi UM Mart"
+      },
+      {
+        "thumbnail": "images/locations/um/03-thumb.webp",
+        "src": "images/locations/um/03.webp",
+        "alt": "Foto asli UM Mart 3",
+        "caption": "Dokumentasi UM Mart"
       }
     ]
   },
@@ -836,7 +1215,55 @@
       {
         "thumbnail": "images/locations/bengkel-to-1/01-thumb.webp",
         "src": "images/locations/bengkel-to-1/01.webp",
-        "alt": "Foto asli Bengkel TO 1",
+        "alt": "Foto asli Bengkel TO 1 1",
+        "caption": "Dokumentasi Bengkel TO 1"
+      },
+      {
+        "thumbnail": "images/locations/bengkel-to-1/02-thumb.webp",
+        "src": "images/locations/bengkel-to-1/02.webp",
+        "alt": "Foto asli Bengkel TO 1 2",
+        "caption": "Dokumentasi Bengkel TO 1"
+      },
+      {
+        "thumbnail": "images/locations/bengkel-to-1/03-thumb.webp",
+        "src": "images/locations/bengkel-to-1/03.webp",
+        "alt": "Foto asli Bengkel TO 1 3",
+        "caption": "Dokumentasi Bengkel TO 1"
+      },
+      {
+        "thumbnail": "images/locations/bengkel-to-1/04-thumb.webp",
+        "src": "images/locations/bengkel-to-1/04.webp",
+        "alt": "Foto asli Bengkel TO 1 4",
+        "caption": "Dokumentasi Bengkel TO 1"
+      },
+      {
+        "thumbnail": "images/locations/bengkel-to-1/05-thumb.webp",
+        "src": "images/locations/bengkel-to-1/05.webp",
+        "alt": "Foto asli Bengkel TO 1 5",
+        "caption": "Dokumentasi Bengkel TO 1"
+      },
+      {
+        "thumbnail": "images/locations/bengkel-to-1/06-thumb.webp",
+        "src": "images/locations/bengkel-to-1/06.webp",
+        "alt": "Foto asli Bengkel TO 1 6",
+        "caption": "Dokumentasi Bengkel TO 1"
+      },
+      {
+        "thumbnail": "images/locations/bengkel-to-1/07-thumb.webp",
+        "src": "images/locations/bengkel-to-1/07.webp",
+        "alt": "Foto asli Bengkel TO 1 7",
+        "caption": "Dokumentasi Bengkel TO 1"
+      },
+      {
+        "thumbnail": "images/locations/bengkel-to-1/08-thumb.webp",
+        "src": "images/locations/bengkel-to-1/08.webp",
+        "alt": "Foto asli Bengkel TO 1 8",
+        "caption": "Dokumentasi Bengkel TO 1"
+      },
+      {
+        "thumbnail": "images/locations/bengkel-to-1/09-thumb.webp",
+        "src": "images/locations/bengkel-to-1/09.webp",
+        "alt": "Foto asli Bengkel TO 1 9",
         "caption": "Dokumentasi Bengkel TO 1"
       }
     ],
@@ -910,6 +1337,18 @@
         "src": "images/locations/bengkel-to-2/05.webp",
         "alt": "Foto asli Bengkel TO 2 5",
         "caption": "Dokumentasi Bengkel TO 2"
+      },
+      {
+        "thumbnail": "images/locations/bengkel-to-2/06-thumb.webp",
+        "src": "images/locations/bengkel-to-2/06.webp",
+        "alt": "Foto asli Bengkel TO 2 6",
+        "caption": "Dokumentasi Bengkel TO 2"
+      },
+      {
+        "thumbnail": "images/locations/bengkel-to-2/07-thumb.webp",
+        "src": "images/locations/bengkel-to-2/07.webp",
+        "alt": "Foto asli Bengkel TO 2 7",
+        "caption": "Dokumentasi Bengkel TO 2"
       }
     ],
     "teleportLookAt": [
@@ -963,6 +1402,18 @@
         "src": "images/locations/teori-to/02.webp",
         "alt": "Foto asli Teori TO 2",
         "caption": "Dokumentasi Teori TO"
+      },
+      {
+        "thumbnail": "images/locations/teori-to/03-thumb.webp",
+        "src": "images/locations/teori-to/03.webp",
+        "alt": "Foto asli Teori TO 3",
+        "caption": "Dokumentasi Teori TO"
+      },
+      {
+        "thumbnail": "images/locations/teori-to/04-thumb.webp",
+        "src": "images/locations/teori-to/04.webp",
+        "alt": "Foto asli Teori TO 4",
+        "caption": "Dokumentasi Teori TO"
       }
     ],
     "teleportLookAt": [
@@ -1014,7 +1465,43 @@
       {
         "thumbnail": "images/locations/bengkel-tm/01-thumb.webp",
         "src": "images/locations/bengkel-tm/01.webp",
-        "alt": "Foto asli Bengkel TM",
+        "alt": "Foto asli Bengkel TM 1",
+        "caption": "Dokumentasi Bengkel TM"
+      },
+      {
+        "thumbnail": "images/locations/bengkel-tm/02-thumb.webp",
+        "src": "images/locations/bengkel-tm/02.webp",
+        "alt": "Foto asli Bengkel TM 2",
+        "caption": "Dokumentasi Bengkel TM"
+      },
+      {
+        "thumbnail": "images/locations/bengkel-tm/03-thumb.webp",
+        "src": "images/locations/bengkel-tm/03.webp",
+        "alt": "Foto asli Bengkel TM 3",
+        "caption": "Dokumentasi Bengkel TM"
+      },
+      {
+        "thumbnail": "images/locations/bengkel-tm/04-thumb.webp",
+        "src": "images/locations/bengkel-tm/04.webp",
+        "alt": "Foto asli Bengkel TM 4",
+        "caption": "Dokumentasi Bengkel TM"
+      },
+      {
+        "thumbnail": "images/locations/bengkel-tm/05-thumb.webp",
+        "src": "images/locations/bengkel-tm/05.webp",
+        "alt": "Foto asli Bengkel TM 5",
+        "caption": "Dokumentasi Bengkel TM"
+      },
+      {
+        "thumbnail": "images/locations/bengkel-tm/06-thumb.webp",
+        "src": "images/locations/bengkel-tm/06.webp",
+        "alt": "Foto asli Bengkel TM 6",
+        "caption": "Dokumentasi Bengkel TM"
+      },
+      {
+        "thumbnail": "images/locations/bengkel-tm/07-thumb.webp",
+        "src": "images/locations/bengkel-tm/07.webp",
+        "alt": "Foto asli Bengkel TM 7",
         "caption": "Dokumentasi Bengkel TM"
       }
     ]
@@ -1052,7 +1539,14 @@
       "Tempat Pembuangan Sampah Terpilah",
       "Akses Jalan Logistik"
     ],
-    "images": [],
+    "images": [
+      {
+        "thumbnail": "images/locations/pembuangan-akhir/01-thumb.webp",
+        "src": "images/locations/pembuangan-akhir/01.webp",
+        "alt": "Foto asli Pembuangan Akhir 1",
+        "caption": "Dokumentasi Pembuangan Akhir"
+      }
+    ],
     "teleportLookAt": [
       -92,
       1.72,
@@ -1097,14 +1591,14 @@
       {
         "thumbnail": "images/locations/lapvol/01-thumb.webp",
         "src": "images/locations/lapvol/01.webp",
-        "alt": "Foto asli Lapangan Voli 1",
-        "caption": "Dokumentasi Lapangan Voli"
+        "alt": "Foto asli Lavol 1",
+        "caption": "Dokumentasi Lavol"
       },
       {
         "thumbnail": "images/locations/lapvol/02-thumb.webp",
         "src": "images/locations/lapvol/02.webp",
-        "alt": "Foto asli Lapangan Voli 2",
-        "caption": "Dokumentasi Lapangan Voli"
+        "alt": "Foto asli Lavol 2",
+        "caption": "Dokumentasi Lavol"
       }
     ],
     "teleportLookAt": [
@@ -1146,7 +1640,32 @@
       "Lapangan Aspal/Semen Luas",
       "Kamar Mandi & Tempat Ganti Olahraga"
     ],
-    "images": [],
+    "images": [
+      {
+        "thumbnail": "images/locations/labas/01-thumb.webp",
+        "src": "images/locations/labas/01.webp",
+        "alt": "Foto asli Labas 1",
+        "caption": "Dokumentasi Labas"
+      },
+      {
+        "thumbnail": "images/locations/labas/02-thumb.webp",
+        "src": "images/locations/labas/02.webp",
+        "alt": "Foto asli Labas 2",
+        "caption": "Dokumentasi Labas"
+      },
+      {
+        "thumbnail": "images/locations/labas/03-thumb.webp",
+        "src": "images/locations/labas/03.webp",
+        "alt": "Foto asli Labas 3",
+        "caption": "Dokumentasi Labas"
+      },
+      {
+        "thumbnail": "images/locations/labas/04-thumb.webp",
+        "src": "images/locations/labas/04.webp",
+        "alt": "Foto asli Labas 4",
+        "caption": "Dokumentasi Labas"
+      }
+    ],
     "teleportLookAt": [
       -42,
       1.72,
@@ -1198,6 +1717,42 @@
         "thumbnail": "images/locations/tpfl/02-thumb.webp",
         "src": "images/locations/tpfl/02.webp",
         "alt": "Foto asli TPFL 2",
+        "caption": "Dokumentasi TPFL"
+      },
+      {
+        "thumbnail": "images/locations/tpfl/03-thumb.webp",
+        "src": "images/locations/tpfl/03.webp",
+        "alt": "Foto asli TPFL 3",
+        "caption": "Dokumentasi TPFL"
+      },
+      {
+        "thumbnail": "images/locations/tpfl/04-thumb.webp",
+        "src": "images/locations/tpfl/04.webp",
+        "alt": "Foto asli TPFL 4",
+        "caption": "Dokumentasi TPFL"
+      },
+      {
+        "thumbnail": "images/locations/tpfl/05-thumb.webp",
+        "src": "images/locations/tpfl/05.webp",
+        "alt": "Foto asli TPFL 5",
+        "caption": "Dokumentasi TPFL"
+      },
+      {
+        "thumbnail": "images/locations/tpfl/06-thumb.webp",
+        "src": "images/locations/tpfl/06.webp",
+        "alt": "Foto asli TPFL 6",
+        "caption": "Dokumentasi TPFL"
+      },
+      {
+        "thumbnail": "images/locations/tpfl/07-thumb.webp",
+        "src": "images/locations/tpfl/07.webp",
+        "alt": "Foto asli TPFL 7",
+        "caption": "Dokumentasi TPFL"
+      },
+      {
+        "thumbnail": "images/locations/tpfl/08-thumb.webp",
+        "src": "images/locations/tpfl/08.webp",
+        "alt": "Foto asli TPFL 8",
         "caption": "Dokumentasi TPFL"
       }
     ],
