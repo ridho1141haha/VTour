@@ -4,7 +4,7 @@ import * as THREE from 'three';
 import { SpatialGrid } from '../../lib/collision';
 
 export const SCHOOL_MODEL_URL = `${import.meta.env.BASE_URL}models/smkn2_ska.glb`;
-export const WALKABLE_MESH_PATTERN = /^(GROUNDMAIN|Rumfut|Plane$|FLOOR|INT_Floor|K_Lantai|Lantai|TANGGA)/i;
+export const WALKABLE_MESH_PATTERN = /^(GROUND|Rumput|Rumfut|Plane|FLOOR|INT_Floor|K_Lantai|Lantai|TANGGA|JALAN|ASPAL|PATOKAN|SEMEN|KERAMIK|PAVING|TROTOAR)/i;
 
 export function clearSchoolModelCache() {
   useGLTF.clear(SCHOOL_MODEL_URL);
@@ -15,16 +15,26 @@ function addObstacleBoxes(mesh, obstacleBoxes, instanceMatrix, worldMatrix) {
   const geometryBox = mesh.geometry.boundingBox;
   if (!geometryBox) return;
 
+  // Pintu, kaca, dan penanda tidak menghalangi jalur pemain.
+  if (/^(ROOF|ATAP|CEILING|PLAFON|GENTENG|PINTU|DOOR|CUTPINTU|JENDELA|WINDOW|FRAME|GLASS|KACA|REF_)/i.test(mesh.name)) {
+    return;
+  }
+
+  const worldBox = geometryBox.clone().applyMatrix4(mesh.matrixWorld);
+
   if (mesh.isInstancedMesh) {
     for (let index = 0; index < mesh.count; index += 1) {
       mesh.getMatrixAt(index, instanceMatrix);
       worldMatrix.multiplyMatrices(mesh.matrixWorld, instanceMatrix);
-      obstacleBoxes.push(geometryBox.clone().applyMatrix4(worldMatrix));
+      const obstacleBox = geometryBox.clone().applyMatrix4(worldMatrix);
+      obstacleBox.mesh = mesh;
+      obstacleBoxes.push(obstacleBox);
     }
     return;
   }
 
-  obstacleBoxes.push(geometryBox.clone().applyMatrix4(mesh.matrixWorld));
+  worldBox.mesh = mesh;
+  obstacleBoxes.push(worldBox);
 }
 
 export function SchoolModel({ collisionRef, onReady }) {

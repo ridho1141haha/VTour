@@ -7,6 +7,7 @@ const EMPTY_KEYS = Object.freeze({
   right: false,
   sprint: false,
   interact: false,
+  jump: false,
 });
 
 const KEY_BINDINGS = {
@@ -21,6 +22,7 @@ const KEY_BINDINGS = {
   ShiftLeft: 'sprint',
   ShiftRight: 'sprint',
   KeyE: 'interact',
+  Space: 'jump',
 };
 
 function deriveKeysFromCodes(codes) {
@@ -31,6 +33,7 @@ function deriveKeysFromCodes(codes) {
     right: codes.has('KeyD') || codes.has('ArrowRight'),
     sprint: codes.has('ShiftLeft') || codes.has('ShiftRight'),
     interact: codes.has('KeyE'),
+    jump: codes.has('Space'),
   };
 }
 

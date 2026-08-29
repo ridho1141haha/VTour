@@ -12,9 +12,11 @@ const DEFAULT_SPAWN = [0, 2, 12];
 const EYE_HEIGHT = 1.7;
 const WALK_SPEED = 4;
 const SPRINT_SPEED = 6.5;
+const JUMP_VELOCITY = 4.8;
+const GRAVITY = 14;
 const MAX_FRAME_DELTA = 0.05;
-const MAX_STEP = 0.5;
-const MAX_DROP = 0.75;
+const MAX_STEP = 0.65;
+const MAX_DROP = 0.85;
 const GROUND_DAMPING = 20;
 const DOWN = new THREE.Vector3(0, -1, 0);
 
@@ -40,6 +42,8 @@ export function FirstPersonPlayer({ collisionRef, enabled, spawnPosition = DEFAU
   const hasSpawnedRef = useRef(false);
   const spawnAttemptsRef = useRef(0);
   const targetGroundYRef = useRef(null);
+  const verticalVelocityRef = useRef(0);
+  const isGroundedRef = useRef(true);
   const wasEnabledRef = useRef(enabled);
   const savedPoseRef = useRef(null);
   const lastInteractRef = useRef(false);
@@ -82,8 +86,7 @@ export function FirstPersonPlayer({ collisionRef, enabled, spawnPosition = DEFAU
     const [x, y, z] = teleport.position;
     const groundY = findGround(x, z, y - EYE_HEIGHT, true);
     if (groundY == null) return false;
-    const obstacleSource = collisionRef.current.obstacleGrid ?? collisionRef.current.obstacleBoxes;
-    if (isPositionBlocked(x, z, groundY, obstacleSource)) return false;
+    if (isPositionBlocked(x, z, groundY, collisionRef.current)) return false;
 
     camera.position.set(x, groundY + EYE_HEIGHT, z);
     targetGroundYRef.current = groundY;
@@ -257,6 +260,12 @@ export function FirstPersonPlayer({ collisionRef, enabled, spawnPosition = DEFAU
     let currentGroundY = targetGroundYRef.current ?? (camera.position.y - EYE_HEIGHT);
     const obstacleSource = collision.obstacleGrid ?? collision.obstacleBoxes;
 
+    // Trigger jump bila player sedang di atas tanah
+    if (keys.jump && isGroundedRef.current) {
+      verticalVelocityRef.current = JUMP_VELOCITY;
+      isGroundedRef.current = false;
+    }
+
     if (isMoving) {
       if (moveVector.current.x !== 0) {
         const nextX = camera.position.x + moveVector.current.x;
@@ -277,12 +286,27 @@ export function FirstPersonPlayer({ collisionRef, enabled, spawnPosition = DEFAU
       targetGroundYRef.current = currentGroundY;
     }
 
-    const targetCameraY = (targetGroundYRef.current ?? currentGroundY) + EYE_HEIGHT;
-    camera.position.y = THREE.MathUtils.lerp(
-      camera.position.y,
-      targetCameraY,
-      1 - Math.exp(-GROUND_DAMPING * actualDelta),
-    );
+    // Fisika vertikal (Lompat & Gravitasi)
+    if (!isGroundedRef.current) {
+      verticalVelocityRef.current -= GRAVITY * actualDelta;
+      camera.position.y += verticalVelocityRef.current * actualDelta;
+      const detectedGround = findGround(camera.position.x, camera.position.z, targetGroundYRef.current ?? (camera.position.y - EYE_HEIGHT));
+      const landingY = (detectedGround ?? targetGroundYRef.current ?? currentGroundY) + EYE_HEIGHT;
+
+      if (camera.position.y <= landingY) {
+        camera.position.y = landingY;
+        verticalVelocityRef.current = 0;
+        isGroundedRef.current = true;
+        if (detectedGround != null) targetGroundYRef.current = detectedGround;
+      }
+    } else {
+      const targetCameraY = (targetGroundYRef.current ?? currentGroundY) + EYE_HEIGHT;
+      camera.position.y = THREE.MathUtils.lerp(
+        camera.position.y,
+        targetCameraY,
+        1 - Math.exp(-GROUND_DAMPING * actualDelta),
+      );
+    }
 
     // Proximity check optimization: run when moved > 0.05 units
     const distMovedSq = lastProximityCheckPosRef.current.distanceToSquared(camera.position);

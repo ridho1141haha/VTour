@@ -1,5 +1,16 @@
-export const PLAYER_RADIUS = 0.35;
+import * as THREE from 'three';
+
+export const PLAYER_RADIUS = 0.28;
 export const PLAYER_HEIGHT = 1.8;
+
+const COLLISION_DIRECTIONS = [
+  [1, 0], [-1, 0], [0, 1], [0, -1],
+  [1, 1], [1, -1], [-1, 1], [-1, -1],
+].map(([x, z]) => new THREE.Vector3(x, 0, z).normalize());
+
+const rayOrigin = new THREE.Vector3();
+const raycaster = new THREE.Raycaster();
+const rayHits = [];
 
 export function circleIntersectsBoxXZ(x, z, radius, box) {
   const closestX = Math.max(box.min.x, Math.min(x, box.max.x));
@@ -61,12 +72,30 @@ export class SpatialGrid {
 
 export function isPositionBlocked(x, z, groundY, obstacleSource, radius = PLAYER_RADIUS) {
   const playerTop = groundY + PLAYER_HEIGHT;
-  const boxes = obstacleSource instanceof SpatialGrid
+  const boxes = obstacleSource?.obstacleGrid instanceof SpatialGrid
+    ? obstacleSource.obstacleGrid.getPotentialObstacles(x, z, radius)
+    : obstacleSource instanceof SpatialGrid
     ? obstacleSource.getPotentialObstacles(x, z, radius)
     : (obstacleSource || []);
+  const obstacles = Array.isArray(boxes) ? boxes : [...boxes];
 
-  for (const box of boxes) {
-    if (box.max.y <= groundY + 0.08 || box.min.y >= playerTop) continue;
+  const meshes = [...new Set(obstacles.map((box) => box.mesh).filter(Boolean))];
+  if (meshes.length > 0) {
+    rayOrigin.set(x, groundY + PLAYER_HEIGHT / 2, z);
+    raycaster.far = radius;
+
+    for (const direction of COLLISION_DIRECTIONS) {
+      raycaster.set(rayOrigin, direction);
+      rayHits.length = 0;
+      raycaster.intersectObjects(meshes, false, rayHits);
+      if (rayHits[0]?.distance <= radius) return true;
+    }
+
+    return false;
+  }
+
+  for (const box of obstacles) {
+    if (box.max.y <= groundY + 0.35 || box.min.y >= playerTop) continue;
     if (circleIntersectsBoxXZ(x, z, radius, box)) return true;
   }
 

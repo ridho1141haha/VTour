@@ -18,7 +18,7 @@
     ],
     "mapPosition": {
       "x": 50,
-      "y": 91.5
+      "y": 86
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
@@ -76,8 +76,8 @@
       -62
     ],
     "mapPosition": {
-      "x": 49.5,
-      "y": 76.5
+      "x": 50.8,
+      "y": 68
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
@@ -205,18 +205,18 @@
     "description": "Merupakan fasilitas yang mendukung kegiatan inovasi, pembelajaran berbasis teknologi dan industri, serta pengembangan hasil karya siswa. Area ini menjadi wadah untuk mengembangkan ide, produk, dan keterampilan siswa.",
     "anchorStatus": "calibrated",
     "position": [
-      -42,
+      -38,
       0.45,
-      -67
+      -35
     ],
     "teleportPosition": [
-      -42,
+      -38,
       1.72,
-      -62
+      -31
     ],
     "mapPosition": {
-      "x": 59.8,
-      "y": 78.5
+      "x": 50,
+      "y": 53.5
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
@@ -269,9 +269,9 @@
       }
     ],
     "teleportLookAt": [
-      -42,
+      -38,
       1.72,
-      -67
+      -35
     ]
   },
   {
@@ -282,18 +282,18 @@
     "description": "Gedung pusat administrasi dan kegiatan belajar teori. Meliputi Lobby utama penerima tamu, Ruang GNA sebagai ruang kerja guru mata pelajaran normatif dan adaptif, Ruang Kesiswaan untuk pembinaan peserta didik dan ekstrakurikuler, Ruang Tata Usaha (TU) sebagai pusat layanan administrasi dan surat-menyurat, serta Ruang Teori TM dan Teori TJKT.",
     "anchorStatus": "calibrated",
     "position": [
-      -56.04,
+      -42,
       0.45,
-      -18
+      -67
     ],
     "teleportPosition": [
-      -56.04,
+      -42,
       1.72,
-      -14
+      -62
     ],
     "mapPosition": {
-      "x": 36.5,
-      "y": 71
+      "x": 59.8,
+      "y": 78.5
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
@@ -344,9 +344,9 @@
       }
     ],
     "teleportLookAt": [
-      -56.04,
+      -42,
       1.72,
-      -18
+      -67
     ]
   },
   {
@@ -372,8 +372,8 @@
       -31.98
     ],
     "mapPosition": {
-      "x": 38,
-      "y": 53.5
+      "x": 37.4,
+      "y": 53.7
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
@@ -499,8 +499,8 @@
       19.51
     ],
     "mapPosition": {
-      "x": 37,
-      "y": 39.5
+      "x": 37.2,
+      "y": 39.6
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
@@ -556,18 +556,18 @@
     "description": "Merupakan pusat sumber belajar yang menyediakan berbagai koleksi buku dan bahan referensi. Perpustakaan digunakan oleh siswa dan guru untuk membaca, belajar mandiri, serta mencari informasi yang mendukung kegiatan pembelajaran.",
     "anchorStatus": "calibrated",
     "position": [
-      -38,
+      -56.04,
       0.45,
-      -35
+      -18
     ],
     "teleportPosition": [
-      -38,
+      -56.04,
       1.72,
-      -31
+      -14
     ],
     "mapPosition": {
-      "x": 50,
-      "y": 53.5
+      "x": 36.5,
+      "y": 71
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
@@ -615,9 +615,9 @@
       }
     ],
     "teleportLookAt": [
-      -38,
+      -56.04,
       1.72,
-      -35
+      -18
     ]
   },
   {
@@ -643,8 +643,8 @@
       -65.32
     ],
     "mapPosition": {
-      "x": 65,
-      "y": 59
+      "x": 64.2,
+      "y": 56.2
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
@@ -763,8 +763,8 @@
       -6
     ],
     "mapPosition": {
-      "x": 59,
-      "y": 39.5
+      "x": 59.8,
+      "y": 39.8
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
@@ -996,8 +996,8 @@
       47.12
     ],
     "mapPosition": {
-      "x": 51.5,
-      "y": 32
+      "x": 51,
+      "y": 31.9
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
@@ -1056,8 +1056,8 @@
       34.9
     ],
     "mapPosition": {
-      "x": 37.5,
-      "y": 29
+      "x": 37.1,
+      "y": 29.4
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
@@ -1140,7 +1140,7 @@
       82
     ],
     "mapPosition": {
-      "x": 47,
+      "x": 50.3,
       "y": 16.5
     },
     "interactionRadius": 4.5,
@@ -1445,7 +1445,7 @@
       82.93
     ],
     "mapPosition": {
-      "x": 32.5,
+      "x": 33.4,
       "y": 16.5
     },
     "interactionRadius": 4.5,
@@ -1572,7 +1572,7 @@
     ],
     "mapPosition": {
       "x": 18.5,
-      "y": 75.5
+      "y": 74.7
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
@@ -1625,8 +1625,8 @@
       31
     ],
     "mapPosition": {
-      "x": 18.5,
-      "y": 35
+      "x": 18,
+      "y": 37.5
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,

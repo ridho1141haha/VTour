@@ -9,8 +9,8 @@ import { isPositionBlocked } from '../../lib/collision';
 
 const WALK_SPEED = 3.5;
 const SPRINT_SPEED = 6.0;
-const MAX_STEP = 0.5;
-const MAX_DROP = 0.75;
+const MAX_STEP = 0.65;
+const MAX_DROP = 0.85;
 const DOWN = new THREE.Vector3(0, -1, 0);
 const DEAD_ZONE = 0.15;
 const DEFAULT_SPAWN = [0, 0, 12];
@@ -86,8 +86,7 @@ export function XRPlayer({ collisionRef, enabled, originRef }) {
     const [x, y, z] = teleport.position;
     const groundY = findGround(x, z, y, true);
     if (groundY == null) return false;
-    const obstacleSource = collisionRef.current.obstacleGrid ?? collisionRef.current.obstacleBoxes;
-    if (isPositionBlocked(x, z, groundY, obstacleSource)) return false;
+    if (isPositionBlocked(x, z, groundY, collisionRef.current)) return false;
     originRef.current.position.set(x, groundY, z);
     targetGroundYRef.current = groundY;
     return true;
@@ -202,14 +201,13 @@ export function XRPlayer({ collisionRef, enabled, originRef }) {
     moveVec.current.multiplyScalar(speed * actualDelta);
 
     let currentGroundY = targetGroundYRef.current ?? origin.position.y;
-    const obstacleSource = collision.obstacleGrid ?? collision.obstacleBoxes;
 
     // === 4. Collision & Step Ground Finding ===
     if (isMoving) {
       if (moveVec.current.x !== 0) {
         const nextX = origin.position.x + moveVec.current.x;
         const nextGround = findGround(nextX, origin.position.z, currentGroundY);
-        if (nextGround != null && !isPositionBlocked(nextX, origin.position.z, nextGround, obstacleSource)) {
+        if (nextGround != null && !isPositionBlocked(nextX, origin.position.z, nextGround, collision)) {
           origin.position.x = nextX;
           currentGroundY = nextGround;
         }
@@ -217,7 +215,7 @@ export function XRPlayer({ collisionRef, enabled, originRef }) {
       if (moveVec.current.z !== 0) {
         const nextZ = origin.position.z + moveVec.current.z;
         const nextGround = findGround(origin.position.x, nextZ, currentGroundY);
-        if (nextGround != null && !isPositionBlocked(origin.position.x, nextZ, nextGround, obstacleSource)) {
+        if (nextGround != null && !isPositionBlocked(origin.position.x, nextZ, nextGround, collision)) {
           origin.position.z = nextZ;
           currentGroundY = nextGround;
         }

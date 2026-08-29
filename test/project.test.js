@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFile, stat } from 'node:fs/promises';
 import test from 'node:test';
+import * as THREE from 'three';
 
 import viteConfig from '../vite.config.js';
 import { SpatialGrid, circleIntersectsBoxXZ, isPositionBlocked } from '../src/lib/collision.js';
@@ -146,6 +147,17 @@ test('collision circle-vs-AABB dan SpatialGrid menangani obstacle secara konsist
   assert.equal(isPositionBlocked(100, 100, 0, grid), false);
 });
 
+test('collision mesh mengikuti dinding tanpa menutup bukaan ruangan', () => {
+  const wall = new THREE.Mesh(new THREE.BoxGeometry(0.2, 3, 6));
+  wall.updateMatrixWorld();
+  const wallBox = new THREE.Box3().setFromObject(wall);
+  wallBox.mesh = wall;
+  const source = { obstacleGrid: new SpatialGrid([wallBox], 8) };
+
+  assert.equal(isPositionBlocked(0.25, 0, 0, source), true);
+  assert.equal(isPositionBlocked(1, 0, 0, source), false);
+});
+
 test('mouse-look dan status pointer lock memakai canvas yang sama', async () => {
   const source = await readFile(playerPath, 'utf8');
   assert.match(source, /domElement=\{gl\.domElement\}/);
@@ -238,4 +250,3 @@ test('integrasi WebXR VR mode terpasang dan tervalidasi', async () => {
   assert.match(xrButtonSource, /navigator\.xr\.isSessionSupported\('immersive-vr'\)/);
   assert.match(xrButtonSource, /xrStore\.enterVR\(\)/);
 });
-
