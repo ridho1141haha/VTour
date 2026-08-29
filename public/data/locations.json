@@ -17,8 +17,8 @@
       -103
     ],
     "mapPosition": {
-      "x": 37.4,
-      "y": 3.3
+      "x": 50,
+      "y": 91.5
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
@@ -76,8 +76,8 @@
       -63.5
     ],
     "mapPosition": {
-      "x": 43,
-      "y": 20.9
+      "x": 49.5,
+      "y": 76.5
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
@@ -215,8 +215,8 @@
       -9.5
     ],
     "mapPosition": {
-      "x": 76.6,
-      "y": 44.5
+      "x": 59.8,
+      "y": 78.5
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
@@ -292,8 +292,8 @@
       1
     ],
     "mapPosition": {
-      "x": 43,
-      "y": 49.1
+      "x": 36.5,
+      "y": 71
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
@@ -372,8 +372,8 @@
       -31.98
     ],
     "mapPosition": {
-      "x": 69.7,
-      "y": 36.3
+      "x": 38,
+      "y": 53.5
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
@@ -499,8 +499,8 @@
       21.78
     ],
     "mapPosition": {
-      "x": 61.6,
-      "y": 59.7
+      "x": 37,
+      "y": 39.5
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
@@ -566,8 +566,8 @@
       -41.5
     ],
     "mapPosition": {
-      "x": 31.2,
-      "y": 30.5
+      "x": 50,
+      "y": 53.5
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
@@ -643,8 +643,8 @@
       -64.31
     ],
     "mapPosition": {
-      "x": 19.4,
-      "y": 22.1
+      "x": 65,
+      "y": 59
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
@@ -763,8 +763,8 @@
       6.5
     ],
     "mapPosition": {
-      "x": 22,
-      "y": 54.6
+      "x": 59,
+      "y": 39.5
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
@@ -930,8 +930,8 @@
       37.09
     ],
     "mapPosition": {
-      "x": 41.9,
-      "y": 66.3
+      "x": 58.5,
+      "y": 31
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
@@ -996,8 +996,8 @@
       43.33
     ],
     "mapPosition": {
-      "x": 37.6,
-      "y": 69.1
+      "x": 51.5,
+      "y": 32
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
@@ -1056,8 +1056,8 @@
       37.09
     ],
     "mapPosition": {
-      "x": 45.3,
-      "y": 66.3
+      "x": 37.5,
+      "y": 29
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
@@ -1140,8 +1140,8 @@
       85.15
     ],
     "mapPosition": {
-      "x": 48.9,
-      "y": 87.3
+      "x": 47,
+      "y": 16.5
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
@@ -1195,8 +1195,8 @@
       58.5
     ],
     "mapPosition": {
-      "x": 30.9,
-      "y": 77.3
+      "x": 55,
+      "y": 25.5
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
@@ -1291,8 +1291,8 @@
       61.5
     ],
     "mapPosition": {
-      "x": 26.6,
-      "y": 78.6
+      "x": 62.5,
+      "y": 25.5
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
@@ -1375,8 +1375,8 @@
       48.5
     ],
     "mapPosition": {
-      "x": 33.3,
-      "y": 72.9
+      "x": 56.5,
+      "y": 16.5
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
@@ -1445,8 +1445,8 @@
       82.93
     ],
     "mapPosition": {
-      "x": 77,
-      "y": 86.5
+      "x": 32.5,
+      "y": 16.5
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
@@ -1524,8 +1524,8 @@
       81.5
     ],
     "mapPosition": {
-      "x": 23.6,
-      "y": 87.3
+      "x": 13.5,
+      "y": 16.5
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
@@ -1571,8 +1571,8 @@
       48
     ],
     "mapPosition": {
-      "x": 63.2,
-      "y": 72.9
+      "x": 18.5,
+      "y": 75.5
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
@@ -1625,8 +1625,8 @@
       34
     ],
     "mapPosition": {
-      "x": 50.5,
-      "y": 66.3
+      "x": 18.5,
+      "y": 35
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
@@ -1690,8 +1690,8 @@
       79
     ],
     "mapPosition": {
-      "x": 64.5,
-      "y": 86.2
+      "x": 18,
+      "y": 57.5
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
@@ -1780,8 +1780,8 @@
       44.5
     ],
     "mapPosition": {
-      "x": 46.4,
-      "y": 71.2
+      "x": 65,
+      "y": 16.5
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
@@ -1851,8 +1851,8 @@
       -28.4
     ],
     "mapPosition": {
-      "x": 11.6,
-      "y": 37.8
+      "x": 76,
+      "y": 16.5
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,

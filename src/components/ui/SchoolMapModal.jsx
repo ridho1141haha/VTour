@@ -1,7 +1,7 @@
 import React, { useMemo, useRef, useState } from 'react';
 import { Info, MapPin, Navigation, X } from 'lucide-react';
 import { useTourStore } from '../../stores/useTourStore';
-import { resolveTeleportPosition } from '../../lib/locationUtils';
+import { publicAssetUrl, resolveTeleportPosition } from '../../lib/locationUtils';
 import { useFocusTrap } from '../../hooks/useFocusTrap';
 
 export function SchoolMapModal() {
@@ -37,9 +37,12 @@ export function SchoolMapModal() {
         </header>
 
         <div className="custom-scrollbar grid flex-1 gap-5 overflow-y-auto p-4 sm:p-6 lg:grid-cols-[1fr_300px]">
-          <div className="bg-blueprint relative min-h-[430px] overflow-hidden border border-zinc-800 bg-zinc-900/35">
-            <div className="absolute inset-5 border border-zinc-700/70" />
-            <div className="absolute left-1/2 top-1/2 h-[28%] w-[25%] -translate-x-1/2 -translate-y-1/2 border border-dashed border-zinc-600 bg-zinc-950/50" />
+          <div className="relative min-h-[430px] overflow-hidden border border-zinc-800 bg-zinc-950/80">
+            <img
+              src={publicAssetUrl('images/denah-kampus.webp')}
+              alt="Denah Kampus SMKN 2 Surakarta"
+              className="absolute inset-0 h-full w-full object-contain p-2 opacity-90 select-none pointer-events-none"
+            />
             <div className="absolute right-4 top-4 border border-zinc-700 bg-zinc-950 px-2 py-1 font-mono text-[10px] text-zinc-400"><span className="text-orange-400">U ↑</span></div>
             {mappedLocations.map((location, index) => {
               const selectedMarker = selectedId === location.id;
