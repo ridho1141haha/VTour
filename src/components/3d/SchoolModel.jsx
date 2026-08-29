@@ -44,11 +44,20 @@ export function SchoolModel({ collisionRef, onReady }) {
       child.castShadow = false;
       child.receiveShadow = false;
 
-      // transmission > 0 memicu render pass tambahan seluruh scene per frame;
-      // ganti dengan opacity biasa agar kaca tetap terlihat tanpa pass ganda.
+      // Pastikan material dinding/atap/bangunan bersifat DoubleSide agar tidak tembus pandang/bolong dari dalam
       const materials = Array.isArray(child.material) ? child.material : [child.material];
       for (const material of materials) {
-        if (material?.transmission > 0 && !adjustedGlassMaterials.has(material)) {
+        if (!material) continue;
+
+        // Jadikan DoubleSide agar bagian dalam gedung tidak bolong/tembus pandang
+        if (material.side !== THREE.DoubleSide) {
+          material.side = THREE.DoubleSide;
+          material.needsUpdate = true;
+        }
+
+        // transmission > 0 memicu render pass tambahan seluruh scene per frame;
+        // ganti dengan opacity biasa agar kaca tetap terlihat tanpa pass ganda.
+        if (material.transmission > 0 && !adjustedGlassMaterials.has(material)) {
           adjustedGlassMaterials.add(material);
           material.transmission = 0;
           material.transparent = true;

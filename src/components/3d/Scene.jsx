@@ -138,9 +138,10 @@ export function Scene({ controlsEnabled = true, onAssetError, onAssetRetry, onRe
           <XR store={xrStore}>
             <XROrigin ref={xrOriginRef} />
             <CanvasLifecycle onUnavailable={onUnavailable} onRestored={onRestored} />
-            <ambientLight intensity={0.9} />
-            <directionalLight position={[60, 90, 30]} intensity={1.75} />
-            <directionalLight position={[-50, 40, -30]} intensity={0.35} />
+            <ambientLight intensity={1.1} />
+            <directionalLight position={[60, 90, 30]} intensity={1.5} />
+            <directionalLight position={[-60, 60, -50]} intensity={0.85} />
+            <directionalLight position={[0, 50, 0]} intensity={0.4} />
             <Sky sunPosition={[60, 90, 30]} turbidity={6} rayleigh={3} />
 
             <FirstPersonPlayer collisionRef={collisionRef} enabled={cameraMode === 'fps' && controlsEnabled} spawnPosition={DEFAULT_SPAWN_POS} />
