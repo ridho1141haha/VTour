@@ -9,12 +9,12 @@
     "position": [
       -66.44,
       0.45,
-      -107.27
+      -102
     ],
     "teleportPosition": [
       -66.44,
       1.72,
-      -103
+      -98
     ],
     "mapPosition": {
       "x": 50,
@@ -55,7 +55,7 @@
     "teleportLookAt": [
       -66.44,
       1.72,
-      -107.27
+      -102
     ]
   },
   {
@@ -73,7 +73,7 @@
     "teleportPosition": [
       -55.93,
       1.72,
-      -63.5
+      -62
     ],
     "mapPosition": {
       "x": 49.5,
@@ -205,14 +205,14 @@
     "description": "Merupakan fasilitas yang mendukung kegiatan inovasi, pembelajaran berbasis teknologi dan industri, serta pengembangan hasil karya siswa. Area ini menjadi wadah untuk mengembangkan ide, produk, dan keterampilan siswa.",
     "anchorStatus": "calibrated",
     "position": [
-      6.5,
+      -42,
       0.45,
-      -13
+      -67
     ],
     "teleportPosition": [
-      6.5,
+      -42,
       1.72,
-      -9.5
+      -62
     ],
     "mapPosition": {
       "x": 59.8,
@@ -269,9 +269,9 @@
       }
     ],
     "teleportLookAt": [
-      6.5,
+      -42,
       1.72,
-      -13
+      -67
     ]
   },
   {
@@ -282,14 +282,14 @@
     "description": "Gedung pusat administrasi dan kegiatan belajar teori. Meliputi Lobby utama penerima tamu, Ruang GNA sebagai ruang kerja guru mata pelajaran normatif dan adaptif, Ruang Kesiswaan untuk pembinaan peserta didik dan ekstrakurikuler, Ruang Tata Usaha (TU) sebagai pusat layanan administrasi dan surat-menyurat, serta Ruang Teori TM dan Teori TJKT.",
     "anchorStatus": "calibrated",
     "position": [
-      -56,
+      -56.04,
       0.45,
-      -2.5
+      -18
     ],
     "teleportPosition": [
-      -56,
+      -56.04,
       1.72,
-      1
+      -14
     ],
     "mapPosition": {
       "x": 36.5,
@@ -344,9 +344,9 @@
       }
     ],
     "teleportLookAt": [
-      -56,
+      -56.04,
       1.72,
-      -2.5
+      -18
     ]
   },
   {
@@ -358,17 +358,17 @@
     "anchorStatus": "calibrated",
     "position": [
       -6.41,
-      0.445,
+      0.45,
       -31.98
     ],
     "teleportPosition": [
       -6.41,
-      2.145,
-      -29.6
+      1.72,
+      -27
     ],
     "teleportLookAt": [
       -6.41,
-      1.7,
+      1.72,
       -31.98
     ],
     "mapPosition": {
@@ -484,19 +484,19 @@
     "description": "Merupakan laboratorium komputer dan ruang kelas teori yang digunakan untuk kegiatan pemrograman, pembuatan aplikasi, pengembangan perangkat lunak, serta pembuatan dan pengembangan gim. Dilengkapi ruang Teori PPLG untuk pembelajaran mata pelajaran umum.",
     "anchorStatus": "calibrated",
     "position": [
-      -21.41,
-      0.378,
-      21.78
+      -9.47,
+      0.38,
+      19.51
     ],
     "teleportPosition": [
-      -21.41,
-      2.07,
-      23.3
+      -9.47,
+      1.72,
+      24
     ],
     "teleportLookAt": [
-      -21.41,
-      2.098,
-      21.78
+      -9.47,
+      1.72,
+      19.51
     ],
     "mapPosition": {
       "x": 37,
@@ -556,14 +556,14 @@
     "description": "Merupakan pusat sumber belajar yang menyediakan berbagai koleksi buku dan bahan referensi. Perpustakaan digunakan oleh siswa dan guru untuk membaca, belajar mandiri, serta mencari informasi yang mendukung kegiatan pembelajaran.",
     "anchorStatus": "calibrated",
     "position": [
-      -78,
+      -38,
       0.45,
-      -45
+      -35
     ],
     "teleportPosition": [
-      -78,
+      -38,
       1.72,
-      -41.5
+      -31
     ],
     "mapPosition": {
       "x": 50,
@@ -615,9 +615,9 @@
       }
     ],
     "teleportLookAt": [
-      -78,
+      -38,
       1.72,
-      -45
+      -35
     ]
   },
   {
@@ -628,19 +628,19 @@
     "description": "Area konsentrasi keahlian teknik bangunan dan konstruksi. Meliputi DPIB (Desain Pemodelan dan Informasi Bangunan) untuk menggambar teknik, perancangan, dan pemodelan bangunan; TKL untuk penerapan keterampilan dan peralatan keahlian; serta ruang kelas Teori DPIB dan Teori TKL untuk pembelajaran mata pelajaran umum.",
     "anchorStatus": "calibrated",
     "position": [
-      -100,
-      0.153,
-      -64.31
+      -80,
+      0.3,
+      -65.32
     ],
     "teleportPosition": [
-      -100,
-      1.853,
-      -62.3
+      -80,
+      1.72,
+      -60
     ],
     "teleportLookAt": [
-      -100,
-      1.265,
-      -64.31
+      -80,
+      1.72,
+      -65.32
     ],
     "mapPosition": {
       "x": 65,
@@ -753,14 +753,14 @@
     "description": "Merupakan sarana ibadah bagi warga sekolah, khususnya umat Islam. Selain digunakan untuk melaksanakan ibadah, masjid juga dimanfaatkan untuk berbagai kegiatan keagamaan dan pembinaan kerohanian siswa.",
     "anchorStatus": "calibrated",
     "position": [
-      -95,
+      -85,
       0.45,
-      10
+      -10
     ],
     "teleportPosition": [
-      -95,
+      -85,
       1.72,
-      6.5
+      -6
     ],
     "mapPosition": {
       "x": 59,
@@ -902,9 +902,9 @@
       }
     ],
     "teleportLookAt": [
-      -95,
+      -85,
       1.72,
-      10
+      -10
     ]
   },
   {
@@ -915,19 +915,19 @@
     "description": "Merupakan fasilitas pelayanan kesehatan dasar di lingkungan sekolah yang digunakan untuk memberikan pertolongan pertama serta menjadi tempat beristirahat sementara bagi siswa yang mengalami gangguan kesehatan.",
     "anchorStatus": "calibrated",
     "position": [
-      -58.07,
+      -62.36,
       0.3,
-      36.79
+      34.9
     ],
     "teleportPosition": [
-      -58.07,
+      -62.36,
       1.72,
-      34.6
+      31
     ],
     "teleportLookAt": [
-      -58.07,
-      1.75,
-      37.09
+      -62.36,
+      1.72,
+      34.9
     ],
     "mapPosition": {
       "x": 58.5,
@@ -981,19 +981,19 @@
     "description": "Pusat layanan konsumsi dan perlengkapan sekolah. Kantin menyediakan aneka makanan dan minuman sehat bagi warga sekolah serta menjadi tempat beristirahat dan bersosialisasi. Koperasi menyediakan kebutuhan warga sekolah seperti alat tulis, seragam, dan perlengkapan belajar sekaligus sarana praktik kewirausahaan.",
     "anchorStatus": "calibrated",
     "position": [
-      -66.06,
-      0.02,
-      43.33
+      -65.73,
+      0.3,
+      47.12
     ],
     "teleportPosition": [
-      -66.06,
+      -65.73,
       1.72,
-      41.5
+      43
     ],
     "teleportLookAt": [
-      -66.06,
-      1.757,
-      43.33
+      -65.73,
+      1.72,
+      47.12
     ],
     "mapPosition": {
       "x": 51.5,
@@ -1041,19 +1041,19 @@
     "description": "Merupakan laboratorium praktik yang digunakan untuk kegiatan perakitan komputer, konfigurasi jaringan, pengelolaan perangkat jaringan (router/switch), server, serta praktik telekomunikasi. Terhubung dengan ruang Teori TJKT untuk pembelajaran umum.",
     "anchorStatus": "calibrated",
     "position": [
-      -51.67,
+      -48.75,
       0.3,
-      36.79
+      34.9
     ],
     "teleportPosition": [
-      -51.67,
+      -48.75,
       1.72,
-      34.6
+      31
     ],
     "teleportLookAt": [
-      -51.67,
-      1.75,
-      37.09
+      -48.75,
+      1.72,
+      34.9
     ],
     "mapPosition": {
       "x": 37.5,
@@ -1126,18 +1126,18 @@
     "anchorStatus": "calibrated",
     "position": [
       -45.11,
-      0.023,
-      84.98
+      0.3,
+      82
     ],
     "teleportPosition": [
       -45.11,
       1.72,
-      82.8
+      78
     ],
     "teleportLookAt": [
       -45.11,
-      1.7,
-      85.15
+      1.72,
+      82
     ],
     "mapPosition": {
       "x": 47,
@@ -1187,12 +1187,12 @@
     "position": [
       -78.5,
       0.35,
-      62
+      64.73
     ],
     "teleportPosition": [
       -78.5,
       1.72,
-      58.5
+      60
     ],
     "mapPosition": {
       "x": 55,
@@ -1270,7 +1270,7 @@
     "teleportLookAt": [
       -78.5,
       1.72,
-      62
+      64.73
     ]
   },
   {
@@ -1283,12 +1283,12 @@
     "position": [
       -86.5,
       0.35,
-      65
+      64.73
     ],
     "teleportPosition": [
       -86.5,
       1.72,
-      61.5
+      60
     ],
     "mapPosition": {
       "x": 62.5,
@@ -1354,7 +1354,7 @@
     "teleportLookAt": [
       -86.5,
       1.72,
-      65
+      64.73
     ]
   },
   {
@@ -1365,14 +1365,14 @@
     "description": "Merupakan ruang kelas yang digunakan oleh siswa Teknik Otomotif untuk pembelajaran mata pelajaran umum, seperti Matematika, Bahasa Indonesia, Bahasa Inggris, serta pendalaman konsep teori teknik otomotif sesuai kurikulum.",
     "anchorStatus": "calibrated",
     "position": [
-      -74,
-      0.35,
-      52
+      -65,
+      0.3,
+      60
     ],
     "teleportPosition": [
-      -74,
+      -65,
       1.72,
-      48.5
+      56
     ],
     "mapPosition": {
       "x": 56.5,
@@ -1417,9 +1417,9 @@
       }
     ],
     "teleportLookAt": [
-      -74,
+      -65,
       1.72,
-      52
+      60
     ]
   },
   {
@@ -1431,17 +1431,17 @@
     "anchorStatus": "calibrated",
     "position": [
       7.33,
-      0.02,
+      0.3,
       82.93
     ],
     "teleportPosition": [
       7.33,
-      1.899,
-      80.8
+      1.72,
+      78
     ],
     "teleportLookAt": [
       7.33,
-      1.7,
+      1.72,
       82.93
     ],
     "mapPosition": {
@@ -1516,12 +1516,12 @@
     "position": [
       -92,
       0.2,
-      85
+      82
     ],
     "teleportPosition": [
       -92,
       1.72,
-      81.5
+      78
     ],
     "mapPosition": {
       "x": 13.5,
@@ -1550,7 +1550,7 @@
     "teleportLookAt": [
       -92,
       1.72,
-      85
+      82
     ]
   },
   {
@@ -1615,14 +1615,14 @@
     "description": "Merupakan area terbuka yang digunakan untuk olahraga bola basket, kegiatan olahraga lainnya, upacara/apel, serta berbagai aktivitas sekolah yang membutuhkan ruang terbuka luas.",
     "anchorStatus": "calibrated",
     "position": [
-      -42,
-      0.3,
-      36.79
+      -18.5,
+      0.2,
+      35
     ],
     "teleportPosition": [
-      -42,
+      -18.5,
       1.72,
-      34
+      31
     ],
     "mapPosition": {
       "x": 18.5,
@@ -1667,9 +1667,9 @@
       }
     ],
     "teleportLookAt": [
-      -42,
+      -18.5,
       1.72,
-      36.79
+      35
     ]
   },
   {
@@ -1680,14 +1680,14 @@
     "description": "Merupakan bengkel praktik dan ruang kelas teori yang digunakan untuk kegiatan pengelasan dan fabrikasi logam, seperti pemotongan, penyambungan, pengelasan (SMAW, GMAW, GTAW), dan pembentukan material logam. Dilengkapi ruang Teori TPFL untuk pembelajaran mata pelajaran umum.",
     "anchorStatus": "calibrated",
     "position": [
-      -16,
+      -20,
       0.3,
-      82.5
+      82
     ],
     "teleportPosition": [
-      -16,
+      -20,
       1.72,
-      79
+      78
     ],
     "mapPosition": {
       "x": 18,
@@ -1757,9 +1757,9 @@
       }
     ],
     "teleportLookAt": [
-      -16,
+      -20,
       1.72,
-      82.5
+      82
     ]
   },
   {
@@ -1770,14 +1770,14 @@
     "description": "Fasilitas sanitasi dan laboratorium pendukung. Meliputi kamar mandi deretan laboratorium sekolah serta akses ke Lab IPA yang digunakan untuk kegiatan praktikum sains seperti Fisika, Kimia, dan Biologi melalui pengamatan, percobaan, dan praktik secara langsung.",
     "anchorStatus": "calibrated",
     "position": [
-      -49.69,
+      -55.55,
       0.3,
-      48
+      34.9
     ],
     "teleportPosition": [
-      -49.69,
+      -55.55,
       1.72,
-      44.5
+      31
     ],
     "mapPosition": {
       "x": 65,
@@ -1823,9 +1823,9 @@
       }
     ],
     "teleportLookAt": [
-      -49.69,
+      -55.55,
       1.72,
-      48
+      34.9
     ]
   },
   {
@@ -1837,17 +1837,17 @@
     "anchorStatus": "calibrated",
     "position": [
       -114.43,
-      0.445,
+      0.45,
       -28.4
     ],
     "teleportPosition": [
-      -112.5,
+      -110,
       1.72,
       -28.4
     ],
     "teleportLookAt": [
       -114.43,
-      1.7,
+      1.72,
       -28.4
     ],
     "mapPosition": {
