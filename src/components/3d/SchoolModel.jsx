@@ -28,7 +28,7 @@ function addObstacleBoxes(mesh, obstacleBoxes, instanceMatrix, worldMatrix) {
 }
 
 export function SchoolModel({ collisionRef, onReady }) {
-  const { scene } = useGLTF(SCHOOL_MODEL_URL);
+  const { scene } = useGLTF(SCHOOL_MODEL_URL, true);
 
   useEffect(() => {
     const groundMeshes = [];
@@ -85,4 +85,4 @@ export function SchoolModel({ collisionRef, onReady }) {
   return <primitive object={scene} />;
 }
 
-useGLTF.preload(SCHOOL_MODEL_URL);
+useGLTF.preload(SCHOOL_MODEL_URL, true);
