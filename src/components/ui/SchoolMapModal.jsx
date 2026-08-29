@@ -37,13 +37,13 @@ export function SchoolMapModal() {
         </header>
 
         <div className="custom-scrollbar grid flex-1 gap-5 overflow-y-auto p-4 sm:p-6 lg:grid-cols-[1fr_300px]">
-          <div className="relative min-h-[430px] overflow-hidden border border-zinc-800 bg-zinc-950/80">
+          <div className="relative mx-auto aspect-[886/696] w-full max-w-[680px] overflow-hidden border border-zinc-800 bg-zinc-950 shadow-inner">
             <img
               src={publicAssetUrl('images/denah-kampus.webp')}
               alt="Denah Kampus SMKN 2 Surakarta"
-              className="absolute inset-0 h-full w-full object-contain p-2 opacity-90 select-none pointer-events-none"
+              className="absolute inset-0 h-full w-full object-cover select-none pointer-events-none"
             />
-            <div className="absolute right-4 top-4 border border-zinc-700 bg-zinc-950 px-2 py-1 font-mono text-[10px] text-zinc-400"><span className="text-orange-400">U ↑</span></div>
+            <div className="absolute right-3 top-3 border border-zinc-700 bg-zinc-950/90 px-2 py-1 font-mono text-[10px] text-zinc-400"><span className="text-orange-400">U ↑</span></div>
             {mappedLocations.map((location, index) => {
               const selectedMarker = selectedId === location.id;
               return (
