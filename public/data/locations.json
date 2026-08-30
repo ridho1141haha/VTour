@@ -210,13 +210,13 @@
       -90.94
     ],
     "teleportPosition": [
-      -92.77,
-      1.72,
-      -86.94
+      -92.91,
+      2.28,
+      -94.35
     ],
     "mapPosition": {
-      "x": 50,
-      "y": 53.5
+      "x": 59.8,
+      "y": 78.5
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
@@ -282,18 +282,18 @@
     "description": "Gedung pusat administrasi dan kegiatan belajar teori. Meliputi Lobby utama penerima tamu, Ruang GNA sebagai ruang kerja guru mata pelajaran normatif dan adaptif, Ruang Kesiswaan untuk pembinaan peserta didik dan ekstrakurikuler, Ruang Tata Usaha (TU) sebagai pusat layanan administrasi dan surat-menyurat, serta Ruang Teori TM dan Teori TJKT.",
     "anchorStatus": "calibrated",
     "position": [
-      -42,
-      0.45,
-      -67
+      -8.01,
+      1.44,
+      -55.74
     ],
     "teleportPosition": [
-      -42,
-      1.72,
-      -62
+      -7.94,
+      1.44,
+      -52.25
     ],
     "mapPosition": {
-      "x": 59.8,
-      "y": 78.5
+      "x": 36.5,
+      "y": 71
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
@@ -566,8 +566,8 @@
       -14
     ],
     "mapPosition": {
-      "x": 36.5,
-      "y": 71
+      "x": 50,
+      "y": 53.5
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
@@ -915,14 +915,14 @@
     "description": "Merupakan fasilitas pelayanan kesehatan dasar di lingkungan sekolah yang digunakan untuk memberikan pertolongan pertama serta menjadi tempat beristirahat sementara bagi siswa yang mengalami gangguan kesehatan.",
     "anchorStatus": "calibrated",
     "position": [
-      -62.36,
-      0.3,
-      34.9
+      -60.32,
+      1.44,
+      30.90
     ],
     "teleportPosition": [
-      -62.36,
-      1.72,
-      31
+      -60.32,
+      1.44,
+      30.90
     ],
     "teleportLookAt": [
       -62.36,
@@ -930,8 +930,8 @@
       34.9
     ],
     "mapPosition": {
-      "x": 58.5,
-      "y": 31
+      "x": 59.5,
+      "y": 32.5
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
@@ -1185,14 +1185,14 @@
     "description": "Merupakan area praktik Teknik Otomotif yang digunakan untuk kegiatan perawatan, pemeriksaan, perbaikan, pembongkaran, dan pemasangan berbagai komponen kendaraan bermotor, khususnya sistem mesin, kelistrikan bodi, dan transmisi kendaraan.",
     "anchorStatus": "calibrated",
     "position": [
-      -78.5,
-      0.35,
-      64.73
+      -45.87,
+      1.44,
+      65.00
     ],
     "teleportPosition": [
-      -78.5,
-      1.72,
-      60
+      -45.87,
+      1.44,
+      65.00
     ],
     "mapPosition": {
       "x": 55,
@@ -1281,18 +1281,18 @@
     "description": "Merupakan area lanjutan bengkel Teknik Otomotif untuk servis chasis, sistem pengereman, kemudi, suspensi, dan roda kendaraan bermotor dengan standar keselamatan kerja bengkel modern.",
     "anchorStatus": "calibrated",
     "position": [
-      -86.5,
-      0.35,
-      64.73
+      -107.60,
+      1.44,
+      80.25
     ],
     "teleportPosition": [
-      -86.5,
-      1.72,
-      60
+      -107.60,
+      1.44,
+      80.25
     ],
     "mapPosition": {
-      "x": 62.5,
-      "y": 25.5
+      "x": 65,
+      "y": 19
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
@@ -1365,14 +1365,14 @@
     "description": "Merupakan ruang kelas yang digunakan oleh siswa Teknik Otomotif untuk pembelajaran mata pelajaran umum, seperti Matematika, Bahasa Indonesia, Bahasa Inggris, serta pendalaman konsep teori teknik otomotif sesuai kurikulum.",
     "anchorStatus": "calibrated",
     "position": [
-      -65,
-      0.3,
-      60
+      -62.41,
+      1.44,
+      84.42
     ],
     "teleportPosition": [
-      -65,
-      1.72,
-      56
+      -62.85,
+      1.44,
+      81.97
     ],
     "mapPosition": {
       "x": 56.5,
@@ -1763,11 +1763,11 @@
     ]
   },
   {
-    "id": "kamar-mandi-lab",
-    "name": "Kamar Mandi Lab & Lab IPA",
-    "shortName": "Kamar Mandi Lab & IPA",
+    "id": "kamar-mandi",
+    "name": "Kamar Mandi",
+    "shortName": "Kamar Mandi",
     "category": "Fasilitas",
-    "description": "Fasilitas sanitasi dan laboratorium pendukung. Meliputi kamar mandi deretan laboratorium sekolah serta akses ke Lab IPA yang digunakan untuk kegiatan praktikum sains seperti Fisika, Kimia, dan Biologi melalui pengamatan, percobaan, dan praktik secara langsung.",
+    "description": "Meliputi kamar mandi depan deretan Lab Komputer",
     "anchorStatus": "calibrated",
     "position": [
       21.97,
@@ -1775,26 +1775,22 @@
       50.7
     ],
     "teleportPosition": [
-      21.97,
-      1.72,
-      46.7
+      25.57,
+      1.44,
+      51.44
     ],
     "mapPosition": {
-      "x": 65,
-      "y": 16.5
+      "x": 30,
+      "y": 30
     },
     "interactionRadius": 4.5,
     "locationRadius": 12,
     "details": [
-      "Kamar mandi dan sanitasi bersih area laboratorium",
-      "Praktikum sains terapan (Fisika, Kimia, Biologi)",
-      "Fasilitas cuci tangan dan keselamatan kerja lab"
+      "Kamar mandi Laki-laki dan Perempuan"
     ],
     "facilities": [
       "Bilik Toilet Bersih",
-      "Wastafel Cuci Tangan",
-      "Meja Praktikum Lab IPA & Rak Reagen",
-      "Peralatan Gelas & Mikroskop Sains"
+      "Wastafel Cuci Tangan"
     ],
     "images": [
       {
@@ -1836,14 +1832,14 @@
     "description": "Merupakan pusat kegiatan organisasi siswa seperti OSIS, Pasukan Paduan Suara, Elmobpela, Patroli Keamanan Sekolah (PKS), dan Wira Paski Sakti. Gedung ini digunakan sebagai tempat sekretariat, berkumpul, berdiskusi, menyusun program, dan melakukan koordinasi kegiatan.",
     "anchorStatus": "calibrated",
     "position": [
-      -114.43,
-      0.45,
-      -28.4
+      -141.25,
+      1.44,
+      85.60
     ],
     "teleportPosition": [
-      -110,
-      1.72,
-      -28.4
+      -141.25,
+      1.44,
+      85.60
     ],
     "teleportLookAt": [
       -114.43,
@@ -1901,4 +1897,4 @@
       }
     ]
   }
-]
+    ]
